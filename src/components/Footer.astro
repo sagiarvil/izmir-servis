@@ -1,5 +1,18 @@
 ---
 import { business } from '../data/business';
+
+const decisionNetwork = [
+  { name: "Dr. Finans", url: "https://drfin.com.tr" },
+  { name: "Excel Arşiv", url: "https://excelarsiv.com" },
+  { name: "SKDM Hesapla", url: "https://skdmhesapla.com" },
+  { name: "Karbon Fiyat", url: "https://karbonfiyat.com" },
+  { name: "Inversion Core", url: "https://inversioncore.com" },
+  { name: "Belgin Kuyumculuk", url: "https://belginkuyumculuk.com" },
+  { name: "Saatchi", url: "https://saatchi.com.tr" },
+  { name: "Dilekçe Yazdır", url: "https://dilekceyazdir.com.tr" },
+  { name: "HTML & HTML", url: "https://htmlandhtml.com" },
+  { name: "Değerlet", url: "https://degerlet.com" }
+];
 ---
 
 <footer class="site-footer">
@@ -49,7 +62,7 @@ import { business } from '../data/business';
 
       <!-- İletişim & Çalışma Saatleri -->
       <div class="footer-col contact-col">
-        <h4 class="footer-heading">İletişim & Saatler</h4>
+        <h4 class="footer-heading">İletişim & Konum</h4>
         <p class="footer-contact-item">
           <strong>Adres:</strong> {business.address.fullAddress}
         </p>
@@ -57,11 +70,21 @@ import { business } from '../data/business';
           <strong>Telefon:</strong> <a href={`tel:${business.phoneE164}`}>{business.phoneDisplay}</a>
         </p>
         <p class="footer-contact-item">
-          <strong>Pzt - Cts:</strong> {business.workingHours.weekdays}
+          <strong>Çalışma Saatleri:</strong> Pzt - Cts {business.workingHours.weekdays}
         </p>
         <p class="footer-contact-item">
-          <strong>Pazar:</strong> Kapalı
+          <a href={business.address.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="footer-maps-link">Google Haritalar Yol Tarifi →</a>
         </p>
+      </div>
+    </div>
+
+    <!-- Karar Platformları Çapraz Penetrasyon Ağı -->
+    <div class="footer-network">
+      <span class="network-title">Karar & Çözüm Ağımız:</span>
+      <div class="network-links">
+        {decisionNetwork.map(net => (
+          <a href={net.url} target="_blank" rel="noopener noreferrer">{net.name}</a>
+        ))}
       </div>
     </div>
 
@@ -91,7 +114,7 @@ import { business } from '../data/business';
     display: grid;
     grid-template-columns: 1fr;
     gap: 36px;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
   }
 
   @media (min-width: 576px) {
@@ -180,8 +203,50 @@ import { business } from '../data/business';
     font-weight: 700;
   }
 
+  .footer-maps-link {
+    color: #38BDF8 !important;
+    text-decoration: underline;
+  }
+
+  .footer-network {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  @media (min-width: 768px) {
+    .footer-network {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .network-title {
+    color: #64748B;
+    font-weight: 600;
+  }
+
+  .network-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .network-links a {
+    color: #94A3B8;
+    transition: color 0.2s;
+  }
+
+  .network-links a:hover {
+    color: #FFFFFF;
+  }
+
   .footer-bottom {
-    padding-top: 24px;
+    padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;

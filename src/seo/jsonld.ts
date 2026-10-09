@@ -6,7 +6,7 @@ export function getAutoRepairSchema() {
     "@type": "AutoRepair",
     "@id": `${business.siteUrl}/#business`,
     "name": business.name,
-    "alternateName": [business.serviceBrand, "İzmir Yağ Değişim Servisi"],
+    "alternateName": [business.serviceBrand, "İzmir Yağ Değişim Servisi", "ASM Auto Gaziemir"],
     "legalName": business.legalName,
     "url": business.siteUrl,
     "telephone": business.phoneE164,
@@ -14,13 +14,14 @@ export function getAutoRepairSchema() {
     "image": `${business.siteUrl}/images/logo.png`,
     "logo": `${business.siteUrl}/images/logo.png`,
     "description": business.description,
-    "priceRange": "$$",
+    "priceRange": "₺₺",
+    "hasMap": business.address.googleMapsUrl,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": business.address.street,
       "addressLocality": business.address.district,
       "addressRegion": business.address.city,
-      "postalCode": "35410",
+      "postalCode": business.address.postalCode,
       "addressCountry": "TR"
     },
     "geo": {
@@ -44,22 +45,27 @@ export function getAutoRepairSchema() {
     ],
     "sameAs": [
       business.social.instagramShop,
-      business.social.instagramMaster
+      business.social.instagramMaster,
+      business.address.googleMapsUrl
     ],
-    "areaServed": {
-      "@type": "City",
-      "name": "İzmir"
-    },
+    "areaServed": [
+      { "@type": "City", "name": "İzmir" },
+      { "@type": "AdministrativeArea", "name": "Gaziemir" },
+      { "@type": "AdministrativeArea", "name": "Karabağlar" },
+      { "@type": "AdministrativeArea", "name": "Menderes" },
+      { "@type": "AdministrativeArea", "name": "Buca" },
+      { "@type": "AdministrativeArea", "name": "Bornova" }
+    ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Motor Yağı ve Bakım Hizmetleri",
+      "name": "Otomotiv Bakım ve Onarım Hizmetleri",
       "itemListElement": [
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
             "name": "Motor Yağı Değişimi",
-            "description": "Araç motor koduna uygun tam sentetik motor yağı değişimi ve seviye kalibrasyonu."
+            "description": "Araç motor koduna tam uyumlu üretici onaylı sentetik motor yağı değişimi ve seviye kalibrasyonu."
           }
         },
         {
@@ -67,7 +73,7 @@ export function getAutoRepairSchema() {
           "itemOffered": {
             "@type": "Service",
             "name": "Yağ Filtresi Değişimi",
-            "description": "Orijinal mikron partikül filtre elemanı ve conta montajı."
+            "description": "Orijinal mikron partikül filtre elemanı, kovan temizliği ve conta sıfırlama."
           }
         },
         {
@@ -76,6 +82,14 @@ export function getAutoRepairSchema() {
             "@type": "Service",
             "name": "Periyodik Bakım",
             "description": "Dörtlü filtre seti, motor yağı ve 24 nokta mekanik güvenlik kontrolü."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Oto Diyagnostik ve Arıza Tespiti",
+            "description": "OBD2 bilgisayarlı elektronik sistem taraması, arıza kodu tespiti ve gösterge sıfırlama."
           }
         }
       ]
@@ -92,7 +106,16 @@ export function getServiceSchema(service: { title: string; description: string; 
     "provider": {
       "@type": "AutoRepair",
       "name": business.name,
-      "url": business.siteUrl
+      "url": business.siteUrl,
+      "telephone": business.phoneE164,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": business.address.street,
+        "addressLocality": business.address.district,
+        "addressRegion": business.address.city,
+        "postalCode": business.address.postalCode,
+        "addressCountry": "TR"
+      }
     },
     "areaServed": {
       "@type": "City",

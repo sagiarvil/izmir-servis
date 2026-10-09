@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>İzmir Yağ Değişim Servisi | ASM Auto Gaziemir</title>
+    <link>https://izmiryagdegisimi.web.app</link>
+    <description>İzmir Gaziemir 6. Sanayi Sitesi motor yağı değişimi, periyodik bakım ve oto diyagnostik servis güncellemeleri.</description>
+    <language>tr</language>
+    <atom:link href="https://izmiryagdegisimi.web.app/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>İzmir'de Motor Yağı Değişimi ve Periyodik Bakım</title>
+      <link>https://izmiryagdegisimi.web.app/motor-yagi-degisimi/</link>
+      <description>Üretici onaylı sentetik motor yağı değişimi ve seviye kalibrasyonu.</description>
+      <pubDate>Fri, 09 Oct 2026 12:00:00 GMT</pubDate>
+      <guid>https://izmiryagdegisimi.web.app/motor-yagi-degisimi/</guid>
+    </item>
+    <item>
+      <title>Yağ Filtresi Değişimi ve Sızdırmazlık</title>
+      <link>https://izmiryagdegisimi.web.app/yag-filtresi-degisimi/</link>
+      <description>Orijinal filtre elemanı montajı, kovan temizliği ve tork kontrollü sıkım.</description>
+      <pubDate>Fri, 09 Oct 2026 12:00:00 GMT</pubDate>
+      <guid>https://izmiryagdegisimi.web.app/yag-filtresi-degisimi/</guid>
+    </item>
+    <item>
+      <title>Kapsamlı Periyodik Bakım ve 24 Nokta Kontrol</title>
+      <link>https://izmiryagdegisimi.web.app/periyodik-bakim/</link>
+      <description>4 filtre seti değişimi, fren ve antifriz testleri ile periyodik araç bakımı.</description>
+      <pubDate>Fri, 09 Oct 2026 12:00:00 GMT</pubDate>
+      <guid>https://izmiryagdegisimi.web.app/periyodik-bakim/</guid>
+    </item>
+  </channel>
+</rss>

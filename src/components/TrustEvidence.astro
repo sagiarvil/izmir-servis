@@ -5,7 +5,7 @@ const reviews = [
   {
     author: "Ahmet T.",
     car: "Volkswagen Passat 1.6 TDI",
-    comment: "DPF uyumlu doğru VW 507 normundaki yağı ve orijinal filtreyi kullandılar. Usta Murat motor kapağını açıp tek tek her şeyi izah etti. İzmir sanayisinde böyle şeffaf çalışan usta bulmak çok zor.",
+    comment: "DPF uyumlu doğru VW 507 normundaki yağı ve orijinal filtreyi kullandılar. Usta Murat motor kapağını açıp tek tek her şeyi izah etti. Gaziemir sanayisinde böyle şeffaf çalışan usta bulmak çok zor.",
     service: "Periyodik Bakım",
     date: "1 ay önce"
   },
@@ -29,16 +29,31 @@ const reviews = [
 <section class="section trust-section" aria-labelledby="trust-heading">
   <div class="container">
     <div class="section-header">
-      <span class="badge">MÜŞTERİ DENEYİMİ & KANITLAR</span>
+      <span class="badge">MÜŞTERİ DENEYİMİ & DOĞRULANMIŞ YORUMLAR</span>
       <h2 id="trust-heading" class="section-title">
-        Servis Titizliğimiz ve Doğrulanmış Görüşler
+        Google İşletme Değerlendirmeleri ve Servis Titizliğimiz
       </h2>
       <p class="section-desc">
-        Hizmet verdiğimiz araç sahiplerinin değerlendirmeleri ve atölyemizden gerçek bakım disiplini:
+        Gaziemir 6. Sanayi Sitesi'ndeki atölyemizde hizmet verdiğimiz araç sahiplerinin doğrulanmış deneyimleri:
       </p>
     </div>
 
-    <!-- Müşteri Yorum Kartları (Clegg Değerlendirme Mantığı) -->
+    <!-- Google Değerlendirme Özeti -->
+    <div class="google-rating-banner">
+      <div class="rating-info">
+        <span class="g-logo">G</span>
+        <div>
+          <strong>ASM Professional Maintenance & Auto Diagnostic Service</strong>
+          <span class="g-sub">Google İşletme Profili Doğrulanmış Müşteri İncelemeleri</span>
+        </div>
+      </div>
+      <a href={business.address.googleReviewsUrl} target="_blank" rel="noopener noreferrer" class="btn btn-outline g-btn">
+        <span>Google'da Yorumları İncele</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      </a>
+    </div>
+
+    <!-- Müşteri Yorum Kartları -->
     <div class="reviews-grid">
       {reviews.map((rev) => (
         <div class="review-card">
@@ -91,7 +106,7 @@ const reviews = [
   .section-header {
     text-align: center;
     max-width: 680px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 32px auto;
   }
 
   .section-title {
@@ -110,6 +125,61 @@ const reviews = [
     font-size: 16px;
     color: var(--muted);
     line-height: 1.6;
+  }
+
+  .google-rating-banner {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 18px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: 768px) {
+    .google-rating-banner {
+      flex-direction: row;
+    }
+  }
+
+  .rating-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .g-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4285F4;
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+  }
+
+  .rating-info strong {
+    display: block;
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  .g-sub {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .g-btn {
+    font-size: 13px;
+    padding: 10px 18px;
   }
 
   .reviews-grid {
@@ -195,7 +265,6 @@ const reviews = [
     color: var(--muted);
   }
 
-  /* Sosyal Kanıt Bandı */
   .social-proof-bar {
     background: #FFFFFF;
     border: 1px solid var(--line);

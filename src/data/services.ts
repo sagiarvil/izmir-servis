@@ -21,8 +21,8 @@ export const services: ServiceItem[] = [
     title: "Motor Yağı Değişimi",
     shortTitle: "Motor Yağı",
     badge: "Üretici Standartlarında",
-    lead: "Aracınızın motor koduna ve üretici teknik onayına (RN0720, VW 504/507, BMW LL-04 vb.) birebir uyumlu sentetik motor yağı değişimi.",
-    description: "Rastgele viskozite seçimi motor ömrünü tüketir. ASM İzmir Yağ Servisi'nde sadece viskoziteye değil (0W-20, 5W-30, 5W-40), motorun fabrika teknik onay standartlarına göre dolum yapılır.",
+    lead: "İzmir Gaziemir 6. Sanayi Sitesi'nde motor koduna ve üretici onayına (RN0720, VW 504/507, BMW LL-04 vb.) tam uyumlu sentetik motor yağı değişimi.",
+    description: "Rastgele viskozite seçimi motor ömrünü tüketir. ASM Profesyonel Servis'te sadece viskoziteye değil (0W-20, 5W-30, 5W-40), motorun fabrika teknik onay standartlarına göre sıcak karter tahliyesi ve hassas dolum yapılır.",
     icon: "oil-can",
     highlights: [
       "Motor koduna özel üretici onaylı yağ tespiti",
@@ -59,7 +59,7 @@ export const services: ServiceItem[] = [
     title: "Yağ Filtresi Değişimi",
     shortTitle: "Yağ Filtresi",
     badge: "Orijinal Filtre Elemanı",
-    lead: "Mikron düzeyinde partikül tutma kapasitesine sahip yüksek kaliteli filtre elemanı montajı ve kovan o-ring contalarının yenilenmesi.",
+    lead: "Mikron düzeyinde partikül tutma kapasitesine sahip OEM filtre elemanı montajı, kovan temizliği ve tork kontrollü sıkım.",
     description: "Taze motor yağı koyup eski filtreyi bırakmak, temiz suya çamur karıştırmak gibidir. Her yağ değişiminde filtre gövdesi temizlenir, kovan contaları değiştirilir ve tork anahtarıyla sıkılır.",
     icon: "filter",
     highlights: [
@@ -97,7 +97,7 @@ export const services: ServiceItem[] = [
     title: "Periyodik Bakım",
     shortTitle: "Periyodik Bakım",
     badge: "Kapsamlı Servis Paketi",
-    lead: "Motor yağı, tüm filtreler (yağ, hava, polen, yakıt) ve 24 nokta mekanik & güvenlik kontrolünü içeren eksiksiz periyodik bakım.",
+    lead: "Motor yağı, 4 filtre seti (yağ, hava, polen, yakıt), fren kontrolleri ve 24 nokta mekanik güvenlik muayenesi.",
     description: "Aracınızın yolda kalmasını ve beklenmedik ağır masraflar çıkarmasını engelleyen koruyucu bakım. Fren hidroliği, soğutma sıvısı, alt takım, kayışlar ve akü sağlığı tek ziyarette kontrol edilir.",
     icon: "wrench",
     highlights: [
@@ -133,23 +133,33 @@ export const services: ServiceItem[] = [
 
 export const secondaryServices = [
   {
-    title: "Hava Filtresi Değişimi",
-    desc: "Motorun oksijen geçirgenliğini artırarak yakıt tasarrufu ve tam yanma sağlar.",
-    badge: "Performans & Tasarruf"
+    title: "Oto Diyagnostik & Arıza Tespiti",
+    desc: "Lisanslı OBD2 tarama cihazları ile motor, şanzıman, ABS ve hava yastığı elektronik arıza kodlarının analizi ve sıfırlanması.",
+    badge: "Elektronik Tarama"
   },
   {
-    title: "Polen (Kabin) Filtresi",
-    desc: "Klima ve havalandırma kanallarından içeri giren toz, polen ve zararlı egzoz partiküllerini süzer.",
-    badge: "Kabin Sağlığı"
+    title: "Fren Sistemi & Balata Kontrolü",
+    desc: "Ön-arka fren balata kalınlıkları, disk aşınma payı ve elektronik nem test cihazıyla hidrolik kaynama derecesi ölçümü.",
+    badge: "Fren Güvenliği"
   },
   {
-    title: "Fren Hidroliği Nem Ölçümü",
-    desc: "Zamanla nem çeken hidrolik sıvısının kaynama noktasını elektronik cihazla test ederiz.",
-    badge: "Sürüş Güvenliği"
+    title: "Hava ve Polen Filtresi Değişimi",
+    desc: "Motor hava emiş debisi için hava filtresi ve araç içi klima hava hijyeni için aktif karbonlu polen filtresi değişimi.",
+    badge: "Kabin & Motor Havası"
   },
   {
-    title: "Antifriz & Sıvı Kontrolleri",
-    desc: "Soğutma suyu donma derecesi, direksiyon hidroliği ve cam suyu seviyeleri tamamlanır.",
-    badge: "Mevsimsel Koruma"
+    title: "Antifriz & Soğutma Sistemi",
+    desc: "Refraktometre ile soğutma sıvısının -35°C koruma derecesi testi, termostat ve radyatör sızdırmazlık muayenesi.",
+    badge: "Motor Koruma"
+  },
+  {
+    title: "Şanzıman ve Diferansiyel Yağları",
+    desc: "Manuel ve otomatik şanzıman yağ viskoziteleri, diferansiyel dişli sıvısı seviyesi ve kaçak kontrolleri.",
+    badge: "Aktarma Organları"
+  },
+  {
+    title: "Akü Sağlığı & Şarj Dinamosu Testi",
+    desc: "Dijital akü test cihazı ile CCA marş basma gücü, alternatör şarj voltajı ve kaçak akım tespiti.",
+    badge: "Elektrik Sistemi"
   }
 ];

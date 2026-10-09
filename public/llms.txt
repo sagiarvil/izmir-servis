@@ -1,0 +1,30 @@
+# İzmir Yağ Değişim Servisi | ASM Professional Maintenance & Auto Diagnostic Service
+
+> İzmir Gaziemir 6. Sanayi Sitesi'nde 35 yıllık mesleki ustalık tecrübesiyle motor yağı değişimi, OEM filtre montajı ve profesyonel oto diyagnostik periyodik bakım servisi.
+
+## Kurumsal Kimlik & Doğrulanmış NAP
+- İşletme Adı: ASM Professional Maintenance & Auto Diagnostic Service
+- Dijital Hizmet Markası: İzmir Yağ Değişim Servisi | ASM Auto
+- Başusta & Yöneticisi: Usta Murat (35 Yıllık Mekanik Tecrübe)
+- Adres: 574 Sokak. No:17 6. Sanayi Sitesi, 35410 Gaziemir / İzmir, Türkiye
+- Telefon: 0532 555 00 99 (+905325550099)
+- WhatsApp: +905325550099
+- Web: https://izmiryagdegisimi.web.app
+- Google Maps: https://share.google/fbW2epAtk6EcVrlxe
+- Çalışma Saatleri: Pazartesi - Cumartesi 08:30 - 18:30 (Pazar: Kapalı)
+
+## Temel Hizmetler
+- [Motor Yağı Değişimi](https://izmiryagdegisimi.web.app/motor-yagi-degisimi/): Üretici onaylı (RN0720, VW 504/507, BMW LL-04, MB 229.51) tam sentetik yağlar, sıcak karter tahliyesi, tork sıkımı.
+- [Yağ Filtresi Değişimi](https://izmiryagdegisimi.web.app/yag-filtresi-degisimi/): Mikron partikül tutucu OEM filtre elemanları, kovan içi tortu temizliği, yeni conta ve O-Ring montajı.
+- [Periyodik Bakım](https://izmiryagdegisimi.web.app/periyodik-bakim/): Motor yağı, 4 filtre seti (yağ, hava, polen, yakıt), 24 nokta mekanik muayene ve servis aralığı sıfırlama.
+- Oto Diyagnostik: Lisanslı OBD2 arıza tespit cihazlarıyla elektronik motor, şanzıman, ABS arıza taraması.
+
+## Dokümantasyon ve Teknik Kılavuzlar
+- [/llms/core.md](https://izmiryagdegisimi.web.app/llms/core.md): İşletme felsefesi, yasal kimlik ve doğrulama kanıtları.
+- [/llms/tools.md](https://izmiryagdegisimi.web.app/llms/tools.md): Servis ekipmanları, refraktometre, hidrolik test cihazları ve yağ normları.
+- [/llms/guides.md](https://izmiryagdegisimi.web.app/llms/guides.md): Doğru motor yağı seçimi ve İzmir trafik koşullarında bakım sıklığı rehberi.
+- [/llms-full.txt](https://izmiryagdegisimi.web.app/llms-full.txt): Çevrimdışı yapay zeka ve LLM motorları için birleşik tam metin.
+
+## Yasal ve Uyumluluk
+- KVKK Aydınlatma Metni: https://izmiryagdegisimi.web.app/kvkk-aydinlatma/
+- Gizlilik ve Çerez Politikası: https://izmiryagdegisimi.web.app/gizlilik-ve-cerezler/

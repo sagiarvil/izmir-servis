@@ -1,0 +1,27 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "İzmir Yağ Değişim Servisi | ASM Auto Gaziemir",
+  "home_page_url": "https://izmiryagdegisimi.web.app",
+  "feed_url": "https://izmiryagdegisimi.web.app/feed.json",
+  "description": "ASM Auto Gaziemir 6. Sanayi Sitesi araç bakım ve motor yağı servis akışı.",
+  "items": [
+    {
+      "id": "https://izmiryagdegisimi.web.app/motor-yagi-degisimi/",
+      "url": "https://izmiryagdegisimi.web.app/motor-yagi-degisimi/",
+      "title": "Motor Yağı Değişimi",
+      "content_text": "Üretici onaylı sentetik motor yağları ile karterden sıcak tahliye ve hassas dolum."
+    },
+    {
+      "id": "https://izmiryagdegisimi.web.app/yag-filtresi-degisimi/",
+      "url": "https://izmiryagdegisimi.web.app/yag-filtresi-degisimi/",
+      "title": "Yağ Filtresi Değişimi",
+      "content_text": "OEM filtre elemanları, kovan temizliği ve conta yenileme."
+    },
+    {
+      "id": "https://izmiryagdegisimi.web.app/periyodik-bakim/",
+      "url": "https://izmiryagdegisimi.web.app/periyodik-bakim/",
+      "title": "Periyodik Bakım",
+      "content_text": "Dörtlü filtre seti ve 24 nokta mekanik güvenlik kontrolü."
+    }
+  ]
+}

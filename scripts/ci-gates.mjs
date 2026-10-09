@@ -111,7 +111,7 @@ if (
   indexContent.includes('İzmir&#39;de Motor Yağı Değişimi') ||
   indexContent.includes('İzmir\'de Motor Yağı Değişimi')
 ) {
-  if (indexContent.includes('tel:+902322530035') && indexContent.includes('wa.me/905322530035')) {
+  if (indexContent.includes('tel:+905325550099') && indexContent.includes('wa.me/905325550099')) {
     gates.G6_HTML_RENDER = true;
     console.log('✔ G6 (İlk HTML Render & CTA): PASS');
   }
