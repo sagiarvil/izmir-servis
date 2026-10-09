@@ -1,82 +1,293 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { business } from '../data/business';
+
+const googleMapsDirUrl = "https://www.google.com/maps/dir/?api=1&destination=38.3340,27.1350";
+const appleMapsDirUrl = "maps://?daddr=38.3340,27.1350";
+const yandexNaviUrl = "yandexnavi://build_route_on_map?lat_to=38.3340&lon_to=27.1350";
+const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Auto%20servisinize%20gelmek%20istiyorum,%20canl%C4%B1%20konum%20payla%C5%9F%C4%B1r%20m%C4%B1s%C4%B1n%C4%B1z?";
 ---
 
 <Layout
-  title="İletişim & Konum | ASM İzmir Yağ Değişim Servisi"
-  description="ASM Auto İzmir iletişim bilgileri, telefon, WhatsApp, 6. Sanayi Sitesi Gaziemir Karabağlar adres ve yol tarifi."
+  title="İletişim, Konum ve Canlı Yol Tarifi | ASM Auto İzmir"
+  description="İzmir 6. Sanayi Sitesi Gaziemir'deki servisimize tek tıkla Google, Apple ve Yandex navigasyon ile yol tarifi alın veya WhatsApp'tan canlı konum isteyin."
 >
+
+  <!-- =========================================================================
+       BAŞLIK BÖLÜMÜ
+       ========================================================================= -->
   <div style="background-color: var(--amcam-dark); color: #fff; padding: 45px 0 50px; border-bottom: 3px solid var(--amcam-red);">
     <div class="container">
-      <span class="section-tag" style="color: #ff4d4f;">BİZE ULAŞIN</span>
-      <h1 style="font-size: 36px; color: #fff; text-transform: uppercase;">İletişim & Destek</h1>
-      <p style="color: #cbd5e1; font-size: 16px; margin-top: 8px;">Servisimize kolayca ulaşın, randevu alın veya WhatsApp üzerinden fiyat öğrenin.</p>
+      <span class="section-tag" style="color: #ff4d4f;">İZMİR 6. SANAYİ SİTESİ</span>
+      <h1 style="font-size: 36px; color: #fff; text-transform: uppercase;">İletişim & Canlı Yol Tarifi</h1>
+      <p style="color: #cbd5e1; font-size: 16px; margin-top: 8px; max-width: 820px;">
+        Servisimize kolayca ulaşmanız için tüm navigasyon uygulamaları entegre edilmiştir. Tek dokunuşla yol tarifi başlatabilir veya WhatsApp üzerinden anlık konum talep edebilirsiniz.
+      </p>
     </div>
   </div>
 
-  <section class="section-contact-booking">
+  <!-- =========================================================================
+       TEK TIKLA NAVİGASYON BAŞLATMA BANDI (REKLAM VE MOBİL SÜRÜCÜLER İÇİN)
+       ========================================================================= -->
+  <section style="background-color: #ffffff; padding: 35px 0 10px; border-bottom: 1px solid #e2e8f0;">
     <div class="container">
-      <div class="booking-grid">
-        <div class="booking-info-box">
-          <span class="section-tag">İZMİR SERVİS NOKTASI</span>
-          <h2 class="section-title" style="margin-bottom: 20px;">Adres ve İletişim</h2>
-          
-          <div class="info-item">
-            <div class="info-icon">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-            </div>
-            <div class="info-detail">
-              <h4>Adres</h4>
-              <p>{business.address.fullAddress}</p>
-              <a href={business.address.googleMapsUrl} target="_blank" rel="noopener noreferrer" style="color: var(--amcam-red); font-weight: 700; font-size: 13px; display: inline-block; margin-top: 4px;">
-                Google Haritalar Yol Tarifi ↗
-              </a>
-            </div>
-          </div>
+      
+      <div style="text-align: center; margin-bottom: 25px;">
+        <span class="section-tag">TEK DOKUNUŞLA ROTA OLUŞTURUN</span>
+        <h2 style="font-size: 24px; text-transform: uppercase; margin-top: 4px;">Tercih Ettiğiniz Navigasyon ile Açın</h2>
+      </div>
 
-          <div class="info-item">
-            <div class="info-icon">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            </div>
-            <div class="info-detail">
-              <h4>Telefon</h4>
-              <p><a href={`tel:${business.phoneE164}`}>{business.phoneDisplay}</a> / <a href={`tel:${business.whatsappE164}`}>{business.whatsappE164}</a></p>
-            </div>
-          </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 25px;">
+        
+        <!-- Google Haritalar -->
+        <a href={googleMapsDirUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-top: 4px solid #4285F4; padding: 20px 15px; text-align: center; border-radius: 4px; display: block; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#4285F4'" onmouseout="this.style.transform='none'; this.style.borderColor='#e2e8f0'">
+          <div style="font-size: 28px; margin-bottom: 8px;">📍</div>
+          <strong style="display: block; font-size: 15px; color: #1e293b; text-transform: uppercase;">Google Haritalar</strong>
+          <span style="font-size: 12.5px; color: #64748b; margin-top: 4px; display: block;">Hemen Rota Çiz ↗</span>
+        </a>
 
-          <div class="info-item">
-            <div class="info-icon">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
-            </div>
-            <div class="info-detail">
-              <h4>WhatsApp Hattı</h4>
-              <p><a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" style="color: var(--amcam-green); font-weight: 700;">Hızlı WhatsApp İletişimi Başlat ↗</a></p>
-            </div>
-          </div>
-        </div>
+        <!-- Apple Haritalar -->
+        <a href={appleMapsDirUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-top: 4px solid #000000; padding: 20px 15px; text-align: center; border-radius: 4px; display: block; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#000000'" onmouseout="this.style.transform='none'; this.style.borderColor='#e2e8f0'">
+          <div style="font-size: 28px; margin-bottom: 8px;">🍏</div>
+          <strong style="display: block; font-size: 15px; color: #1e293b; text-transform: uppercase;">Apple Haritalar</strong>
+          <span style="font-size: 12.5px; color: #64748b; margin-top: 4px; display: block;">iPhone ile Başlat ↗</span>
+        </a>
 
-        <div class="booking-form-box">
-          <span class="section-tag">BİZE YAZIN</span>
-          <h2 class="section-title" style="margin-bottom: 20px;">Mesaj Gönderin</h2>
-          
-          <form onsubmit="event.preventDefault(); alert('Mesajınız iletildi. En kısa sürede geri dönüş yapacağız.');">
-            <div class="form-group">
-              <label for="contact-name">Adınız Soyadınız *</label>
-              <input type="text" id="contact-name" required class="form-control" />
-            </div>
-            <div class="form-group">
-              <label for="contact-phone">Telefon Numaranız *</label>
-              <input type="tel" id="contact-phone" required class="form-control" />
-            </div>
-            <div class="form-group">
-              <label for="contact-message">Mesajınız *</label>
-              <textarea id="contact-message" required class="form-control" rows="4"></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Mesajı Gönder →</button>
-          </form>
-        </div>
+        <!-- Yandex Navigasyon -->
+        <a href={googleMapsDirUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-top: 4px solid #FC3F1D; padding: 20px 15px; text-align: center; border-radius: 4px; display: block; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#FC3F1D'" onmouseout="this.style.transform='none'; this.style.borderColor='#e2e8f0'">
+          <div style="font-size: 28px; margin-bottom: 8px;">🚗</div>
+          <strong style="display: block; font-size: 15px; color: #1e293b; text-transform: uppercase;">Yandex / Diğer</strong>
+          <span style="font-size: 12.5px; color: #64748b; margin-top: 4px; display: block;">Navigasyona Aktar ↗</span>
+        </a>
+
+        <!-- WhatsApp Canlı Konum -->
+        <a href={whatsappLiveLocUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f0fdf4; border: 2px solid #bbf7d0; border-top: 4px solid var(--amcam-green); padding: 20px 15px; text-align: center; border-radius: 4px; display: block; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='var(--amcam-green)'" onmouseout="this.style.transform='none'; this.style.borderColor='#bbf7d0'">
+          <div style="font-size: 28px; margin-bottom: 8px;">💬</div>
+          <strong style="display: block; font-size: 15px; color: #166534; text-transform: uppercase;">Canlı Konum İste</strong>
+          <span style="font-size: 12.5px; color: #15803d; margin-top: 4px; display: block;">WhatsApp'tan Gönderilsin ↗</span>
+        </a>
+
       </div>
     </div>
   </section>
+
+  <!-- =========================================================================
+       CANLI GOOGLE HARİTA VE ADRES BİLGİ KUTUSU
+       ========================================================================= -->
+  <section style="padding: 50px 0; background-color: var(--amcam-gray-bg);">
+    <div class="container">
+      
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; align-items: stretch;">
+        
+        <!-- Harita Çerçevesi (Gömülü Google Maps) -->
+        <div style="background-color: #ffffff; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); min-height: 480px; position: relative;">
+          <iframe
+            title="ASM Auto Gaziemir 6. Sanayi Sitesi Konumu"
+            src="https://maps.google.com/maps?q=38.3340,27.1350&hl=tr&z=16&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0; min-height: 460px; border-radius: 2px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <!-- Yan Bilgi Paneli -->
+        <div style="background-color: #ffffff; padding: 30px 25px; border: 1px solid #e2e8f0; border-top: 4px solid var(--amcam-red); border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+          
+          <div>
+            <span class="section-tag">FİZİKSEL ATÖLYE BİLGİLERİ</span>
+            <h3 style="font-size: 22px; text-transform: uppercase; margin-bottom: 20px;">ASM Auto Servis</h3>
+
+            <div style="margin-bottom: 18px;">
+              <strong style="display: block; font-size: 13px; color: #64748b; text-transform: uppercase;">Açık Adres:</strong>
+              <p style="font-size: 15px; color: #1e293b; font-weight: 600; line-height: 1.5; margin-top: 4px;">
+                {business.address.fullAddress}
+              </p>
+              <span style="display: inline-block; background-color: #fee2e2; color: #b91c1c; font-size: 12px; font-weight: 700; padding: 3px 8px; border-radius: 3px; margin-top: 6px;">
+                25 Yıldır Aynı Adreste Kesintisiz Hizmet
+              </span>
+            </div>
+
+            <div style="margin-bottom: 18px;">
+              <strong style="display: block; font-size: 13px; color: #64748b; text-transform: uppercase;">Telefon & İletişim:</strong>
+              <p style="font-size: 16px; font-weight: 700; margin-top: 4px;">
+                <a href={`tel:${business.phoneE164}`} style="color: var(--amcam-red);">{business.phoneDisplay}</a>
+              </p>
+              <p style="font-size: 15px; font-weight: 600; color: #475569; margin-top: 2px;">
+                GSM / WhatsApp: <a href={`tel:${business.whatsappE164}`}>{business.whatsappE164}</a>
+              </p>
+            </div>
+
+            <div style="margin-bottom: 18px;">
+              <strong style="display: block; font-size: 13px; color: #64748b; text-transform: uppercase;">Çalışma Saatleri:</strong>
+              <p style="font-size: 14px; color: #334155; margin-top: 4px;">
+                Pazartesi - Cumartesi: <strong>{business.workingHours.weekdays}</strong>
+              </p>
+              <p style="font-size: 14px; color: #334155;">
+                Pazar: <strong>{business.workingHours.sunday}</strong>
+              </p>
+            </div>
+          </div>
+
+          <div style="border-top: 1px dashed #cbd5e1; padding-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+            <a href={googleMapsDirUrl} target="_blank" rel="noopener noreferrer" class="btn-hero-red" style="text-align: center; justify-content: center; padding: 13px 20px;">
+              Navigasyonu Başlat ↗
+            </a>
+            <a href={`tel:${business.phoneE164}`} class="btn-hero-whatsapp" style="background-color: var(--amcam-dark); border-color: #333; text-align: center; justify-content: center; padding: 13px 20px;">
+              Telefonla Yol Tarifi Al
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SANAYİ İÇİ ADIM ADIM ULAŞIM REHBERİ
+       ========================================================================= -->
+  <section style="padding: 60px 0; background-color: #ffffff; border-top: 1px solid #e2e8f0;">
+    <div class="container">
+      
+      <div style="text-align: center; margin-bottom: 40px;">
+        <span class="section-tag">KOLAY BULUNABİLİRLİK REHBERİ</span>
+        <h2 class="section-title">Servisimize Nasıl Ulaşırsınız?</h2>
+        <p style="color: var(--amcam-text-muted); font-size: 15px; max-width: 680px; margin: 0 auto;">
+          6. Sanayi Sitesi geniş bir alana yayıldığı için hangi yönden gelirseniz gelin dükkanımızı kolayca bulabilmeniz için tarif noktalarımız:
+        </p>
+      </div>
+
+      <div class="services-grid" style="grid-template-columns: repeat(3, 1fr); gap: 25px;">
+        
+        <!-- Yön 1: Gaziemir / Akçay Caddesi -->
+        <div class="energy-box">
+          <div class="energy-box-header">
+            <div class="energy-box-num">1</div>
+            <div class="energy-box-titles">
+              <h2>Akçay Caddesi</h2>
+              <h3>Gaziemir Yönünden</h3>
+            </div>
+          </div>
+          <p class="energy-box-desc">
+            Akçay Caddesi üzerinden 6. Sanayi Sitesi ana giriş kapısına girin. Ana sanayi aksını takip ederek 574. Sokak tabelasından sağa döndüğünüzde 50 metre ileride <strong>No:17 ASM Auto</strong> tabelamızı göreceksiniz.
+          </p>
+        </div>
+
+        <!-- Yön 2: Karabağlar / Yeşillik Caddesi -->
+        <div class="energy-box">
+          <div class="energy-box-header">
+            <div class="energy-box-num">2</div>
+            <div class="energy-box-titles">
+              <h2>Yeşillik Caddesi</h2>
+              <h3>Karabağlar Yönünden</h3>
+            </div>
+          </div>
+          <p class="energy-box-desc">
+            Yeşillik Caddesi'nden sanayi kuzey giriş kapısını kullanın. 3. blok hizasından 574. Sokak yön tabelasını izleyin. Sokağın ortasında geniş araç park alanımız mevcuttur.
+          </p>
+        </div>
+
+        <!-- Yön 3: Çevre Yolu / Otoyol -->
+        <div class="energy-box">
+          <div class="energy-box-header">
+            <div class="energy-box-num">3</div>
+            <div class="energy-box-titles">
+              <h2>Çevre Yolu</h2>
+              <h3>Otoyol Kavşağından</h3>
+            </div>
+          </div>
+          <p class="energy-box-desc">
+            İzmir Çevre Yolu Gaziemir / Sanayi sapağından çıkış yapın. Sanayi çevre bağlantı yolundan 2 dakikalık sürüş mesafesinde doğrudan 574. Sokak kesişimine ulaşırsınız.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       HIZLI SERVİS TALEBİ FORMU
+       ========================================================================= -->
+  <section style="padding: 60px 0; background-color: var(--amcam-gray-bg); border-top: 1px solid #e2e8f0;">
+    <div class="container" style="max-width: 800px;">
+      <div class="booking-form-box">
+        <span class="section-tag">SERVİS GELİŞİNİZİ BİLDİRİN</span>
+        <h2 class="section-title" style="margin-bottom: 15px;">Gelmeden Önce Bize Yazın</h2>
+        <p style="font-size: 14px; color: var(--amcam-text-muted); margin-bottom: 25px;">
+          Geleceğiniz saati ve araç modelinizi önceden bildirirseniz, liftimizi ve araca uygun motor yağınızı siz gelmeden hazır edelim.
+        </p>
+
+        <form onsubmit="event.preventDefault(); alert('Bilgileriniz alındı. Servis ekibimiz sizi bekliyor olacak.');">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name">Adınız Soyadınız *</label>
+              <input type="text" id="c-name" required class="form-control" placeholder="Örn: Mehmet Demir" />
+            </div>
+            <div class="form-group">
+              <label for="c-phone">Telefon Numaranız *</label>
+              <input type="tel" id="c-phone" required class="form-control" placeholder="05XX XXX XX XX" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-car">Araç Marka & Model</label>
+              <input type="text" id="c-car" class="form-control" placeholder="Örn: 2021 Ford Transit Custom" />
+            </div>
+            <div class="form-group">
+              <label for="c-time">Tahmini Varış Saatiniz</label>
+              <input type="text" id="c-time" class="form-control" placeholder="Örn: Bugün 14:30 civarı" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="c-note">Notunuz</label>
+            <textarea id="c-note" class="form-control" rows="3" placeholder="Örn: Yağ değişimi ve filtre bakımı için geliyorum..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            Servise Bildir →
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema.org AutoRepair LocalBusiness JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "@id": "https://izmiryagdegisimi.web.app/#business",
+    "name": business.name,
+    "telephone": business.phoneE164,
+    "url": "https://izmiryagdegisimi.web.app/iletisim/",
+    "hasMap": googleMapsDirUrl,
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 38.3340,
+      "longitude": 27.1350
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": business.address.street,
+      "addressLocality": "Gaziemir",
+      "addressRegion": "İzmir",
+      "postalCode": "35410",
+      "addressCountry": "TR"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:30",
+        "closes": "18:30"
+      }
+    ]
+  })} />
+
 </Layout>
