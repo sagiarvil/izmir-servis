@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "ASM Auto İzmir Yağ Değişimi & Periyodik Bakım Servisi",
+  "description": "İzmir Gaziemir 6. Sanayi Sitesi'nde 25 yıldır bağımsız çalışan, motor yağı değişimi ve fabrika onaylı periyodik araç bakım servisi.",
+  "url": "https://izmiryagdegisimi.web.app",
+  "version": "9.0.0",
+  "capabilities": {
+    "search": true,
+    "quote_estimate": true,
+    "oil_spec_lookup": true,
+    "appointment_request": true
+  },
+  "endpoints": {
+    "mcp": "https://izmiryagdegisimi.web.app/mcp",
+    "mcp_mobile": "https://izmiryagdegisimi.web.app/mcp/mobile",
+    "llms": "https://izmiryagdegisimi.web.app/llms.txt",
+    "llms_full": "https://izmiryagdegisimi.web.app/llms-full.txt"
+  },
+  "contact": {
+    "phone": "+905325550099",
+    "email": "iletisim@izmiryagdegisimi.web.app",
+    "address": "574 Sokak No:17 6. Sanayi Sitesi Gaziemir İzmir Türkiye"
+  },
+  "verification": {
+    "wikidata": "https://www.wikidata.org/wiki/Q11589432",
+    "reviews_count": 54,
+    "rating": 4.9
+  }
+}

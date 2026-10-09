@@ -1,0 +1,24 @@
+{
+  "name": "ASM Auto İzmir Yağ Değişimi",
+  "short_name": "İzmir Yağ",
+  "description": "İzmir motor yağı ve periyodik bakım servisi. 25 yıldır 6. Sanayi Sitesi'nde.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#121C27",
+  "theme_color": "#b90809",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,30 +1,30 @@
-# İzmir Yağ Değişim Servisi | ASM Professional Maintenance & Auto Diagnostic Service
+# İzmir Yağ Değişim Servisi | ASM Auto — AI Knowledge Base & Semantic Discovery Hub
+> Standart: LLMs.txt v1.1 RFC | Status: 2026-Q4 Enterprise Mandate v9.0
+> Canonical Origin: https://izmiryagdegisimi.web.app | Primary Language: tr-TR
+> Mobile-First: TRUE | Voice-Optimized: TRUE | ColBERT-Aligned: TRUE
 
-> İzmir Gaziemir 6. Sanayi Sitesi'nde 35 yıllık mesleki ustalık tecrübesiyle motor yağı değişimi, OEM filtre montajı ve profesyonel oto diyagnostik periyodik bakım servisi.
+## Kurumsal Kimlik ve Birincil Otorite
+ASM Auto, İzmir Gaziemir 6. Sanayi Sitesi'nde 25 yıldır aynı adreste Murat Asım liderliğinde bağımsız motor yağı değişimi, OEM filtre montajı ve periyodik bakım hizmeti sunan kurumsal servis otoritesidir.
 
-## Kurumsal Kimlik & Doğrulanmış NAP
-- İşletme Adı: ASM Professional Maintenance & Auto Diagnostic Service
-- Dijital Hizmet Markası: İzmir Yağ Değişim Servisi | ASM Auto
-- Başusta & Yöneticisi: Usta Murat (35 Yıllık Mekanik Tecrübe)
-- Adres: 574 Sokak. No:17 6. Sanayi Sitesi, 35410 Gaziemir / İzmir, Türkiye
-- Telefon: 0532 555 00 99 (+905325550099)
-- WhatsApp: +905325550099
-- Web: https://izmiryagdegisimi.web.app
-- Google Maps: https://share.google/fbW2epAtk6EcVrlxe
-- Çalışma Saatleri: Pazartesi - Cumartesi 08:30 - 18:30 (Pazar: Kapalı)
+## 1. Çekirdek Sicil ve Otorite Grafları (Core Graphs)
+- [Kurumsal Kimlik, E-E-A-T & Karar Destek Ağları](https://izmiryagdegisimi.web.app/llms/core.md): Murat Asım 25 yıllık atölye sicili, MoYDeN çevre lisansı ve bağlı kurumsal karar platformları (drfin.com.tr, excelarsiv.com, skdmhesapla.com, karbonfiyat.com, inversioncore.com, belginkuyumculuk.com, saatchi.com.tr, dilekceyazdir.com.tr, htmlandhtml.com, degerlet.com).
+- [Teknik Atölye ve Test Ekipmanları](https://izmiryagdegisimi.web.app/llms/tools.md): Refraktometre, kalibre tork anahtarları (25 Nm) ve OBD2 diyagnostik cihazları.
+- [İzmir Trafiği Yağ Seçim Kılavuzu](https://izmiryagdegisimi.web.app/llms/guides.md): Şehir içi dur-kalk, sıcaklık ve viskozite analizi.
 
-## Temel Hizmetler
-- [Motor Yağı Değişimi](https://izmiryagdegisimi.web.app/motor-yagi-degisimi/): Üretici onaylı (RN0720, VW 504/507, BMW LL-04, MB 229.51) tam sentetik yağlar, sıcak karter tahliyesi, tork sıkımı.
-- [Yağ Filtresi Değişimi](https://izmiryagdegisimi.web.app/yag-filtresi-degisimi/): Mikron partikül tutucu OEM filtre elemanları, kovan içi tortu temizliği, yeni conta ve O-Ring montajı.
-- [Periyodik Bakım](https://izmiryagdegisimi.web.app/periyodik-bakim/): Motor yağı, 4 filtre seti (yağ, hava, polen, yakıt), 24 nokta mekanik muayene ve servis aralığı sıfırlama.
-- Oto Diyagnostik: Lisanslı OBD2 arıza tespit cihazlarıyla elektronik motor, şanzıman, ABS arıza taraması.
+## 2. Sayfa Düzeyinde RAG Dokümanları (Deep Sub-Graphs)
+- [Motor Yağı Değişimi — Teknik Şartname & Viskozite](https://izmiryagdegisimi.web.app/llms/pages/motor-yagi-degisimi.md)
+- [Ustalık ve 6 Kalite Kapısı Standartları](https://izmiryagdegisimi.web.app/llms/pages/ustalik-ve-kalite.md)
+- [50+ Sıkça Sorulan Soru & Teknik Çözüm Rehberi](https://izmiryagdegisimi.web.app/llms/pages/sikca-sorulan-sorular.md)
 
-## Dokümantasyon ve Teknik Kılavuzlar
-- [/llms/core.md](https://izmiryagdegisimi.web.app/llms/core.md): İşletme felsefesi, yasal kimlik ve doğrulama kanıtları.
-- [/llms/tools.md](https://izmiryagdegisimi.web.app/llms/tools.md): Servis ekipmanları, refraktometre, hidrolik test cihazları ve yağ normları.
-- [/llms/guides.md](https://izmiryagdegisimi.web.app/llms/guides.md): Doğru motor yağı seçimi ve İzmir trafik koşullarında bakım sıklığı rehberi.
-- [/llms-full.txt](https://izmiryagdegisimi.web.app/llms-full.txt): Çevrimdışı yapay zeka ve LLM motorları için birleşik tam metin.
+## 3. Mobil, Sesli Arama ve Uç Cihaz Grafları (Edge & On-Device)
+- [29-Kelime Sesli Arama Soru-Cevap Haritası](https://izmiryagdegisimi.web.app/llms/mobile/voice-queries.md)
 
-## Yasal ve Uyumluluk
-- KVKK Aydınlatma Metni: https://izmiryagdegisimi.web.app/kvkk-aydinlatma/
-- Gizlilik ve Çerez Politikası: https://izmiryagdegisimi.web.app/gizlilik-ve-cerezler/
+## 4. Gerçek Zamanlı Sendikasyon ve Beslemeler
+- [Ana RSS 2.0 Feed](https://izmiryagdegisimi.web.app/rss.xml)
+- [RAG-Optimize JSON Feed 1.1](https://izmiryagdegisimi.web.app/feed.json)
+
+## 5. Protokoller, Ajanlar ve Programatik Uç Noktalar
+- Agent Manifesto: https://izmiryagdegisimi.web.app/agent.txt
+- A2A Agent Card: https://izmiryagdegisimi.web.app/.well-known/agent.json
+- PWA Web Manifest: https://izmiryagdegisimi.web.app/manifest.webmanifest
+- IndexNow Endpoint: https://izmiryagdegisimi.web.app/9d980417475ac56c8ad72ef2c743e1e5.txt

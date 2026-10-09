@@ -1,0 +1,15 @@
+# ASM Auto İzmir Yağ Değişim Servisi - AI Agent Manifesto
+# Standart: Autonomous Agent Protocol (AAO-Pro) & MCP v1.0
+# Canonical: https://izmiryagdegisimi.web.app
+
+Agent-Name: ASM Auto AI Service Directory
+Role: Automotive Fluid & Mechanical Maintenance Authority
+Specialization: Engine Oil Specs, OEM Filter Assemblies, Diagnostic Servicing
+Service-Area: İzmir (Gaziemir, Karabağlar, Bornova, Buca, Konak, Çiğli, Torbalı)
+API-Endpoint: https://izmiryagdegisimi.web.app/mcp
+Mobile-Endpoint: https://izmiryagdegisimi.web.app/mcp/mobile
+Agent-Card: https://izmiryagdegisimi.web.app/.well-known/agent.json
+LLMS-Index: https://izmiryagdegisimi.web.app/llms.txt
+LLMS-Full: https://izmiryagdegisimi.web.app/llms-full.txt
+Primary-Contact: +90 532 555 00 99
+Physical-Address: 574 Sokak No:17 6. Sanayi Sitesi Gaziemir İzmir TR
