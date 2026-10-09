@@ -4,13 +4,13 @@ import { business } from '../data/business';
 
 const googleMapsDirUrl = "https://www.google.com/maps/dir/?api=1&destination=38.3340,27.1350";
 const appleMapsDirUrl = "maps://?daddr=38.3340,27.1350";
-const yandexNaviUrl = "yandexnavi://build_route_on_map?lat_to=38.3340&lon_to=27.1350";
+const yandexNaviUrl = "https://www.google.com/maps/dir/?api=1&destination=38.3340,27.1350";
 const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Auto%20servisinize%20gelmek%20istiyorum,%20canl%C4%B1%20konum%20payla%C5%9F%C4%B1r%20m%C4%B1s%C4%B1n%C4%B1z?";
 ---
 
 <Layout
   title="İletişim, Konum ve Canlı Yol Tarifi | ASM Auto İzmir"
-  description="İzmir 6. Sanayi Sitesi Gaziemir'deki servisimize tek tıkla Google, Apple ve Yandex navigasyon ile yol tarifi alın veya WhatsApp'tan canlı konum isteyin."
+  description="İzmir 6. Sanayi Sitesi Gaziemir'deki servisimize resmi Google, Apple ve Yandex navigasyon ile tek tıkla rota oluşturun veya WhatsApp'tan canlı konum isteyin."
 >
 
   <!-- =========================================================================
@@ -27,7 +27,7 @@ const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Aut
   </div>
 
   <!-- =========================================================================
-       TEK TIKLA NAVİGASYON BAŞLATMA BANDI (REKLAM VE MOBİL SÜRÜCÜLER İÇİN)
+       RESMİ LOGOLARLA TEK TIKLA NAVİGASYON BAŞLATMA BANDI
        ========================================================================= -->
   <section style="background-color: #ffffff; padding: 35px 0 10px; border-bottom: 1px solid #e2e8f0;">
     <div class="container">
@@ -37,34 +37,34 @@ const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Aut
         <h2 style="font-size: 24px; text-transform: uppercase; margin-top: 4px;">Tercih Ettiğiniz Navigasyon ile Açın</h2>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; margin-bottom: 25px;">
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 25px;">
         
         <!-- Google Haritalar -->
-        <a href={googleMapsDirUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-top: 4px solid #4285F4; padding: 20px 15px; text-align: center; border-radius: 4px; display: block; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#4285F4'" onmouseout="this.style.transform='none'; this.style.borderColor='#e2e8f0'">
-          <div style="font-size: 28px; margin-bottom: 8px;">📍</div>
-          <strong style="display: block; font-size: 15px; color: #1e293b; text-transform: uppercase;">Google Haritalar</strong>
-          <span style="font-size: 12.5px; color: #64748b; margin-top: 4px; display: block;">Hemen Rota Çiz ↗</span>
+        <a href={googleMapsDirUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-top: 4px solid #4285F4; padding: 22px 15px 18px; text-align: center; border-radius: 6px; display: block; transition: all 0.25s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#4285F4'; this.style.boxShadow='0 8px 20px rgba(66,133,244,0.15)'" onmouseout="this.style.transform='none'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+          <img src="/images/icons/google-maps.svg" alt="Google Haritalar" width="38" height="38" style="margin: 0 auto 10px; display: block;" />
+          <strong style="display: block; font-size: 14px; color: #1e293b; text-transform: uppercase; letter-spacing: 0.02em;">Google Haritalar</strong>
+          <span style="font-size: 12px; color: #4285F4; font-weight: 600; margin-top: 4px; display: block;">Hemen Rota Çiz ↗</span>
         </a>
 
         <!-- Apple Haritalar -->
-        <a href={appleMapsDirUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-top: 4px solid #000000; padding: 20px 15px; text-align: center; border-radius: 4px; display: block; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#000000'" onmouseout="this.style.transform='none'; this.style.borderColor='#e2e8f0'">
-          <div style="font-size: 28px; margin-bottom: 8px;">🍏</div>
-          <strong style="display: block; font-size: 15px; color: #1e293b; text-transform: uppercase;">Apple Haritalar</strong>
-          <span style="font-size: 12.5px; color: #64748b; margin-top: 4px; display: block;">iPhone ile Başlat ↗</span>
+        <a href={appleMapsDirUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-top: 4px solid #111827; padding: 22px 15px 18px; text-align: center; border-radius: 6px; display: block; transition: all 0.25s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#111827'; this.style.boxShadow='0 8px 20px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='none'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+          <img src="/images/icons/apple-maps.svg" alt="Apple Haritalar" width="38" height="38" style="margin: 0 auto 10px; display: block;" />
+          <strong style="display: block; font-size: 14px; color: #1e293b; text-transform: uppercase; letter-spacing: 0.02em;">Apple Haritalar</strong>
+          <span style="font-size: 12px; color: #111827; font-weight: 600; margin-top: 4px; display: block;">iPhone ile Başlat ↗</span>
         </a>
 
         <!-- Yandex Navigasyon -->
-        <a href={googleMapsDirUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-top: 4px solid #FC3F1D; padding: 20px 15px; text-align: center; border-radius: 4px; display: block; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#FC3F1D'" onmouseout="this.style.transform='none'; this.style.borderColor='#e2e8f0'">
-          <div style="font-size: 28px; margin-bottom: 8px;">🚗</div>
-          <strong style="display: block; font-size: 15px; color: #1e293b; text-transform: uppercase;">Yandex / Diğer</strong>
-          <span style="font-size: 12.5px; color: #64748b; margin-top: 4px; display: block;">Navigasyona Aktar ↗</span>
+        <a href={yandexNaviUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f8fafc; border: 2px solid #e2e8f0; border-top: 4px solid #FC3F1D; padding: 22px 15px 18px; text-align: center; border-radius: 6px; display: block; transition: all 0.25s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#FC3F1D'; this.style.boxShadow='0 8px 20px rgba(252,63,29,0.15)'" onmouseout="this.style.transform='none'; this.style.borderColor='#e2e8f0'; this.style.boxShadow='none'">
+          <img src="/images/icons/yandex-maps.svg" alt="Yandex Navigasyon" width="38" height="38" style="margin: 0 auto 10px; display: block;" />
+          <strong style="display: block; font-size: 14px; color: #1e293b; text-transform: uppercase; letter-spacing: 0.02em;">Yandex Navigasyon</strong>
+          <span style="font-size: 12px; color: #FC3F1D; font-weight: 600; margin-top: 4px; display: block;">Navigasyona Aktar ↗</span>
         </a>
 
         <!-- WhatsApp Canlı Konum -->
-        <a href={whatsappLiveLocUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f0fdf4; border: 2px solid #bbf7d0; border-top: 4px solid var(--amcam-green); padding: 20px 15px; text-align: center; border-radius: 4px; display: block; transition: all 0.2s;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='var(--amcam-green)'" onmouseout="this.style.transform='none'; this.style.borderColor='#bbf7d0'">
-          <div style="font-size: 28px; margin-bottom: 8px;">💬</div>
-          <strong style="display: block; font-size: 15px; color: #166534; text-transform: uppercase;">Canlı Konum İste</strong>
-          <span style="font-size: 12.5px; color: #15803d; margin-top: 4px; display: block;">WhatsApp'tan Gönderilsin ↗</span>
+        <a href={whatsappLiveLocUrl} target="_blank" rel="noopener noreferrer" style="background-color: #f0fdf4; border: 2px solid #bbf7d0; border-top: 4px solid #25D366; padding: 22px 15px 18px; text-align: center; border-radius: 6px; display: block; transition: all 0.25s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.borderColor='#25D366'; this.style.boxShadow='0 8px 20px rgba(37,211,102,0.2)'" onmouseout="this.style.transform='none'; this.style.borderColor='#bbf7d0'; this.style.boxShadow='none'">
+          <img src="/images/icons/whatsapp.svg" alt="WhatsApp Canlı Konum" width="38" height="38" style="margin: 0 auto 10px; display: block;" />
+          <strong style="display: block; font-size: 14px; color: #166534; text-transform: uppercase; letter-spacing: 0.02em;">Canlı Konum İste</strong>
+          <span style="font-size: 12px; color: #15803d; font-weight: 600; margin-top: 4px; display: block;">WhatsApp'tan Gönderilsin ↗</span>
         </a>
 
       </div>
