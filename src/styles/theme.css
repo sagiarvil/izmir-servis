@@ -498,31 +498,67 @@ h1, h2, h3, h4, h5, h6 {
   gap: 8px;
 }
 
-/* 2050 ENDÜSTRİYEL HUD TELEMETRİ KARTI (SAĞ TARAF) */
-.hero-hud-card {
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(255, 77, 79, 0.5);
-  border-radius: 8px;
-  padding: 26px 28px;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-  animation: hudGlowPulse 4s infinite ease-in-out;
+/* 2050 360 DERECE DÖNEN CANLI NEON ÇERÇEVELİ MIKNATIS KUTU */
+.hero-neon-box-wrap {
   position: relative;
+  border-radius: 12px;
+  padding: 3px; /* 3px canlı neon sınır kalınlığı */
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.7);
+  display: flex;
+}
+
+/* 360 Derece Dönen Canlı Firebase / Neon Renkler */
+.hero-neon-box-wrap::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    #ff1744 0deg,     /* Canlı Kırmızı */
+    #ff9100 60deg,    /* Canlı Turuncu */
+    #ffd600 120deg,   /* Canlı Sarı */
+    #00e676 180deg,   /* Canlı Yeşil */
+    #00e5ff 240deg,   /* Canlı Turkuaz */
+    #d500f9 300deg,   /* Canlı Mor */
+    #ff1744 360deg    /* Kapanış Kırmızı */
+  );
+  animation: rotateNeonBorder 3.5s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotateNeonBorder {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero-hud-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: #0b111e;
+  border-radius: 10px;
+  padding: 24px 26px;
+  border: none;
+  box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.6);
 }
 
 .hero-hud-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 14px;
-  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .hero-hud-title {
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #ff4d4f;
   margin: 0;
@@ -533,23 +569,33 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-hud-title::before {
   content: '';
-  width: 8px;
-  height: 8px;
-  background-color: #22c55e;
+  width: 9px;
+  height: 9px;
+  background-color: #00e676;
   border-radius: 50%;
-  box-shadow: 0 0 10px #22c55e;
+  box-shadow: 0 0 12px #00e676;
+  animation: pulseLiveGreen 2s infinite ease-in-out;
+}
+
+@keyframes pulseLiveGreen {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.7; }
 }
 
 .hero-hud-meta {
-  font-size: 11px;
-  color: #94a3b8;
-  font-family: monospace;
+  font-size: 11.5px;
+  color: #38bdf8;
+  font-weight: 700;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
 .hero-hud-items {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 11px;
 }
 
 .hero-hud-row {
@@ -557,19 +603,29 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   align-items: center;
   font-size: 13px;
-  padding: 8px 10px;
-  background: rgba(255, 255, 255, 0.03);
+  padding: 9px 12px;
+  background: rgba(255, 255, 255, 0.04);
   border-radius: 4px;
-  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  border-left: 3px solid rgba(255, 255, 255, 0.25);
+  transition: all 0.2s ease;
+}
+
+.hero-hud-row:hover {
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateX(2px);
 }
 
 .hero-hud-row strong {
   color: #ffffff;
+  font-weight: 700;
 }
 
 .hero-hud-row span {
-  color: #94a3b8;
-  font-size: 12px;
+  color: #cbd5e1;
+  font-size: 12.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .hero-highlights span strong {

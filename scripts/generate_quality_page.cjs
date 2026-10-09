@@ -1,4 +1,6 @@
----
+const fs = require('fs');
+
+const content = `---
 import Layout from '../layouts/Layout.astro';
 import { business } from '../data/business';
 ---
@@ -285,3 +287,7 @@ import { business } from '../data/business';
     </div>
   </section>
 </Layout>
+`;
+
+fs.writeFileSync('src/pages/ustalik-ve-kalite.astro', content, 'utf8');
+console.log('Successfully written dedicated quality standards page to src/pages/ustalik-ve-kalite.astro');

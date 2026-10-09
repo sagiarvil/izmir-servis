@@ -1,4 +1,6 @@
----
+const fs = require('fs');
+
+const content = `---
 import Layout from '../layouts/Layout.astro';
 import { business } from '../data/business';
 ---
@@ -310,3 +312,7 @@ import { business } from '../data/business';
     </div>
   </section>
 </Layout>
+`;
+
+fs.writeFileSync('src/pages/motor-yagi-degisimi.astro', content, 'utf8');
+console.log('Successfully written professional oil service page to src/pages/motor-yagi-degisimi.astro');
