@@ -22,6 +22,7 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, minimum-scale=1, maximum-scale=5" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href={canonical} />
   <link rel="icon" type="image/png" href="/images/logo.png" />
   <link rel="apple-touch-icon" href="/images/logo.png" />
@@ -43,8 +44,15 @@ const {
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content="https://izmiryagdegisimi.web.app/images/oil-fill-hero.webp" />
 
-  <!-- Syndication & Protocol Links -->
-  <link rel="alternate" type="application/rss+xml" title="ASM Auto RSS Feed" href="https://izmiryagdegisimi.web.app/rss.xml" />
+  <!-- GEO-Targeting & Local SEO Engine (İzmir / Gaziemir) -->
+  <meta name="geo.region" content="TR-35" />
+  <meta name="geo.placename" content="İzmir, Gaziemir" />
+  <meta name="geo.position" content="38.3182;27.1354" />
+  <meta name="ICBM" content="38.3182, 27.1354" />
+
+  <!-- Syndication & Protocol Links (RSS, Atom, JSON Feed) -->
+  <link rel="alternate" type="application/rss+xml" title="ASM Auto RSS 2.0 Feed" href="https://izmiryagdegisimi.web.app/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title="ASM Auto Atom Feed" href="https://izmiryagdegisimi.web.app/atom.xml" />
   <link rel="alternate" type="application/json" title="ASM Auto JSON Feed" href="https://izmiryagdegisimi.web.app/feed.json" />
 
   <!-- 14KB FIRST-PACKET COMPREHENSIVE @graph JSON-LD (MANDATE V9.0) -->
