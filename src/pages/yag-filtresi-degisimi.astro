@@ -1,233 +1,40 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CtaBanner from '../components/CtaBanner.astro';
-import LocationForm from '../components/LocationForm.astro';
-import { seoRegistry } from '../seo/registry';
-import { services } from '../data/services';
+import Layout from '../layouts/Layout.astro';
 import { business } from '../data/business';
-
-const seo = seoRegistry['/yag-filtresi-degisimi/'];
-const service = services.find(s => s.id === 'yag-filtresi')!;
-
-const serviceSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "İzmir Yağ Filtresi Değişimi",
-  "serviceType": "Yağ Filtresi Değişimi",
-  "provider": {
-    "@type": "AutoRepair",
-    "name": business.name,
-    "telephone": business.phoneE164,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": business.address.street,
-      "addressLocality": business.address.district,
-      "addressRegion": "İzmir",
-      "addressCountry": "TR"
-    }
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "İzmir"
-  },
-  "description": service.fullDesc
-};
 ---
 
-<BaseLayout 
-  title={seo.title} 
-  description={seo.description}
-  canonicalPath="/yag-filtresi-degisimi/"
-  schemaJson={serviceSchema}
+<Layout
+  title="İzmir Yağ Filtresi Değişimi | ASM Auto Servis"
+  description="İzmir'de orijinal ve OEM yağ filtresi değişimi. Tork anahtarıyla garantili montaj ve motor içi aşınma önleme."
 >
-  <div class="page-header">
+  <div style="background-color: var(--amcam-dark); color: #fff; padding: 45px 0 50px; border-bottom: 3px solid var(--amcam-red);">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Sayfa Konumu">
-        <a href="/">Anasayfa</a>
-        <span>/</span>
-        <a href="/#hizmetler">Hizmetlerimiz</a>
-        <span>/</span>
-        <span class="current">Yağ Filtresi Değişimi</span>
-      </nav>
-      <h1 class="page-title">{seo.heading}</h1>
-      <p class="page-intro">
-        Motor içindeki partikülleri ve metal çapakları tutan yüksek filtrasyonlu kaliteli filtreler, fabrika torkuyla montaj ve sızdırmazlık testi.
-      </p>
+      <span class="section-tag" style="color: #ff4d4f;">UZMAN SERVİS</span>
+      <h1 style="font-size: 36px; color: #fff; text-transform: uppercase;">Yağ Filtresi Değişimi</h1>
+      <p style="color: #cbd5e1; font-size: 16px; margin-top: 8px;">Her yağ değişiminde yenilenmesi gereken motorun en kritik koruma filtresi.</p>
     </div>
   </div>
 
-  <section class="section service-content-section">
-    <div class="container content-grid">
-      <div class="main-body">
-        <h2>Yağ Filtresi Neden Her Bakımda Değişmelidir?</h2>
-        <p>
-          Yağ filtresi, motorun kalbi olan yağ pompasının bastığı motor yağını süzerek krank mili, pistonlar ve eksantrik miline giden yağın temiz olmasını sağlar. Eski filtre tıkanırsa, motorun yağsız kalmasını önlemek için bypass valfi açılır ve süzülmemiş kirli yağ doğrudan yataklara gider. Bu durum erken motor aşınmasına neden olur.
-        </p>
-        
-        <h3>ASM Auto Yağ Filtresi Değişim Süreci</h3>
-        <ul class="process-checklist">
-          <li><strong>Orijinal ve Onaylı Filtre Seçimi:</strong> Aracınızın motor tipine göre Bosch, Mann-Filter veya orijinal üretici kodlu filtreler tercih edilir.</li>
-          <li><strong>Conta ve O-Ring Yenilemesi:</strong> Filtre kapağındaki eski kauçuk contalar çıkarılır, yeni contalar temiz motor yağıyla yağlanarak takılır.</li>
-          <li><strong>Tork Anahtarı İle Sıkım:</strong> Plastik veya metal filtre gövdesi üretici tork değerinde (genellikle 25 Nm) sıkılarak çatlama ve sızıntı riski ortadan kaldırılır.</li>
-          <li><strong>Sızdırmazlık Testi:</strong> Motor çalışma sıcaklığına getirilerek filtre etrafında basınç altında kaçak kontrolü yapılır.</li>
-        </ul>
-
-        <h3>Desteklenen Filtre Tipleri</h3>
-        <div class="specs-pill-container">
-          {service.specs.map((spec) => (
-            <span class="spec-pill">{spec}</span>
-          ))}
+  <section style="padding: 60px 0; background-color: #fff;">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <img src="/images/service-oil-filter.webp" alt="Yağ Filtresi Değişimi" style="border-radius: 4px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;" />
+        </div>
+        <div>
+          <span class="section-tag">OEM STANDARDI</span>
+          <h2 class="section-title">Filtre Değişmezse Ne Olur?</h2>
+          <p class="about-lead">
+            Tıkanmış bir yağ filtresi, bypass valfini açarak kirli ve metal çapaklı yağı doğrudan motora gönderir.
+          </p>
+          <p class="about-text">
+            Bu nedenle her motor yağı değişiminde yağ filtresinin yenilenmesi şarttır. ASM Auto'da MANN, Bosch ve Filtron gibi lider OEM üreticilerinin yüksek mikron filtreleme kabiliyetine sahip orijinal parçaları kullanılır ve filtre gövdesi üretici tork değerinde sıkılır.
+          </p>
+          <div style="margin-top: 25px;">
+            <a href="/#servis-talebi" class="header-cta-btn">Randevu Al & Fiyat Sor →</a>
+          </div>
         </div>
       </div>
-
-      <aside class="sidebar-box">
-        <div class="service-summary-card">
-          <h4>Hizmet Özeti</h4>
-          <dl class="summary-list">
-            <dt>Tahmini Süre:</dt>
-            <dd>{service.estimatedDuration}</dd>
-            <dt>Parça Garantisi:</dt>
-            <dd>Orijinal / OEM Kalite</dd>
-            <dt>Sıkım Yöntemi:</dt>
-            <dd>Tork Anahtarlı Montaj</dd>
-            <dt>Kontrol:</dt>
-            <dd>Sızdırmazlık Testi Dahil</dd>
-          </dl>
-          <a href="/randevu/" class="btn btn-primary" style="width: 100%; margin-top: 16px;">
-            Filtre Değişimi Randevusu Al
-          </a>
-          <a href={`tel:${business.phoneE164}`} class="btn btn-outline" style="width: 100%; margin-top: 8px;">
-            Ustayla İletişime Geç
-          </a>
-        </div>
-      </aside>
     </div>
   </section>
-
-  <CtaBanner />
-  <LocationForm />
-</BaseLayout>
-
-<style>
-  .page-header {
-    background: linear-gradient(135deg, #16212C 0%, #0F1722 100%);
-    color: #FFFFFF;
-    padding: 48px 0;
-    border-bottom: 2px solid var(--accent);
-  }
-  .breadcrumb {
-    display: flex;
-    gap: 8px;
-    font-size: 13px;
-    color: #94A3B8;
-    margin-bottom: 16px;
-  }
-  .breadcrumb a {
-    color: #CBD5E1;
-  }
-  .breadcrumb .current {
-    color: #FFA573;
-    font-weight: 600;
-  }
-  .page-title {
-    color: #FFFFFF;
-    font-size: 32px;
-    margin-bottom: 12px;
-  }
-  .page-intro {
-    font-size: 16px;
-    color: #94A3B8;
-    max-width: 720px;
-    line-height: 1.6;
-  }
-  .content-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .main-body h2 {
-    font-size: 24px;
-    margin-bottom: 14px;
-    margin-top: 24px;
-  }
-  .main-body h3 {
-    font-size: 18px;
-    margin-top: 24px;
-    margin-bottom: 12px;
-  }
-  .main-body p {
-    font-size: 15px;
-    color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 16px;
-  }
-  .process-checklist {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
-  }
-  .process-checklist li {
-    font-size: 14px;
-    line-height: 1.6;
-    color: var(--ink);
-    background: var(--surface-soft);
-    padding: 12px 16px;
-    border-radius: 8px;
-    border-left: 3px solid var(--accent);
-  }
-  .specs-pill-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 12px;
-  }
-  .spec-pill {
-    background-color: var(--accent-soft);
-    color: var(--accent-text);
-    border: 1px solid rgba(216, 92, 32, 0.2);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 13px;
-  }
-  .sidebar-box {
-    align-self: start;
-  }
-  .service-summary-card {
-    background-color: var(--surface);
-    border: 1px solid var(--line);
-    border-radius: var(--radius-card);
-    padding: 24px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  }
-  .service-summary-card h4 {
-    font-size: 18px;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--line);
-  }
-  .summary-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    font-size: 13px;
-  }
-  .summary-list dt {
-    color: var(--muted);
-    font-weight: 600;
-  }
-  .summary-list dd {
-    color: var(--ink);
-    font-weight: 700;
-  }
-  @media (min-width: 992px) {
-    .content-grid {
-      grid-template-columns: 1.2fr 0.8fr;
-    }
-    .page-title {
-      font-size: 40px;
-    }
-  }
-</style>
+</Layout>

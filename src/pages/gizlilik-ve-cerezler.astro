@@ -1,82 +1,13 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '../layouts/Layout.astro';
 import { business } from '../data/business';
-import { seoRegistry } from '../seo/registry';
-
-const seo = seoRegistry['/gizlilik-ve-cerezler/'];
 ---
 
-<BaseLayout 
-  title={seo.title} 
-  description={seo.description}
-  canonicalPath="/gizlilik-ve-cerezler/"
->
-  <div class="page-header">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Sayfa Konumu">
-        <a href="/">Anasayfa</a>
-        <span>/</span>
-        <span class="current">Gizlilik ve Çerez Politikası</span>
-      </nav>
-      <h1 class="page-title">{seo.heading}</h1>
-    </div>
+<Layout title="Gizlilik ve Çerez Politikası | ASM Auto">
+  <div class="container" style="padding: 60px 20px; max-width: 800px;">
+    <h1 style="font-size: 28px; margin-bottom: 20px;">Gizlilik ve Çerez Politikası</h1>
+    <p style="margin-bottom: 16px; font-size: 14px; line-height: 1.7;">
+      Bu politika, ASM Auto web sitesini ziyaret ettiğinizde verilerinizin ve çerezlerin nasıl kullanıldığını açıklar. Sitemizde yalnızca temel oturum ve güvenlik çerezleri kullanılmaktadır.
+    </p>
   </div>
-
-  <section class="section">
-    <div class="container legal-body">
-      <h2>1. Genel Gizlilik Taahhüdü</h2>
-      <p>
-        {business.name} olarak, ziyaretçilerimizin gizliliğine ve kişisel verilerinin güvenliğine en üst düzeyde önem veriyoruz. İnternet sitemiz üzerinden toplanan bilgiler üçüncü şahıslara satılmaz, kiralanmaz veya izinsiz paylaşılmaz.
-      </p>
-
-      <h2>2. Çerez (Cookie) Kullanımı</h2>
-      <p>
-        Sitemizde yalnızca sitenin temel işlevselliğini sağlayan zorunlu teknik çerezler ve kullanıcı deneyimini iyileştiren anonim performans çerezleri kullanılmaktadır. Tarayıcı ayarlarınızdan çerez tercihlerinizi dilediğiniz zaman değiştirebilir veya silebilirsiniz.
-      </p>
-
-      <h2>3. Veri Güvenliği</h2>
-      <p>
-        Web sitemiz HTTPS ve modern SSL/TLS şifreleme protokolleriyle korunmaktadır. Form aracılığıyla gönderilen tüm veriler güvenli altyapılarımızda muhafaza edilir.
-      </p>
-    </div>
-  </section>
-</BaseLayout>
-
-<style>
-  .page-header {
-    background: linear-gradient(135deg, #16212C 0%, #0F1722 100%);
-    color: #FFFFFF;
-    padding: 40px 0;
-    border-bottom: 2px solid var(--accent);
-  }
-  .breadcrumb {
-    display: flex;
-    gap: 8px;
-    font-size: 13px;
-    color: #94A3B8;
-    margin-bottom: 12px;
-  }
-  .breadcrumb a {
-    color: #CBD5E1;
-  }
-  .breadcrumb .current {
-    color: #FFA573;
-    font-weight: 600;
-  }
-  .page-title {
-    color: #FFFFFF;
-    font-size: 30px;
-  }
-  .legal-body {
-    max-width: 800px;
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--muted);
-  }
-  .legal-body h2 {
-    font-size: 20px;
-    color: var(--ink);
-    margin-top: 24px;
-    margin-bottom: 10px;
-  }
-</style>
+</Layout>

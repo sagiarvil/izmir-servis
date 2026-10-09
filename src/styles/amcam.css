@@ -1,0 +1,1182 @@
+/* ==========================================================================
+   AMCAM OTOMOTİV BİREBİR TASARIM VE KUTU MİMARİSİ
+   İzmir Yağ Değişimi | ASM Auto
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --amcam-red: #b90809;
+  --amcam-red-dark: #920405;
+  --amcam-dark: #191919;
+  --amcam-darker: #111111;
+  --amcam-gray-bg: #f5f6f8;
+  --amcam-gray-light: #ececec;
+  --amcam-gray-border: #dcdcdc;
+  --amcam-text-main: #333333;
+  --amcam-text-muted: #666666;
+  --amcam-green: #22c15e;
+  --font-heading: 'Maven Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --container-width: 1220px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--amcam-text-main);
+  background-color: #ffffff;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--amcam-dark);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   1. TOP ACTION BAR (AMCAM BİREBİR)
+   ========================================================================== */
+#Action_bar {
+  background-color: var(--amcam-dark);
+  color: #cccccc;
+  font-size: 13px;
+  padding: 8px 0;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+#Action_bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.action-bar-left .slogan {
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.action-bar-left .slogan::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--amcam-red);
+  border-radius: 50%;
+}
+
+.action-bar-left .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #bbbbbb;
+}
+
+.action-bar-left .contact-item a:hover {
+  color: #ffffff;
+}
+
+.action-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background-color: #2b2b2b;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 13px;
+  transition: background-color 0.2s;
+}
+
+.social-links a:hover {
+  background-color: var(--amcam-red);
+}
+
+/* ==========================================================================
+   2. TOP HEADER (AMCAM BİREBİR - LOGO, MENÜ, KIRMIZI BUTON)
+   ========================================================================== */
+#Top_bar {
+  background-color: #ffffff;
+  border-bottom: 2px solid #eaeaea;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#Top_bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.header-logo-wrap {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-logo-wrap img {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+}
+
+.header-logo-wrap:hover img {
+  transform: scale(1.02);
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.main-nav a {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--amcam-dark);
+  text-transform: uppercase;
+  padding: 10px 0;
+  position: relative;
+  letter-spacing: 0.02em;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--amcam-red);
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--amcam-red);
+  transition: width 0.25s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
+.header-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--amcam-red);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 12px 22px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  transition: all 0.2s ease;
+  border: 1px solid var(--amcam-red-dark);
+  box-shadow: 0 3px 6px rgba(185, 8, 9, 0.25);
+}
+
+.header-cta-btn:hover {
+  background-color: var(--amcam-red-dark);
+  box-shadow: 0 4px 12px rgba(185, 8, 9, 0.4);
+  transform: translateY(-1px);
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  color: var(--amcam-dark);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   3. HERO SLIDER / BANNER
+   ========================================================================== */
+.hero-slider-wrap {
+  position: relative;
+  background: linear-gradient(135deg, #111822 0%, #1c2633 100%);
+  color: #ffffff;
+  overflow: hidden;
+  padding: 75px 0 85px;
+  border-bottom: 4px solid var(--amcam-red);
+}
+
+.hero-slider-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 75% 45%, rgba(185, 8, 9, 0.22) 0%, transparent 65%),
+              url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="%23ffffff" fill-opacity="0.02" fill-rule="evenodd"><path d="M0 40L40 0H20L0 20M40 40V20L20 40"/></g></svg>');
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--amcam-red);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 42px;
+  line-height: 1.18;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.hero-title span {
+  color: #ff3b3e;
+}
+
+.hero-desc {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #e2e8f0;
+  margin-bottom: 32px;
+  max-width: 720px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.btn-hero-red {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--amcam-red);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(185, 8, 9, 0.45);
+  border: 1px solid #ff4d4f;
+  transition: all 0.25s ease;
+}
+
+.btn-hero-red:hover {
+  background-color: var(--amcam-red-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(185, 8, 9, 0.6);
+}
+
+.btn-hero-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--amcam-green);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 15px 28px;
+  border-radius: 4px;
+  box-shadow: 0 4px 14px rgba(34, 193, 94, 0.35);
+  border: 1px solid #3de37c;
+  transition: all 0.25s ease;
+}
+
+.btn-hero-whatsapp:hover {
+  background-color: #1ea852;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(34, 193, 94, 0.5);
+}
+
+.hero-highlights {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #cbd5e1;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  padding-top: 20px;
+}
+
+.hero-highlights span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-highlights span strong {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   4. AMCAM 3 ÜST KUTU (ENERGY-BOX MİMARİSİ)
+   ========================================================================== */
+.section-energy-boxes {
+  padding: 50px 0;
+  background-color: var(--amcam-gray-bg);
+}
+
+.energy-boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* Amcam'ın Birebir Energy-Box Kutusu */
+.energy-box {
+  background-color: #ffffff;
+  position: relative;
+  padding: 24px 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.energy-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Amcam'ın Üst ve Alt Çizgileri */
+.energy-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background-color: #333333;
+}
+
+.energy-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background-color: #333333;
+}
+
+.energy-box-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 12px;
+}
+
+/* Amcam'ın Kırmızı Numara Kutusu */
+.energy-box-num {
+  width: 50px;
+  height: 70px;
+  background-color: var(--amcam-red);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 26px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(185, 8, 9, 0.3);
+}
+
+.energy-box-titles h2 {
+  font-size: 20px;
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.energy-box-titles h3 {
+  font-size: 16px;
+  line-height: 1.15;
+  margin: 4px 0 0 0;
+  color: var(--amcam-red);
+  font-weight: 700;
+}
+
+.energy-box-desc {
+  padding-top: 8px;
+  color: var(--amcam-text-main);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   5. HAKKIMIZDA (AMCAM SECTION 1 BİREBİR)
+   ========================================================================== */
+.section-about {
+  padding: 70px 0;
+  background-color: #ffffff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.about-image-card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border: 2px solid #eaeaea;
+}
+
+.about-experience-badge {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--amcam-red);
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(185, 8, 9, 0.45);
+}
+
+.about-experience-badge .num {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.about-experience-badge .txt {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+.section-tag {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--amcam-red);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.section-title {
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--amcam-red);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.about-lead {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a202c;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.about-text {
+  font-size: 14px;
+  color: var(--amcam-text-muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.about-checklist {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.about-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.about-checklist li svg {
+  color: var(--amcam-red);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   6. HİZMETLERİMİZ / NELER YAPIYORUZ? (AMCAM 6'LI ENERGY-BOX GRID)
+   ========================================================================== */
+.section-services {
+  padding: 70px 0 80px;
+  background-color: var(--amcam-gray-bg);
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Amcam Hizmet Kartı */
+.service-card {
+  background-color: #ffffff;
+  position: relative;
+  padding: 22px 18px 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+  border-color: #cbd5e1;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  background-color: #333333;
+}
+
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 18px;
+  right: 18px;
+  height: 2px;
+  background-color: #333333;
+}
+
+.service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.service-card-num {
+  width: 48px;
+  height: 64px;
+  background-color: var(--amcam-red);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.service-card-title h2,
+.service-card-title h3 {
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 0;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.service-card-img-wrap {
+  width: 100%;
+  height: 175px;
+  overflow: hidden;
+  margin-bottom: 14px;
+  border: 1px solid #ececec;
+  background-color: #f1f5f9;
+}
+
+.service-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-card-img-wrap img {
+  transform: scale(1.04);
+}
+
+.service-card-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--amcam-text-main);
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+/* Amcam'ın arrow_link bağlantısı */
+a.arrow_link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--amcam-red);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 6px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+a.arrow_link:hover {
+  color: var(--amcam-red-dark);
+  gap: 12px;
+}
+
+/* ==========================================================================
+   7. MODEL & MARKA ÖZEL BAKIM BLOKLARI (AMCAM TİCARİ/BİNEK GRUBU)
+   ========================================================================== */
+.section-vehicle-brands {
+  padding: 60px 0;
+  background-color: #ffffff;
+  border-top: 1px solid #eaeaea;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.brand-card {
+  border: 1px solid #e2e8f0;
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+}
+
+.brand-card:hover {
+  border-color: var(--amcam-red);
+  box-shadow: 0 6px 18px rgba(185, 8, 9, 0.1);
+  transform: translateY(-2px);
+}
+
+.brand-card h4 {
+  font-size: 12px;
+  color: var(--amcam-red);
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.brand-card h2,
+.brand-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.brand-card p {
+  font-size: 13px;
+  color: var(--amcam-text-muted);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   8. İSTATİSTİK SAYACI BANDI (AMCAM COUNTER BANNER)
+   ========================================================================== */
+.section-stats {
+  background-color: var(--amcam-dark);
+  color: #ffffff;
+  padding: 45px 0;
+  border-top: 3px solid var(--amcam-red);
+  border-bottom: 3px solid var(--amcam-red);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-item h3 span {
+  color: var(--amcam-red);
+}
+
+.stat-item p {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #cccccc;
+}
+
+/* ==========================================================================
+   9. KONUM & RANDEVU FORMU (CLEGG + AMCAM BİRLEŞİMİ)
+   ========================================================================== */
+.section-contact-booking {
+  padding: 70px 0;
+  background-color: var(--amcam-gray-bg);
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.booking-info-box {
+  background-color: #ffffff;
+  padding: 35px 30px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.booking-info-box::before,
+.booking-form-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background-color: #333333;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.info-icon {
+  width: 42px;
+  height: 42px;
+  background-color: #fff1f1;
+  color: var(--amcam-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.info-detail h4 {
+  font-size: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.info-detail p {
+  font-size: 14px;
+  color: var(--amcam-text-muted);
+}
+
+.booking-form-box {
+  background-color: #ffffff;
+  padding: 35px 30px;
+  border: 1px solid #e2e8f0;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 14px;
+  font-family: inherit;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  border-color: var(--amcam-red);
+  box-shadow: 0 0 0 3px rgba(185, 8, 9, 0.12);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: var(--amcam-red);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 12px rgba(185, 8, 9, 0.3);
+}
+
+.btn-submit:hover {
+  background-color: var(--amcam-red-dark);
+}
+
+/* ==========================================================================
+   10. FOOTER (AMCAM 4 KOLONLU YAPI)
+   ========================================================================== */
+#Footer {
+  background-color: var(--amcam-dark);
+  color: #a0aec0;
+  padding: 60px 0 0;
+  border-top: 4px solid var(--amcam-red);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #2d3748;
+}
+
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-col h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background-color: var(--amcam-red);
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #a0aec0;
+  font-size: 13.5px;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-col ul li a:hover {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+
+.footer-logo {
+  height: 60px;
+  width: auto;
+  margin-bottom: 15px;
+}
+
+.footer-bottom {
+  padding: 20px 0;
+  text-align: center;
+  font-size: 12.5px;
+  color: #718096;
+}
+
+.footer-bottom a {
+  color: #a0aec0;
+  margin: 0 8px;
+}
+
+.footer-bottom a:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   11. AMCAM SIDE TAB & WHATSAPP FLOATING BUTTON
+   ========================================================================== */
+#rum_sst_tab {
+  position: fixed;
+  top: 55%;
+  right: -1px;
+  transform-origin: 100% 100%;
+  transform: rotate(-90deg);
+  background-color: var(--amcam-red);
+  color: #ffffff;
+  z-index: 9999;
+  cursor: pointer;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.2s;
+}
+
+#rum_sst_tab:hover {
+  background-color: var(--amcam-red-dark);
+}
+
+#rum_sst_tab a {
+  display: block;
+  padding: 8px 18px 10px;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 58px;
+  height: 58px;
+  background-color: var(--amcam-green);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(34, 193, 94, 0.45);
+  z-index: 9999;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(34, 193, 94, 0.6);
+}
+
+.floating-whatsapp svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* ==========================================================================
+   12. RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .energy-boxes-grid,
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brands-grid,
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #Action_bar {
+    display: none;
+  }
+
+  #Top_bar .container {
+    height: 75px;
+  }
+
+  .header-logo-wrap img {
+    height: 54px;
+  }
+
+  .main-nav,
+  .header-cta-btn {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+  }
+
+  .about-grid,
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .energy-boxes-grid,
+  .services-grid,
+  .brands-grid,
+  .stats-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  #rum_sst_tab {
+    display: none;
+  }
+}

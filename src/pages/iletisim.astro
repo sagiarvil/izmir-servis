@@ -1,63 +1,82 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import LocationForm from '../components/LocationForm.astro';
-import { seoRegistry } from '../seo/registry';
-
-const seo = seoRegistry['/iletisim/'];
+import Layout from '../layouts/Layout.astro';
+import { business } from '../data/business';
 ---
 
-<BaseLayout 
-  title={seo.title} 
-  description={seo.description}
-  canonicalPath="/iletisim/"
+<Layout
+  title="İletişim & Konum | ASM İzmir Yağ Değişim Servisi"
+  description="ASM Auto İzmir iletişim bilgileri, telefon, WhatsApp, 6. Sanayi Sitesi Gaziemir Karabağlar adres ve yol tarifi."
 >
-  <div class="page-header">
+  <div style="background-color: var(--amcam-dark); color: #fff; padding: 45px 0 50px; border-bottom: 3px solid var(--amcam-red);">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Sayfa Konumu">
-        <a href="/">Anasayfa</a>
-        <span>/</span>
-        <span class="current">İletişim & Konum</span>
-      </nav>
-      <h1 class="page-title">{seo.heading}</h1>
-      <p class="page-intro">
-        ASM Auto atölye adresimiz, harita konumu, sabit ve mobil iletişim numaralarımız ile bize dilediğiniz zaman ulaşabilirsiniz.
-      </p>
+      <span class="section-tag" style="color: #ff4d4f;">BİZE ULAŞIN</span>
+      <h1 style="font-size: 36px; color: #fff; text-transform: uppercase;">İletişim & Destek</h1>
+      <p style="color: #cbd5e1; font-size: 16px; margin-top: 8px;">Servisimize kolayca ulaşın, randevu alın veya WhatsApp üzerinden fiyat öğrenin.</p>
     </div>
   </div>
 
-  <LocationForm />
-</BaseLayout>
+  <section class="section-contact-booking">
+    <div class="container">
+      <div class="booking-grid">
+        <div class="booking-info-box">
+          <span class="section-tag">İZMİR SERVİS NOKTASI</span>
+          <h2 class="section-title" style="margin-bottom: 20px;">Adres ve İletişim</h2>
+          
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            </div>
+            <div class="info-detail">
+              <h4>Adres</h4>
+              <p>{business.address.fullAddress}</p>
+              <a href={business.address.googleMapsUrl} target="_blank" rel="noopener noreferrer" style="color: var(--amcam-red); font-weight: 700; font-size: 13px; display: inline-block; margin-top: 4px;">
+                Google Haritalar Yol Tarifi ↗
+              </a>
+            </div>
+          </div>
 
-<style>
-  .page-header {
-    background: linear-gradient(135deg, #16212C 0%, #0F1722 100%);
-    color: #FFFFFF;
-    padding: 48px 0;
-    border-bottom: 2px solid var(--accent);
-  }
-  .breadcrumb {
-    display: flex;
-    gap: 8px;
-    font-size: 13px;
-    color: #94A3B8;
-    margin-bottom: 16px;
-  }
-  .breadcrumb a {
-    color: #CBD5E1;
-  }
-  .breadcrumb .current {
-    color: #FFA573;
-    font-weight: 600;
-  }
-  .page-title {
-    color: #FFFFFF;
-    font-size: 32px;
-    margin-bottom: 12px;
-  }
-  .page-intro {
-    font-size: 16px;
-    color: #94A3B8;
-    max-width: 720px;
-    line-height: 1.6;
-  }
-</style>
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <div class="info-detail">
+              <h4>Telefon</h4>
+              <p><a href={`tel:${business.phoneE164}`}>{business.phoneDisplay}</a> / <a href={`tel:${business.whatsappE164}`}>{business.whatsappE164}</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2z"/></svg>
+            </div>
+            <div class="info-detail">
+              <h4>WhatsApp Hattı</h4>
+              <p><a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" style="color: var(--amcam-green); font-weight: 700;">Hızlı WhatsApp İletişimi Başlat ↗</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-form-box">
+          <span class="section-tag">BİZE YAZIN</span>
+          <h2 class="section-title" style="margin-bottom: 20px;">Mesaj Gönderin</h2>
+          
+          <form onsubmit="event.preventDefault(); alert('Mesajınız iletildi. En kısa sürede geri dönüş yapacağız.');">
+            <div class="form-group">
+              <label for="contact-name">Adınız Soyadınız *</label>
+              <input type="text" id="contact-name" required class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Telefon Numaranız *</label>
+              <input type="tel" id="contact-phone" required class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Mesajınız *</label>
+              <textarea id="contact-message" required class="form-control" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Mesajı Gönder →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

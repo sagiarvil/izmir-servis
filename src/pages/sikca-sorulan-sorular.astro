@@ -1,67 +1,50 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import FaqSection from '../components/FaqSection.astro';
-import CtaBanner from '../components/CtaBanner.astro';
-import LocationForm from '../components/LocationForm.astro';
-import { seoRegistry } from '../seo/registry';
-
-const seo = seoRegistry['/sikca-sorulan-sorular/'];
+import Layout from '../layouts/Layout.astro';
 ---
 
-<BaseLayout 
-  title={seo.title} 
-  description={seo.description}
-  canonicalPath="/sikca-sorulan-sorular/"
+<Layout
+  title="Sıkça Sorulan Sorular | ASM İzmir Yağ Servisi"
+  description="Motor yağı ne zaman değişir? Hangi yağ viskozitesi seçilmeli? Yağ filtresi her seferinde değişir mi? Tüm merak edilenler."
 >
-  <div class="page-header">
+  <div style="background-color: var(--amcam-dark); color: #fff; padding: 45px 0 50px; border-bottom: 3px solid var(--amcam-red);">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Sayfa Konumu">
-        <a href="/">Anasayfa</a>
-        <span>/</span>
-        <span class="current">Sıkça Sorulan Sorular</span>
-      </nav>
-      <h1 class="page-title">{seo.heading}</h1>
-      <p class="page-intro">
-        Motor yağı viskoziteleri, bakım aralıkları, filtre uyumu ve servis süreçleri hakkında aklınıza takılan tüm soruların teknik yanıtları.
-      </p>
+      <span class="section-tag" style="color: #ff4d4f;">TEKNİK REHBER</span>
+      <h1 style="font-size: 36px; color: #fff; text-transform: uppercase;">Sıkça Sorulan Sorular</h1>
+      <p style="color: #cbd5e1; font-size: 16px; margin-top: 8px;">Motor yağı ve periyodik araç bakımı hakkında sıkça sorulan teknik sorular ve yanıtları.</p>
     </div>
   </div>
 
-  <FaqSection />
-  <CtaBanner />
-  <LocationForm />
-</BaseLayout>
+  <section style="padding: 60px 0; background-color: var(--amcam-gray-bg);">
+    <div class="container" style="max-width: 850px;">
+      
+      <div style="background: #fff; padding: 25px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-left: 4px solid var(--amcam-red);">
+        <h3 style="font-size: 18px; margin-bottom: 8px;">Motor yağı ne sıklıkla değiştirilmelidir?</h3>
+        <p style="color: #4a5568; font-size: 14px; line-height: 1.6;">
+          Üreticiler genelde 10.000 - 15.000 km veya yılda 1 defa değişim önerir. Ancak İzmir gibi yoğun şehir içi dur-kalk trafiğinde ve yaz sıcağında yağ daha hızlı bozulduğu için 10.000 km aralığı motor ömrü için en ideal süredir.
+        </p>
+      </div>
 
-<style>
-  .page-header {
-    background: linear-gradient(135deg, #16212C 0%, #0F1722 100%);
-    color: #FFFFFF;
-    padding: 48px 0;
-    border-bottom: 2px solid var(--accent);
-  }
-  .breadcrumb {
-    display: flex;
-    gap: 8px;
-    font-size: 13px;
-    color: #94A3B8;
-    margin-bottom: 16px;
-  }
-  .breadcrumb a {
-    color: #CBD5E1;
-  }
-  .breadcrumb .current {
-    color: #FFA573;
-    font-weight: 600;
-  }
-  .page-title {
-    color: #FFFFFF;
-    font-size: 32px;
-    margin-bottom: 12px;
-  }
-  .page-intro {
-    font-size: 16px;
-    color: #94A3B8;
-    max-width: 720px;
-    line-height: 1.6;
-  }
-</style>
+      <div style="background: #fff; padding: 25px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-left: 4px solid var(--amcam-red);">
+        <h3 style="font-size: 18px; margin-bottom: 8px;">Yağ filtresi her yağ değişiminde mutlaka değişmeli mi?</h3>
+        <p style="color: #4a5568; font-size: 14px; line-height: 1.6;">
+          Evet, kesinlikle değişmelidir. Eski filtrenin içinde yaklaşık 200-400 ml kirli yağ ve yakalanmış metal parçacıkları kalır. Filtre değişmezse yeni koyduğunuz taze motor yağı ilk dakikadan itibaren kirlenir.
+        </p>
+      </div>
+
+      <div style="background: #fff; padding: 25px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-left: 4px solid var(--amcam-red);">
+        <h3 style="font-size: 18px; margin-bottom: 8px;">0W-20 ile 5W-30 arasındaki fark nedir?</h3>
+        <p style="color: #4a5568; font-size: 14px; line-height: 1.6;">
+          0W-20 daha düşük viskoziteli, yeni nesil emisyon ve yakıt tasarrufu odaklı hibrit ve modern turbo motorlar için tasarlanmış bir yağdır. 5W-30 ise daha geniş bir motor yelpazesinde yüksek sıcaklık koruması sağlar. Hangi yağın seçileceğine aracın ruhsatındaki motor koduna ve üretici el kitabına göre karar verilir.
+        </p>
+      </div>
+
+      <div style="background: #fff; padding: 25px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-left: 4px solid var(--amcam-red);">
+        <h3 style="font-size: 18px; margin-bottom: 8px;">Yağ değişimi ne kadar sürer?</h3>
+        <p style="color: #4a5568; font-size: 14px; line-height: 1.6;">
+          Standart bir motor yağı ve filtre değişimi yaklaşık 25-35 dakika sürer. Bu süre içinde motor alt koruma sökülür, eski yağ tam süzülür, yeni filtre torklanır ve genel sıvı kontrolleri tamamlanır.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</Layout>

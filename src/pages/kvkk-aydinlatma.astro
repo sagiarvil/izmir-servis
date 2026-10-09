@@ -1,97 +1,21 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import Layout from '../layouts/Layout.astro';
 import { business } from '../data/business';
-import { seoRegistry } from '../seo/registry';
-
-const seo = seoRegistry['/kvkk-aydinlatma/'];
 ---
 
-<BaseLayout 
-  title={seo.title} 
-  description={seo.description}
-  canonicalPath="/kvkk-aydinlatma/"
->
-  <div class="page-header">
-    <div class="container">
-      <nav class="breadcrumb" aria-label="Sayfa Konumu">
-        <a href="/">Anasayfa</a>
-        <span>/</span>
-        <span class="current">KVKK Aydınlatma Metni</span>
-      </nav>
-      <h1 class="page-title">{seo.heading}</h1>
-    </div>
+<Layout title="KVKK Aydınlatma Metni | ASM Auto">
+  <div class="container" style="padding: 60px 20px; max-width: 800px;">
+    <h1 style="font-size: 28px; margin-bottom: 20px;">6698 Sayılı KVKK Kapsamında Aydınlatma Metni</h1>
+    <p style="margin-bottom: 16px; font-size: 14px; line-height: 1.7;">
+      {business.legalName} ("ASM Auto") olarak, müşterilerimizin kişisel verilerinin korunmasına büyük önem vermekteyiz. Bu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca, veri sorumlusu sıfatıyla tarafımızca toplanan kişisel verilerinize ilişkin sizleri bilgilendirmek amacıyla hazırlanmıştır.
+    </p>
+    <h3 style="font-size: 18px; margin: 20px 0 10px;">1. İşlenen Kişisel Veriler</h3>
+    <p style="margin-bottom: 16px; font-size: 14px; line-height: 1.7;">
+      Servis randevusu, teklif alma ve iletişim süreçlerinde adınız, soyadınız, telefon numaranız, araç plaka/model bilginiz ve servis işlem talebiniz işlenmektedir.
+    </p>
+    <h3 style="font-size: 18px; margin: 20px 0 10px;">2. Veri İşleme Amaçları</h3>
+    <p style="margin-bottom: 16px; font-size: 14px; line-height: 1.7;">
+      Kişisel verileriniz servis randevusunun oluşturulması, bakım geçmişinin takibi, yedek parça temini ve sizinle teyit iletişimi kurulması amacıyla sınırlı olarak işlenir.
+    </p>
   </div>
-
-  <section class="section">
-    <div class="container legal-body">
-      <h2>1. Veri Sorumlusu</h2>
-      <p>
-        6698 sayılı Kişisel Verilerin Korunması Kanunu (“KVKK”) uyarınca, <strong>{business.legalName}</strong> (“ASM Auto”) olarak, veri sorumlusu sıfatıyla kişisel verilerinizi mevzuata uygun şekilde işlemekteyiz.
-      </p>
-
-      <h2>2. İşlenen Kişisel Veriler ve İşlenme Amaçları</h2>
-      <p>
-        Web sitemizdeki servis randevu formu ve iletişim kanalları aracılığıyla adınız, soyadınız, telefon numaranız, araç marka/modeli ve bakım talebiniz toplanmaktadır. Bu veriler:
-      </p>
-      <ul>
-        <li>Servis randevu talebinizin alınması ve uygun bakım zamanının teyit edilmesi,</li>
-        <li>Aracınıza uygun motor yağı ve parça spesifikasyonunun ön değerlendirmesi,</li>
-        <li>Müşteri memnuniyeti ve servis sonrası bilgilendirme yapılması</li>
-      </ul>
-      <p>amaçlarıyla sınırlı olarak işlenmektedir.</p>
-
-      <h2>3. Hukuki Sebepler</h2>
-      <p>
-        Kişisel verileriniz, KVKK'nın 5. maddesi uyarınca bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması ve veri sorumlusunun meşru menfaatleri hukuki sebeplerine dayalı olarak işlenmektedir.
-      </p>
-
-      <h2>4. Haklarınız</h2>
-      <p>
-        KVKK'nın 11. maddesi kapsamında kişisel verilerinizin işlenip işlenmediğini öğrenme, düzeltilmesini veya silinmesini talep etme hakkına sahipsiniz. Başvurularınızı {business.email} adresine iletebilirsiniz.
-      </p>
-    </div>
-  </section>
-</BaseLayout>
-
-<style>
-  .page-header {
-    background: linear-gradient(135deg, #16212C 0%, #0F1722 100%);
-    color: #FFFFFF;
-    padding: 40px 0;
-    border-bottom: 2px solid var(--accent);
-  }
-  .breadcrumb {
-    display: flex;
-    gap: 8px;
-    font-size: 13px;
-    color: #94A3B8;
-    margin-bottom: 12px;
-  }
-  .breadcrumb a {
-    color: #CBD5E1;
-  }
-  .breadcrumb .current {
-    color: #FFA573;
-    font-weight: 600;
-  }
-  .page-title {
-    color: #FFFFFF;
-    font-size: 30px;
-  }
-  .legal-body {
-    max-width: 800px;
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--muted);
-  }
-  .legal-body h2 {
-    font-size: 20px;
-    color: var(--ink);
-    margin-top: 24px;
-    margin-bottom: 10px;
-  }
-  .legal-body ul {
-    margin-left: 20px;
-    margin-bottom: 16px;
-  }
-</style>
+</Layout>
