@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileActionBar from '../components/MobileActionBar.astro';
+---
+
+<BaseLayout title="Sayfa Bulunamadı (404) | ASM Auto Servis" description="Aradığınız sayfa bulunamadı. İzmir Yağ Değişimi ana sayfasına veya randevu bölümüne geçebilirsiniz.">
+  <Header />
+
+  <main id="ana-icerik" class="container section not-found-container">
+    <div class="not-found-box">
+      <span class="badge">404 HATA</span>
+      <h1>Aradığınız Sayfa Bulunamadı</h1>
+      <p>Aradığınız sayfa kaldırılmış, adı değiştirilmiş veya geçici olarak kullanım dışı kalmış olabilir.</p>
+      <div class="nf-actions">
+        <a href="/" class="btn btn-primary">Ana Sayfaya Dön</a>
+        <a href="/randevu/" class="btn btn-secondary">Servis Talebi Oluştur</a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <MobileActionBar />
+</BaseLayout>
+
+<style>
+  .not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding: 60px 20px;
+  }
+  .not-found-box {
+    text-align: center;
+    max-width: 540px;
+  }
+  .not-found-box h1 {
+    font-size: 32px;
+    margin: 16px 0;
+  }
+  .not-found-box p {
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+  .nf-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>

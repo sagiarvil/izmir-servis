@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileActionBar from '../components/MobileActionBar.astro';
+import { routesRegistry } from '../seo/registry';
+import { business } from '../data/business';
+
+const meta = routesRegistry["/gizlilik-ve-cerezler/"];
+---
+
+<BaseLayout title={meta.title} description={meta.description} canonical={meta.canonical}>
+  <Header />
+
+  <main id="ana-icerik" class="container section legal-container">
+    <h1>Gizlilik ve Çerez Politikası</h1>
+    <p class="lead-text">
+      {business.legalName} olarak ziyaretçilerimizin gizlilik haklarına saygı duyuyor ve web sitemizi ziyaretleriniz sırasında güvenli bir deneyim sağlamayı taahhüt ediyoruz.
+    </p>
+
+    <h2>1. Çerezler (Cookies) Nedir?</h2>
+    <p>
+      Çerezler, ziyaret ettiğiniz internet siteleri tarafından tarayıcınız aracılığıyla cihazınıza veya ağ sunucusuna depolanan küçük metin dosyalarıdır.
+    </p>
+
+    <h2>2. Kullanılan Çerez Türleri</h2>
+    <ul>
+      <li><strong>Zorunlu Çerezler:</strong> Web sitesinin düzgün çalışması, form güvenliği ve temel navigasyon fonksiyonları için gereklidir.</li>
+      <li><strong>Analitik Çerezler:</strong> Ziyaretçi trafiğini ve sayfa kullanım alışkanlıklarını ölçümleyerek web sitemizin performansını artırmamıza yardımcı olur.</li>
+    </ul>
+
+    <h2>3. Çerezlerin Kontrolü ve Silinmesi</h2>
+    <p>
+      Tarayıcınızın ayarlarını değiştirerek çerezlere ilişkin tercihlerinizi kişiselleştirebilir, çerezleri engelleyebilir veya silebilirsiniz.
+    </p>
+  </main>
+
+  <Footer />
+  <MobileActionBar />
+</BaseLayout>
+
+<style>
+  .legal-container {
+    max-width: 800px;
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+  .legal-container h1 { font-size: 32px; margin-bottom: 20px; }
+  .legal-container h2 { font-size: 22px; margin-top: 32px; margin-bottom: 12px; }
+  .legal-container p { font-size: 15px; line-height: 1.7; color: var(--muted); margin-bottom: 16px; }
+  .legal-container ul { margin-left: 20px; margin-bottom: 20px; color: var(--muted); line-height: 1.6; }
+</style>

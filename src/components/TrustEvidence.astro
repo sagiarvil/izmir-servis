@@ -1,0 +1,250 @@
+---
+import { business } from '../data/business';
+
+const reviews = [
+  {
+    author: "Ahmet T.",
+    car: "Volkswagen Passat 1.6 TDI",
+    comment: "DPF uyumlu doğru VW 507 normundaki yağı ve orijinal filtreyi kullandılar. Usta Murat motor kapağını açıp tek tek her şeyi izah etti. İzmir sanayisinde böyle şeffaf çalışan usta bulmak çok zor.",
+    service: "Periyodik Bakım",
+    date: "1 ay önce"
+  },
+  {
+    author: "Serkan K.",
+    car: "Renault Megane 1.5 dCi",
+    comment: "Yağ filtresi kovanını temizleyip contayı sıfırladılar, karter tapasına yeni bakır pul taktılar. Damlatma kaçak kesinlikle yok. Randevu saatinde hemen aldılar, 45 dakikada işim bitti.",
+    service: "Motor Yağı & Filtre",
+    date: "2 hafta önce"
+  },
+  {
+    author: "Caner B.",
+    car: "Fiat Egea 1.3 MultiJet",
+    comment: "Kullandıkları yağın onayını bizzat kutu üzerinden gösterdiler. Fiyat konusunda ne dedilerse o çıktı, ekstra sürpriz masraf çıkarmadılar. Emeğinize sağlık.",
+    service: "Yağ Değişimi",
+    date: "3 hafta önce"
+  }
+];
+---
+
+<section class="section trust-section" aria-labelledby="trust-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">MÜŞTERİ DENEYİMİ & KANITLAR</span>
+      <h2 id="trust-heading" class="section-title">
+        Servis Titizliğimiz ve Doğrulanmış Görüşler
+      </h2>
+      <p class="section-desc">
+        Hizmet verdiğimiz araç sahiplerinin değerlendirmeleri ve atölyemizden gerçek bakım disiplini:
+      </p>
+    </div>
+
+    <!-- Müşteri Yorum Kartları (Clegg Değerlendirme Mantığı) -->
+    <div class="reviews-grid">
+      {reviews.map((rev) => (
+        <div class="review-card">
+          <div class="review-header">
+            <div class="stars" aria-label="5 yıldız">★★★★★</div>
+            <span class="review-date">{rev.date}</span>
+          </div>
+
+          <p class="review-text">"{rev.comment}"</p>
+
+          <div class="review-author-wrap">
+            <div class="author-avatar">{rev.author.charAt(0)}</div>
+            <div>
+              <strong class="author-name">{rev.author}</strong>
+              <span class="author-car">{rev.car} · <em>{rev.service}</em></span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Instagram & Sosyal Kanıt Şeridi -->
+    <div class="social-proof-bar">
+      <div class="social-left">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        <div>
+          <h4>Atölye Günlükleri ve Uygulama Videoları</h4>
+          <p>Gerçek servis uygulamalarımızı ve araç bakım süreçlerimizi Instagram'da takip edin.</p>
+        </div>
+      </div>
+
+      <div class="social-links-wrap">
+        <a href={business.social.instagramShop} target="_blank" rel="noopener noreferrer" class="btn btn-outline social-btn">
+          @asm_auto_service
+        </a>
+        <a href={business.social.instagramMaster} target="_blank" rel="noopener noreferrer" class="btn btn-outline social-btn">
+          @asm_murat_
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trust-section {
+    background-color: var(--surface-soft);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 40px auto;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 36px;
+    }
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 768px) {
+    .reviews-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .review-card {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(22, 33, 44, 0.04);
+  }
+
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .stars {
+    color: #F59E0B;
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  .review-date {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .review-text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin-bottom: 20px;
+    flex-grow: 1;
+    font-style: italic;
+  }
+
+  .review-author-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+  }
+
+  .author-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: var(--surface-dark);
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .author-name {
+    display: block;
+    font-size: 14px;
+    color: var(--ink);
+  }
+
+  .author-car {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* Sosyal Kanıt Bandı */
+  .social-proof-bar {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 768px) {
+    .social-proof-bar {
+      flex-direction: row;
+      padding: 28px 32px;
+    }
+  }
+
+  .social-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .social-left svg {
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .social-left h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .social-left p {
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .social-links-wrap {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .social-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 20px;
+  }
+</style>

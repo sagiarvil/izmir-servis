@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileActionBar from '../components/MobileActionBar.astro';
+import MasterStory from '../components/MasterStory.astro';
+import TrustEvidence from '../components/TrustEvidence.astro';
+
+import { routesRegistry } from '../seo/registry';
+import { getBreadcrumbSchema } from '../seo/jsonld';
+
+const meta = routesRegistry["/hakkimizda/"];
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: "Ana Sayfa", path: "/" },
+  { name: "Hakkımızda", path: "/hakkimizda/" }
+]);
+---
+
+<BaseLayout title={meta.title} description={meta.description} canonical={meta.canonical} schema={[breadcrumbSchema]}>
+  <Header />
+
+  <main id="ana-icerik">
+    <div class="page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+          <a href="/">Ana Sayfa</a>
+          <span class="bc-sep">/</span>
+          <span aria-current="page">Hakkımızda</span>
+        </nav>
+        <span class="badge">USTALIK VE ŞEFFAFLIK</span>
+        <h1 class="page-title">Hakkımızda: Usta Murat & ASM Auto</h1>
+        <p class="page-lead">
+          35 yıllık mesleki geçmişe dayanan deneyimle, İzmir'de araç bakımına ve motor sağlığına adanmış bağımsız servis anlayışı.
+        </p>
+      </div>
+    </div>
+
+    <MasterStory />
+    <TrustEvidence />
+  </main>
+
+  <Footer />
+  <MobileActionBar />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(180deg, var(--surface-dark) 0%, #101820 100%);
+    color: #FFFFFF;
+    padding: 48px 0;
+  }
+  .breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #94A3B8;
+    margin-bottom: 16px;
+  }
+  .breadcrumb-nav a { color: #CBD5E1; }
+  .bc-sep { color: #64748B; }
+  .page-title {
+    color: #FFFFFF;
+    font-size: 32px;
+    margin: 12px 0 16px 0;
+  }
+  @media (min-width: 768px) {
+    .page-title { font-size: 42px; }
+  }
+  .page-lead {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #CBD5E1;
+    max-width: 760px;
+  }
+</style>

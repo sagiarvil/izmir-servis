@@ -1,0 +1,21 @@
+{
+  "name": "asm-izmir-yag",
+  "type": "module",
+  "version": "1.1.0",
+  "description": "ASM İzmir Yağ Değişimi & Periyodik Bakım Web Platformu",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "test": "node scripts/ci-gates.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.4.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.7.3"
+  }
+}

@@ -1,0 +1,219 @@
+---
+---
+
+<section class="section process-section" aria-labelledby="process-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">İŞLEM ADIMLARI & GÜVEN</span>
+      <h2 id="process-heading" class="section-title">
+        Neden ASM ve Bakım Sürecimiz Nasıl İşler?
+      </h2>
+      <p class="section-desc">
+        Rastgele parça ve tahminle iş yapmıyoruz. Her araçta fabrika servis bültenlerine sadık kalarak 4 kontrollü adım izliyoruz:
+      </p>
+    </div>
+
+    <!-- 4 Adımlı İşlem Süreci -->
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Araç & Motor Bilgisi</h3>
+        <p class="step-desc">
+          Aracınızın marka, model, yıl ve ruhsattaki motor kodunu kontrol ederek fabrika onaylı yağ ve filtre normunu doğrularız.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3 class="step-title">Teknik Spesifikasyon</h3>
+        <p class="step-desc">
+          DPF, GPF ve turbo toleranslarına uygun yağ viskozitesi ve OEM onaylı filtre elemanını tespit eder, işlem öncesi net bilgi veririz.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Karterden Sıcak Tahliye</h3>
+        <p class="step-desc">
+          Yağ sıcakken karterden tam olarak süzülür; tortu bırakılmaz. Yeni karter pulu ve tork kontrollü sıkımla sıfır sızıntı sağlanır.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h3 class="step-title">Servis Kaydı & Teslimat</h3>
+        <p class="step-desc">
+          Litre hassasiyetiyle dolum yapılır, gösterge servis aralığı sıfırlanır ve yapılan işlemler araç bakım kartına işlenerek teslim edilir.
+        </p>
+      </div>
+    </div>
+
+    <!-- Neden ASM Güven Blokları -->
+    <div class="why-asm-box">
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <div>
+            <h4>Teknik Doğruluk</h4>
+            <p>Sadece viskozite değil, üretici onay kodu kontrolü ile DPF ve turbo sağlığı güvence altına alınır.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div>
+            <h4>Hızlı & Randevulu</h4>
+            <p>İzmir'de gereksiz bekleme olmadan, randevu saatinizde aracınız doğrudan bakım liftine alınır.</p>
+          </div>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          </div>
+          <div>
+            <h4>Şeffaf Servis Kaydı</h4>
+            <p>Hangi yağın, kaç litre konulduğu ve filtre markaları fiziki servis kartına eksiksiz işlenir.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process-section {
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 40px auto;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 36px;
+    }
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: 576px) {
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 992px) {
+    .steps-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .step-card {
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    position: relative;
+    transition: transform 0.2s ease;
+  }
+
+  .step-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .step-num {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 14px;
+    font-family: var(--font-heading);
+  }
+
+  .step-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  .step-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  .why-asm-box {
+    background: var(--surface-dark);
+    color: #FFFFFF;
+    border-radius: var(--radius-card);
+    padding: 32px;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .why-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .why-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .why-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(216, 92, 32, 0.2);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .why-item h4 {
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .why-item p {
+    color: #94A3B8;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+</style>

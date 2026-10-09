@@ -1,0 +1,217 @@
+---
+import { business } from '../data/business';
+---
+
+<section id="usta-murat" class="section master-section" aria-labelledby="master-heading">
+  <div class="container master-container">
+    <div class="master-image-col">
+      <div class="master-card-visual">
+        <div class="master-badge-overlay">
+          <span class="badge-exp">35 YIL</span>
+          <span class="badge-text">Mesleki Deneyim</span>
+        </div>
+        <div class="master-avatar-wrap">
+          <svg class="master-avatar-icon" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <h3 class="master-name">{business.experienceMaster}</h3>
+        <p class="master-role">Başusta & Servis Yöneticisi</p>
+        <div class="master-meta">
+          <span>İzmir Oto Sanayi Uzmanlığı</span>
+          <span class="meta-dot">·</span>
+          <span>Motor & Mekanik Bakım</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="master-content-col">
+      <span class="badge">USTALIK VE TİTİZLİK</span>
+      <h2 id="master-heading" class="master-title">
+        "Doğru Yağ ve Düzgün Bakım, Motorun Ömrünü İkiye Katlar."
+      </h2>
+
+      <p class="master-paragraph">
+        Motor bakımında 35 yılı geride bırakan Usta Murat'ın servis yaklaşımı; gösterişli reklamlara değil, doğru işlemi araç sahibine açıkça anlatmaya dayanır.
+      </p>
+
+      <p class="master-paragraph">
+        Gelişen otomobil teknolojisinde motor toleransları mikron seviyesine indi. Turboşarjlı, yüksek basınçlı enjeksiyonlu ve partikül filtreli modern motorlarda kulaktan dolma yağ kullanımı binlerce liralık masraf demektir. ASM Auto'da her araca fabrika onaylı spesifikasyonla yaklaşıyoruz.
+      </p>
+
+      <div class="master-checklist">
+        <div class="check-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>İşlem öncesi ve sonrası açık bilgilendirme</span>
+        </div>
+        <div class="check-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Doğru filtre, orijinal tork ve sıfır sızıntı prensibi</span>
+        </div>
+        <div class="check-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>İzmir şartlarında gerçekçi bakım periyodu tavsiyesi</span>
+        </div>
+      </div>
+
+      <div class="master-cta-row">
+        <a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Usta Murat'a WhatsApp'tan Danış
+        </a>
+        <a href="/hakkimizda/" class="btn btn-outline">
+          Tüm Hikayemizi Oku
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .master-section {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .master-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) {
+    .master-container {
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 56px;
+    }
+  }
+
+  .master-card-visual {
+    background: var(--surface-dark);
+    color: #FFFFFF;
+    border-radius: var(--radius-card);
+    padding: 36px 24px;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(22, 33, 44, 0.08);
+  }
+
+  .master-badge-overlay {
+    position: absolute;
+    top: -14px;
+    right: 20px;
+    background: var(--accent);
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 12px rgba(216, 92, 32, 0.3);
+  }
+
+  .badge-exp {
+    font-weight: 800;
+    font-size: 14px;
+  }
+
+  .badge-text {
+    font-size: 11px;
+    font-weight: 600;
+    opacity: 0.9;
+  }
+
+  .master-avatar-wrap {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 16px auto;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+  }
+
+  .master-name {
+    color: #FFFFFF;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .master-role {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+  }
+
+  .master-meta {
+    font-size: 12px;
+    color: #94A3B8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .meta-dot {
+    color: var(--accent);
+  }
+
+  .master-title {
+    font-size: 26px;
+    line-height: 1.25;
+    margin-top: 12px;
+    margin-bottom: 18px;
+  }
+
+  @media (min-width: 768px) {
+    .master-title {
+      font-size: 34px;
+    }
+  }
+
+  .master-paragraph {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .master-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 28px;
+  }
+
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .check-item svg {
+    color: var(--success);
+    flex-shrink: 0;
+  }
+
+  .master-cta-row {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  @media (min-width: 576px) {
+    .master-cta-row {
+      flex-direction: row;
+    }
+  }
+</style>

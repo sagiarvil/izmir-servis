@@ -1,0 +1,287 @@
+---
+import { services, secondaryServices } from '../data/services';
+---
+
+<section id="hizmetler" class="section services-section" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">HİZMET KAPSAMI</span>
+      <h2 id="services-heading" class="section-title">
+        Öncelikli Yağ ve Periyodik Bakım Hizmetleri
+      </h2>
+      <p class="section-desc">
+        Gereksiz parça değişimleri veya karmaşık paketler yok. Aracınızın motor ömrünü koruyan 3 temel uzmanlık alanımız:
+      </p>
+    </div>
+
+    <!-- 3 Büyük Hizmet Kartı (Amcam Yalın Kart Mimarisi) -->
+    <div class="service-cards-grid">
+      {services.map((item) => (
+        <article class="service-card">
+          <div class="card-badge-row">
+            <span class="service-badge">{item.badge}</span>
+            <span class="service-index">{item.shortTitle}</span>
+          </div>
+
+          <h3 class="card-title">
+            <a href={`/${item.slug}/`} class="title-link">{item.title}</a>
+          </h3>
+
+          <p class="card-lead">{item.lead}</p>
+
+          <ul class="card-highlights">
+            {item.highlights.slice(0, 3).map((hl) => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>{hl}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div class="card-footer">
+            <a href={`/${item.slug}/`} class="btn btn-outline card-detail-btn">
+              Teknik İncele & Detay
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a href="#servis-talebi" class="card-quick-cta">Servis Talebi</a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- İkincil Hizmetler Şeridi (Amcam Sade Yerel Servis Sunumu) -->
+    <div class="secondary-services-wrap">
+      <div class="secondary-header">
+        <h4>Tamamlayıcı Kontrol ve Filtre Bakımları</h4>
+        <p>Her yağ değişiminde ihtiyaç duyulursa yerinde uygulanan destekleyici işlemler:</p>
+      </div>
+
+      <div class="secondary-grid">
+        {secondaryServices.map((sec) => (
+          <div class="secondary-card">
+            <div class="sec-badge">{sec.badge}</div>
+            <h5 class="sec-title">{sec.title}</h5>
+            <p class="sec-desc">{sec.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-section {
+    background-color: var(--surface-soft);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 40px auto;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+
+  @media (min-width: 768px) {
+    .section-title {
+      font-size: 36px;
+    }
+  }
+
+  .section-desc {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .service-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: 768px) {
+    .service-cards-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .service-card {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(22, 33, 44, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(22, 33, 44, 0.08);
+  }
+
+  .card-badge-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .service-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-text);
+    background-color: var(--accent-soft);
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .service-index {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+
+  .card-title {
+    font-size: 22px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .title-link:hover {
+    color: var(--accent);
+  }
+
+  .card-lead {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--muted);
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+
+  .card-highlights {
+    list-style: none;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card-highlights li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .card-highlights svg {
+    color: var(--success);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+
+  .card-detail-btn {
+    width: 100%;
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  .card-quick-cta {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    padding: 6px 0;
+  }
+  .card-quick-cta:hover {
+    text-decoration: underline;
+  }
+
+  /* İkincil Hizmetler */
+  .secondary-services-wrap {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 28px;
+  }
+
+  .secondary-header {
+    margin-bottom: 20px;
+  }
+
+  .secondary-header h4 {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  .secondary-header p {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .secondary-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  @media (min-width: 576px) {
+    .secondary-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 992px) {
+    .secondary-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .secondary-card {
+    background-color: var(--surface-soft);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .sec-badge {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .sec-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .sec-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+</style>

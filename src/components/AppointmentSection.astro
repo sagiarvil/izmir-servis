@@ -1,0 +1,436 @@
+---
+import { business } from '../data/business';
+import { services } from '../data/services';
+---
+
+<section id="servis-talebi" class="section appointment-section" aria-labelledby="appointment-heading">
+  <div class="container">
+    <div class="appointment-grid">
+      <!-- Sol Kolon: Gerçek Konum & İletişim (Amcam Yerel Servis Kimliği) -->
+      <div class="location-col">
+        <span class="badge">GERÇEK ATÖLYE KONUMU</span>
+        <h2 id="appointment-heading" class="location-title">
+          ASM Auto Servis & Atölye
+        </h2>
+        <p class="location-desc">
+          İzmir Karabağlar - Gaziemir sanayi aksında, lift donanımlı ve yağ değişimine özel atölyemizde hizmetinizdeyiz.
+        </p>
+
+        <div class="location-info-list">
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <div>
+              <strong>Adres:</strong>
+              <p>{business.address.fullAddress}</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div>
+              <strong>Telefon:</strong>
+              <p><a href={`tel:${business.phoneE164}`}>{business.phoneDisplay}</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <div>
+              <strong>Çalışma Saatleri:</strong>
+              <p>Pazartesi - Cts: {business.workingHours.weekdays}</p>
+              <p class="text-muted">Pazar günleri kapalıdır.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-actions">
+          <a href={business.address.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            Google Haritalar'da Aç
+          </a>
+          <a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            WhatsApp Yol Tarifi
+          </a>
+        </div>
+      </div>
+
+      <!-- Sağ Kolon: Servis Talebi Formu (Clegg Randevu Omurgası) -->
+      <div class="form-col">
+        <div class="form-card">
+          <div class="form-header">
+            <h3>Online Servis Talebi Oluştur</h3>
+            <p>Aracınızın motoruna uygun yağı hazırlamamız için formu doldurun. Uygun bakım saatini birlikte netleştirelim.</p>
+          </div>
+
+          <form id="appointmentForm" class="appointment-form" novalidate>
+            <div class="form-group">
+              <label for="clientName">Adınız ve Soyadınız <span class="required">*</span></label>
+              <input type="text" id="clientName" name="name" required placeholder="Örn: Ahmet Yılmaz" class="form-input" />
+              <span class="field-error" id="errorName"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="clientPhone">Telefon Numaranız <span class="required">*</span></label>
+              <input type="tel" id="clientPhone" name="phone" required placeholder="05XX XXX XX XX" class="form-input" />
+              <span class="field-error" id="errorPhone"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="serviceSelect">Talep Edilen Hizmet <span class="required">*</span></label>
+              <select id="serviceSelect" name="serviceId" required class="form-select">
+                {services.map(s => (
+                  <option value={s.id}>{s.title}</option>
+                ))}
+                <option value="diger">Diğer / Filtre & Sıvı Kontrolü</option>
+              </select>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="carModel">Araç Marka & Model (İsteğe Bağlı)</label>
+                <input type="text" id="carModel" name="vehicle" placeholder="Örn: 2018 Megane 1.5 dCi" class="form-input" />
+              </div>
+              <div class="form-group">
+                <label for="prefTime">Uygun Gün / Saat (İsteğe Bağlı)</label>
+                <input type="text" id="prefTime" name="preferredTime" placeholder="Örn: Yarın öğleden sonra" class="form-input" />
+              </div>
+            </div>
+
+            <div class="form-group-checkbox">
+              <input type="checkbox" id="kvkkConsent" name="kvkk" required />
+              <label for="kvkkConsent">
+                <a href="/kvkk-aydinlatma/" target="_blank">KVKK Aydınlatma Metni</a>'ni okudum, servis randevusu ve iletişim amacıyla verilerimin işlenmesini onaylıyorum.
+              </label>
+            </div>
+            <span class="field-error" id="errorKvkk"></span>
+
+            <button type="submit" id="submitBtn" class="btn btn-primary form-submit-btn">
+              <span>Servis Talebini İlet</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+
+            <div id="formSuccessMessage" class="form-alert success-alert" style="display: none;">
+              <strong>✓ Servis Talebiniz Alındı!</strong>
+              <p>Talebiniz servis kayıtlarımıza işlendi. Usta Murat araç motor spesifikasyonunu inceleyip randevu teyidi için kısa sürede sizinle iletişime geçecektir.</p>
+            </div>
+
+            <div id="formErrorMessage" class="form-alert error-alert" style="display: none;">
+              <strong>Hata Oluştu!</strong>
+              <p>Lütfen bilgilerinizi kontrol edip tekrar deneyin veya doğrudan bizi telefonla arayın.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('appointmentForm');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('clientName');
+      const phoneInput = document.getElementById('clientPhone');
+      const kvkkInput = document.getElementById('kvkkConsent');
+      const errorName = document.getElementById('errorName');
+      const errorPhone = document.getElementById('errorPhone');
+      const errorKvkk = document.getElementById('errorKvkk');
+      const successMsg = document.getElementById('formSuccessMessage');
+      const errorMsg = document.getElementById('formErrorMessage');
+      const submitBtn = document.getElementById('submitBtn');
+
+      let isValid = true;
+      errorName.textContent = '';
+      errorPhone.textContent = '';
+      errorKvkk.textContent = '';
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      if (!nameInput.value.trim() || nameInput.value.trim().length < 2) {
+        errorName.textContent = 'Lütfen adınızı ve soyadınızı giriniz.';
+        isValid = false;
+      }
+
+      // TR Phone regex
+      const cleanPhone = phoneInput.value.replace(/\D/g, '');
+      if (cleanPhone.length < 10) {
+        errorPhone.textContent = 'Lütfen geçerli bir telefon numarası giriniz (en az 10 hane).';
+        isValid = false;
+      }
+
+      if (!kvkkInput.checked) {
+        errorKvkk.textContent = 'Lütfen KVKK metnini onaylayınız.';
+        isValid = false;
+      }
+
+      if (!isValid) return;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'İşleniyor...';
+
+      // State machine: NEW -> CONTACT_PENDING
+      const leadData = {
+        id: 'LEAD_' + Date.now(),
+        createdAt: new Date().toISOString(),
+        name: nameInput.value.trim(),
+        phone: cleanPhone,
+        serviceId: document.getElementById('serviceSelect').value,
+        vehicle: document.getElementById('carModel').value.trim(),
+        preferredTime: document.getElementById('prefTime').value.trim(),
+        status: 'CONTACT_PENDING',
+        source: 'izmiryagdegisimi_web'
+      };
+
+      try {
+        const storedLeads = JSON.parse(localStorage.getItem('asm_leads') || '[]');
+        storedLeads.push(leadData);
+        localStorage.setItem('asm_leads', JSON.stringify(storedLeads));
+      } catch (err) {
+        console.error('Storage error', err);
+      }
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Servis Talebini İlet';
+        successMsg.style.display = 'block';
+        form.reset();
+      }, 500);
+    });
+  });
+</script>
+
+<style>
+  .appointment-section {
+    background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .appointment-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @media (min-width: 992px) {
+    .appointment-grid {
+      grid-template-columns: 1fr 1.2fr;
+      gap: 56px;
+    }
+  }
+
+  .location-title {
+    font-size: 28px;
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+
+  @media (min-width: 768px) {
+    .location-title {
+      font-size: 34px;
+    }
+  }
+
+  .location-desc {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .location-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .info-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: var(--surface-soft);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid var(--line);
+  }
+
+  .info-item strong {
+    display: block;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .info-item p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .info-item a {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  .info-item a:hover {
+    color: var(--accent);
+  }
+
+  .location-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  @media (min-width: 576px) {
+    .location-actions {
+      flex-direction: row;
+    }
+  }
+
+  /* Form Kolonu */
+  .form-card {
+    background: #FFFFFF;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(22, 33, 44, 0.06);
+  }
+
+  .form-header {
+    margin-bottom: 24px;
+  }
+
+  .form-header h3 {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+
+  .form-header p {
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .required {
+    color: var(--error);
+  }
+
+  .form-input, .form-select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-button);
+    background: var(--surface-soft);
+    color: var(--ink);
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+
+  .form-input:focus, .form-select:focus {
+    background: #FFFFFF;
+    border-color: var(--accent);
+    outline: none;
+  }
+
+  .form-row-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  @media (min-width: 576px) {
+    .form-row-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .form-group-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
+  .form-group-checkbox input {
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .form-group-checkbox a {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .field-error {
+    font-size: 12px;
+    color: var(--error);
+    display: block;
+    min-height: 16px;
+  }
+
+  .form-submit-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    margin-top: 8px;
+  }
+
+  .form-alert {
+    padding: 16px;
+    border-radius: var(--radius-button);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .success-alert {
+    background-color: var(--success-bg);
+    color: var(--success);
+    border: 1px solid rgba(33, 115, 76, 0.2);
+  }
+
+  .error-alert {
+    background-color: var(--error-bg);
+    color: var(--error);
+    border: 1px solid rgba(180, 35, 24, 0.2);
+  }
+</style>

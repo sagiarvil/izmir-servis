@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileActionBar from '../components/MobileActionBar.astro';
+import { routesRegistry } from '../seo/registry';
+import { business } from '../data/business';
+
+const meta = routesRegistry["/ticari-iletisim-tercihleri/"];
+---
+
+<BaseLayout title={meta.title} description={meta.description} canonical={meta.canonical}>
+  <Header />
+
+  <main id="ana-icerik" class="container section legal-container">
+    <h1>Ticari Elektronik İleti ve İletişim Tercihleri</h1>
+    <p class="lead-text">
+      {business.legalName} olarak müşterilerimizle şeffaf ve güvene dayalı bir iletişim yürütürüz.
+    </p>
+
+    <h2>1. Randevu Bilgilendirmesi vs. Ticari İleti</h2>
+    <p>
+      Web sitemiz veya telefon üzerinden oluşturduğunuz servis randevularının durumuna ilişkin onay, hatırlatma ve operasyonel bilgilendirme mesajları ticari reklam niteliği taşımaz; servis sözleşmesi ifası kapsamındadır.
+    </p>
+
+    <h2>2. İzin Yönetimi ve Reddetme Hakkı</h2>
+    <p>
+      Kampanya, periyodik bakım hatırlatması ve indirim duyurularına ilişkin onayınızı dilediğiniz zaman hiçbir gerekçe göstermeksizin geri alabilirsiniz. Tercih değişiklikleriniz için {business.email} adresine yazabilir veya gelen SMS/WhatsApp bildirimlerinde red hakkınızı kullanabilirsiniz.
+    </p>
+  </main>
+
+  <Footer />
+  <MobileActionBar />
+</BaseLayout>
+
+<style>
+  .legal-container {
+    max-width: 800px;
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+  .legal-container h1 { font-size: 32px; margin-bottom: 20px; }
+  .legal-container h2 { font-size: 22px; margin-top: 32px; margin-bottom: 12px; }
+  .legal-container p { font-size: 15px; line-height: 1.7; color: var(--muted); margin-bottom: 16px; }
+</style>

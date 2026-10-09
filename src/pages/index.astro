@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import MasterStory from '../components/MasterStory.astro';
+import TrustEvidence from '../components/TrustEvidence.astro';
+import FaqSection from '../components/FaqSection.astro';
+import AppointmentSection from '../components/AppointmentSection.astro';
+import Footer from '../components/Footer.astro';
+import MobileActionBar from '../components/MobileActionBar.astro';
+
+import { routesRegistry } from '../seo/registry';
+import { getAutoRepairSchema } from '../seo/jsonld';
+
+const meta = routesRegistry["/"];
+const schema = getAutoRepairSchema();
+---
+
+<BaseLayout title={meta.title} description={meta.description} canonical={meta.canonical} schema={schema}>
+  <!-- S01: Üst Bar ve Navigasyon -->
+  <Header />
+
+  <main id="ana-icerik">
+    <!-- S02: Hero / Birincil Satış Teklifi -->
+    <Hero />
+
+    <!-- S03: Hızlı Hizmet Seçimi (Amcam Yalın 3 Kart Mimarisi) -->
+    <ServicesSection />
+
+    <!-- S04: Neden ASM ve Bakım Süreci (4 Adım) -->
+    <ProcessSteps />
+
+    <!-- S05: Usta Murat & 35 Yıllık Mesleki Tecrübe -->
+    <MasterStory />
+
+    <!-- S06: Müşteri Deneyimleri & Gerçek Güven Kanıtı -->
+    <TrustEvidence />
+
+    <!-- S07: Araç Bakım Rehberi & Sık Sorulan Sorular -->
+    <FaqSection />
+
+    <!-- S08: Tek Gerçek Konum & Online Servis Talebi -->
+    <AppointmentSection />
+  </main>
+
+  <!-- S09: Kurumsal Footer -->
+  <Footer />
+
+  <!-- Mobilde Sabit Alt Aksiyon Barı (Hemen Ara + WhatsApp) -->
+  <MobileActionBar />
+</BaseLayout>

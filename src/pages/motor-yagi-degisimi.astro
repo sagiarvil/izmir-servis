@@ -1,0 +1,256 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileActionBar from '../components/MobileActionBar.astro';
+import AppointmentSection from '../components/AppointmentSection.astro';
+
+import { routesRegistry } from '../seo/registry';
+import { services } from '../data/services';
+import { business } from '../data/business';
+import { getServiceSchema, getBreadcrumbSchema, getFaqSchema } from '../seo/jsonld';
+
+const meta = routesRegistry["/motor-yagi-degisimi/"];
+const service = services.find(s => s.slug === "motor-yagi-degisimi")!;
+
+const breadcrumbSchema = getBreadcrumbSchema([
+  { name: "Ana Sayfa", path: "/" },
+  { name: service.title, path: `/${service.slug}/` }
+]);
+
+const serviceSchema = getServiceSchema(service);
+const faqSchema = getFaqSchema(service.faq);
+const schemas = [serviceSchema, breadcrumbSchema, faqSchema];
+---
+
+<BaseLayout title={meta.title} description={meta.description} canonical={meta.canonical} schema={schemas}>
+  <Header />
+
+  <main id="ana-icerik">
+    <div class="page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+          <a href="/">Ana Sayfa</a>
+          <span class="bc-sep">/</span>
+          <span aria-current="page">{service.title}</span>
+        </nav>
+        <span class="badge">{service.badge}</span>
+        <h1 class="page-title">{service.title}</h1>
+        <p class="page-lead">{service.lead}</p>
+        <div class="page-cta-row">
+          <a href={`tel:${business.phoneE164}`} class="btn btn-primary">Hemen Ara: {business.phoneDisplay}</a>
+          <a href="#servis-talebi" class="btn btn-secondary">Servis Talebi Oluştur</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="section service-content-section">
+      <div class="container content-container">
+        <div class="main-article">
+          <h2>Motor Yağında Teknik Doğruluk Neden Hayatidir?</h2>
+          <p>
+            {service.description} Modern içten yanmalı motorlarda yanma odası sıcaklıkları ve turbo devirleri inanılmaz boyutlara ulaşır. Fabrikanın öngördüğü kül oranını (SAPS seviyesi) barındırmayan yağlar, birkaç bin kilometre içerisinde egzoz partikül filtresini (DPF/GPF) doldurur ve turbo yataklarında aşırı sürtünmeye sebep olur.
+          </p>
+
+          <h3>ASM Yağ Değişimi İşlem Aşamaları</h3>
+          <div class="process-list">
+            {service.processSteps.map((step, idx) => (
+              <div class="process-item">
+                <div class="p-num">{idx + 1}</div>
+                <div>
+                  <h4>{step.title}</h4>
+                  <p>{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <h3>Teknik Spesifikasyonlar & Yağ Standartları</h3>
+          <ul class="specs-list">
+            {service.technicalSpecs.map(spec => (
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>{spec}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h3>Sık Sorulan Sorular</h3>
+          <div class="service-faq-wrap">
+            {service.faq.map(item => (
+              <div class="s-faq-item">
+                <h4>{item.q}</h4>
+                <p>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <aside class="sidebar-info">
+          <div class="sidebar-card">
+            <h4>Randevu & Hızlı İletişim</h4>
+            <p>Aracınızın motor tipine en uygun yağı belirlemek için doğrudan atölyemize ulaşabilirsiniz.</p>
+            <a href={`tel:${business.phoneE164}`} class="btn btn-primary side-btn">Hemen Ara</a>
+            <a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary side-btn">WhatsApp Danışma</a>
+          </div>
+
+          <div class="sidebar-card other-services">
+            <h4>Diğer Bakım Hizmetleri</h4>
+            <ul>
+              <li><a href="/yag-filtresi-degisimi/">Yağ Filtresi Değişimi</a></li>
+              <li><a href="/periyodik-bakim/">Periyodik Bakım</a></li>
+              <li><a href="/sikca-sorulan-sorular/">Bakım Rehberi</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Servis Talebi Formu & Konum -->
+    <AppointmentSection />
+  </main>
+
+  <Footer />
+  <MobileActionBar />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(180deg, var(--surface-dark) 0%, #101820 100%);
+    color: #FFFFFF;
+    padding: 48px 0;
+  }
+  .breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #94A3B8;
+    margin-bottom: 16px;
+  }
+  .breadcrumb-nav a { color: #CBD5E1; }
+  .breadcrumb-nav a:hover { color: #FFF; }
+  .bc-sep { color: #64748B; }
+  .page-title {
+    color: #FFFFFF;
+    font-size: 32px;
+    margin: 12px 0 16px 0;
+  }
+  @media (min-width: 768px) {
+    .page-title { font-size: 42px; }
+  }
+  .page-lead {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #CBD5E1;
+    max-width: 760px;
+    margin-bottom: 24px;
+  }
+  .page-cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .content-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  @media (min-width: 992px) {
+    .content-container {
+      grid-template-columns: 1fr 340px;
+      gap: 56px;
+    }
+  }
+
+  .main-article h2 {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+  .main-article h3 {
+    font-size: 20px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+  .main-article p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .process-item {
+    display: flex;
+    gap: 16px;
+    background: var(--surface-soft);
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+  }
+  .p-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #FFF;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .process-item h4 { font-size: 16px; margin-bottom: 4px; }
+  .process-item p { font-size: 13px; color: var(--muted); margin-bottom: 0; }
+
+  .specs-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .specs-list li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .specs-list svg { color: var(--success); flex-shrink: 0; }
+
+  .service-faq-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .s-faq-item {
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .s-faq-item h4 { font-size: 15px; margin-bottom: 6px; color: var(--ink); }
+  .s-faq-item p { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 0; }
+
+  .sidebar-card {
+    background: var(--surface-soft);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    margin-bottom: 24px;
+  }
+  .sidebar-card h4 { font-size: 18px; margin-bottom: 12px; }
+  .sidebar-card p { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+  .side-btn { width: 100%; margin-bottom: 10px; font-size: 14px; }
+  .other-services ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .other-services a { color: var(--ink); font-weight: 600; font-size: 14px; text-decoration: underline; }
+  .other-services a:hover { color: var(--accent); }
+</style>
