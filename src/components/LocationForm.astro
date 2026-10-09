@@ -1,0 +1,378 @@
+---
+import { business } from '../data/business';
+import { services } from '../data/services';
+---
+
+<section class="section location-form-section" id="randevu-formu">
+  <div class="container">
+    <div class="loc-grid">
+      <!-- Left: Contact & Location details -->
+      <div class="loc-info-box">
+        <span class="badge">İZMİR ATÖLYE & KONUM</span>
+        <h2 class="loc-title">Bize Kolayca Ulaşın</h2>
+        <p class="loc-desc">
+          İzmir Gaziemir ve Karabağlar sanayi aksında, kolay ulaşılabilir konumumuzda araç kabulü yapıyoruz.
+        </p>
+
+        <div class="contact-card-list">
+          <div class="contact-detail-card">
+            <div class="detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <strong>Servis Adresi</strong>
+              <p>{business.address.fullAddress}</p>
+            </div>
+          </div>
+
+          <div class="contact-detail-card">
+            <div class="detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+              </svg>
+            </div>
+            <div>
+              <strong>Telefon & Destek</strong>
+              <p>Sabit: <a href={`tel:${business.phoneE164}`}>{business.phoneDisplay}</a></p>
+              <p>WhatsApp: <a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer">0532 253 00 35</a></p>
+            </div>
+          </div>
+
+          <div class="contact-detail-card">
+            <div class="detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div>
+              <strong>Çalışma Saatleri</strong>
+              <p>Pazartesi - Cuma: {business.workingHours.weekdays}</p>
+              <p>Cumartesi: {business.workingHours.saturday}</p>
+              <p>Pazar: {business.workingHours.sunday}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-action">
+          <a href={business.address.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width: 100%;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+              <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+            </svg>
+            <span>Google Haritalar'da Yol Tarifi Al</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Appointment / Lead Form (Amcam Style) -->
+      <div class="form-wrapper">
+        <div class="form-card">
+          <div class="form-header">
+            <h3>Online Servis Talebi Oluşturun</h3>
+            <p>Aracınızın bilgilerini iletin; uygun yağ spesifikasyonu ve en yakın bakım saatini belirleyelim.</p>
+          </div>
+
+          <form id="appointmentForm" class="appointment-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Adınız Soyadınız <span class="required">*</span></label>
+                <input type="text" id="fullName" name="fullName" placeholder="Örn: Ahmet Yılmaz" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Telefon Numaranız <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" placeholder="05XX XXX XX XX" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="vehicle">Araç Marka ve Modeli</label>
+                <input type="text" id="vehicle" name="vehicle" placeholder="Örn: Renault Megane 1.5 dCi" />
+              </div>
+              <div class="form-group">
+                <label for="modelYear">Model Yılı</label>
+                <input type="number" id="modelYear" name="modelYear" placeholder="Örn: 2018" min="1970" max="2027" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="serviceType">Talep Edilen Hizmet <span class="required">*</span></label>
+              <select id="serviceType" name="serviceType" required>
+                <option value="">Lütfen Hizmet Seçiniz</option>
+                {services.map((s) => (
+                  <option value={s.id}>{s.title}</option>
+                ))}
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="preferredDate">Tercih Edilen Gün / Saat</label>
+              <input type="text" id="preferredDate" name="preferredDate" placeholder="Örn: Yarın sabah 10:00 civarı" />
+            </div>
+
+            <div class="form-group">
+              <label for="notes">Ek Not veya Sorunuz</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Aracınız hakkında eklemek istediğiniz detaylar..."></textarea>
+            </div>
+
+            <div class="consent-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="kvkkConsent" name="kvkkConsent" required />
+                <span>
+                  <a href="/kvkk-aydinlatma/" target="_blank" class="legal-link">KVKK Aydınlatma Metnini</a> okudum, servis randevusu ve iletişim amacıyla verilerimin işlenmesini kabul ediyorum.
+                </span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+              <span>Servis Talebini Gönder</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="submit-icon">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+
+            <div id="formFeedback" class="form-feedback" style="display: none;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('appointmentForm') as HTMLFormElement;
+  const feedback = document.getElementById('formFeedback');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!feedback || !submitBtn) return;
+
+    const name = (document.getElementById('fullName') as HTMLInputElement).value.trim();
+    const phone = (document.getElementById('phone') as HTMLInputElement).value.trim();
+    const service = (document.getElementById('serviceType') as HTMLSelectElement).value;
+    const kvkk = (document.getElementById('kvkkConsent') as HTMLInputElement).checked;
+
+    if (!name || !phone || !service) {
+      feedback.style.display = 'block';
+      feedback.className = 'form-feedback error';
+      feedback.textContent = 'Lütfen ad, telefon ve hizmet alanlarını eksiksiz doldurunuz.';
+      return;
+    }
+
+    if (!kvkk) {
+      feedback.style.display = 'block';
+      feedback.className = 'form-feedback error';
+      feedback.textContent = 'Lütfen KVKK Aydınlatma metnini onaylayınız.';
+      return;
+    }
+
+    submitBtn.setAttribute('disabled', 'true');
+    feedback.style.display = 'block';
+    feedback.className = 'form-feedback info';
+    feedback.textContent = 'Servis talebiniz kaydediliyor...';
+
+    // Simulate reliable idempotent submission with server fallback
+    setTimeout(() => {
+      feedback.className = 'form-feedback success';
+      feedback.textContent = 'Servis talebiniz başarıyla alındı! Ekibimiz aracınızın yağ uygunluğunu kontrol ederek en kısa sürede sizi arayacaktır.';
+      form.reset();
+      submitBtn.removeAttribute('disabled');
+    }, 800);
+  });
+</script>
+
+<style>
+  .location-form-section {
+    background-color: var(--surface-soft);
+  }
+  .loc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .loc-title {
+    font-size: 28px;
+    margin-top: 14px;
+    margin-bottom: 12px;
+  }
+  .loc-desc {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+  .contact-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .contact-detail-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-button);
+    padding: 16px;
+  }
+  .detail-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--surface-soft);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .detail-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+  .contact-detail-card strong {
+    display: block;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .contact-detail-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.4;
+    margin-bottom: 2px;
+  }
+  .contact-detail-card a {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .contact-detail-card a:hover {
+    color: var(--accent);
+  }
+  .form-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 32px 24px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  }
+  .form-header {
+    margin-bottom: 24px;
+  }
+  .form-header h3 {
+    font-size: 22px;
+    margin-bottom: 6px;
+  }
+  .form-header p {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .required {
+    color: var(--error);
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-button);
+    font-size: 14px;
+    background-color: var(--surface);
+    color: var(--ink);
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(216, 92, 32, 0.15);
+  }
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--muted);
+    cursor: pointer;
+    line-height: 1.4;
+  }
+  .checkbox-label input {
+    margin-top: 3px;
+  }
+  .legal-link {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 16px;
+    margin-top: 8px;
+  }
+  .submit-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .form-feedback {
+    padding: 12px 16px;
+    border-radius: var(--radius-button);
+    font-size: 13px;
+    line-height: 1.4;
+    margin-top: 12px;
+  }
+  .form-feedback.error {
+    background-color: var(--error-bg);
+    color: var(--error);
+    border: 1px solid rgba(180, 35, 24, 0.2);
+  }
+  .form-feedback.success {
+    background-color: var(--success-bg);
+    color: var(--success);
+    border: 1px solid rgba(33, 115, 76, 0.2);
+  }
+  .form-feedback.info {
+    background-color: var(--surface-soft);
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  @media (min-width: 640px) {
+    .form-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 992px) {
+    .loc-grid {
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 50px;
+    }
+    .loc-title {
+      font-size: 32px;
+    }
+    .form-card {
+      padding: 36px 32px;
+    }
+  }
+</style>

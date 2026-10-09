@@ -1,59 +1,61 @@
 ---
-const mainFaq = [
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
+const defaultFaqs: FaqItem[] = [
   {
-    q: "Hangi motor yağı aracım için uygundur?",
-    a: "Sadece 5W-30 veya 0W-20 gibi viskoziteye bakarak karar vermek yanlıştır. Aracınızın motor üreticisinin belirlediği onay kodu (örneğin Renault RN0720, Volkswagen 504.00/507.00, BMW Longlife-04, Ford WSS-M2C913 vb.) kılavuzdan veya ruhsattaki motor tipinden doğrulanmalıdır. ASM'de her araca bu teknik kontrolle dolum yapılır."
+    q: "Motor yağı kaç kilometrede veya ne kadar sürede bir değişmelidir?",
+    a: "Günümüz modern binek ve hafif ticari araçlarında motor yağı değişim aralığı araç üreticisinin teknik kılavuzuna göre genellikle 10.000 km ile 15.000 km arasında veya yılda 1 kez (hangisi önce dolarsa) yapılmalıdır. Şehir içi yoğun dur-kalk trafikte çalışan araçlarda yağın kimyasal özellikleri daha hızlı yıprandığından yıllık bakım kritik önem taşır."
   },
   {
-    q: "Yağ filtresi her yağ değişiminde mutlaka değişmeli mi?",
-    a: "Evet, kesinlikle. Yeni konulan taze motor yağı, eski filtrenin içinde biriken yaklaşık 300 ml kirli çamurlaşmış yağla ve tıkanmış gözeneklerle birleştiğinde tüm koruyucu özelliğini kaybeder. Ayrıca tıkanmış filtre motorun yağsız kalma riskini doğurur."
+    q: "Aracıma sadece 5W-30 demek yağ seçimi için yeterli midir?",
+    a: "Hayır, kesinlikle yetmez. 5W-30 yalnızca yağın soğuk ve sıcak vizkozite akışkanlık sınıfını gösterir. Asıl belirleyici olan araç üreticisinin onay standartlarıdır (Örn: Volkswagen VW 504.00/507.00, Renault RN 0720, BMW Longlife-04, Mercedes-Benz MB 229.51 vb.). ASM Auto'da aracınızın tam fabrika spesifikasyonuna uygun yağ kullanılır."
   },
   {
-    q: "Motor yağı ne sıklıkla ve kaç kilometrede değişmelidir?",
-    a: "Otomobil üreticileri normal koşullarda 15.000 km veya 1 yıl önerse de, İzmir gibi dur-kalk trafiğinin yoğun olduğu ve yaz sıcaklıklarının yüksek seyrettiği şehirlerde yağ ömrü 10.000 km seviyesinde tükenir. Güvenli motor ömrü için yılda bir kez veya 10.000 - 12.000 km aralığında bakım önerilir."
+    q: "Her yağ değişiminde yağ filtresi de mutlaka değişmeli midir?",
+    a: "Evet. Yağ filtresi, motorun içinde biriken mikroskobik metal çapaklarını ve karbon partiküllerini tutar. Eski filtrenin içinde yaklaşık 0.3 - 0.5 litre kirli atık yağ kalır. Filtre değiştirilmezse yeni koyduğunuz temiz motor yağı ilk çalıştırmada kirlenir ve filtrenin bypass valfi açılarak süzülmemiş kirli yağın motora basılmasına sebep olabilir."
   },
   {
-    q: "Yağ değişimi ve periyodik bakım fiyatını neler belirler?",
-    a: "Motorun aldığı yağ hacmi (örneğin 3.5 litre ile 6.5 litre arası), tercih edilen tam sentetik yağın üretici onay normu, filtre setinin kalitesi (OEM eşdeğeri) ve ek olarak hava/polen/yakıt filtrelerinin dahil olup olmaması fiyatı belirler. Aracınızın bilgilerini ilettiğinizde net ön teklif sunarız."
+    q: "Motor yağı bakım süresi ne kadar sürer?",
+    a: "ASM Auto'da standart motor yağı ve yağ filtresi değişimi ortalama 25 ile 40 dakika arasında tamamlanır. Hava ve polen filtrelerinin de dahil olduğu 15 nokta periyodik bakım işlemi ise ortalama 45 ile 60 dakika sürmektedir."
   },
   {
-    q: "Bakım için önceden randevu almak zorunlu mu?",
-    a: "Zorunlu olmamakla birlikte, gün içinde lift sırası beklememeniz ve aracınıza uygun filtrenin/yağın önceden tezgaha hazırlanması için online talep veya telefonla randevu oluşturmanız tavsiye edilir."
+    q: "Yağ bakım ücreti neye göre belirlenir?",
+    a: "Bakım maliyeti; aracınızın motorunun aldığı yağ litresi hacmine (3.5L, 4.5L, 6L vb.), kullanılan yağın tam sentetik üretici onay standardına ve aracın filtre grubu marka tercihlerine (Orijinal OEM veya kaliteli Bosch/Mann/Filtron) göre belirlenir. İşlem öncesi tahmini fiyat net olarak paylaşılır."
+  },
+  {
+    q: "Randevu almak zorunlu mudur?",
+    a: "Randevu zorunlu değildir ancak sıra beklemeden hızlı hizmet alabilmeniz adına online talep formu veya telefon/WhatsApp üzerinden randevu oluşturmanızı önemle tavsiye ederiz."
   }
 ];
 ---
 
-<section id="sss" class="section faq-section" aria-labelledby="faq-heading">
-  <div class="container faq-container">
+<section class="section faq-section" id="sss">
+  <div class="container">
     <div class="section-header">
-      <span class="badge">UZMAN REHBER & SSS</span>
-      <h2 id="faq-heading" class="section-title">
-        Araç Bakım Rehberi ve Sık Sorulan Sorular
-      </h2>
-      <p class="section-desc">
-        Motor yağı, filtreler ve bakım periyotları hakkında üretici teknik standartlarına dayanan net açıklamalar:
+      <span class="badge">BİLGİLENDİRME & REHBER</span>
+      <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+      <p class="section-subtitle">
+        Motor yağı değişimi ve araç bakım süreçlerine dair müşterilerimizin en çok merak ettiği teknik konular.
       </p>
     </div>
 
-    <div class="faq-accordion-wrap">
-      {mainFaq.map((item, idx) => (
-        <details class="faq-item" open={idx === 0}>
-          <summary class="faq-summary">
-            <span class="faq-question">{item.q}</span>
-            <span class="faq-chevron" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </span>
+    <div class="faq-accordion-list">
+      {defaultFaqs.map((faq, index) => (
+        <details class="faq-item" open={index === 0}>
+          <summary class="faq-question">
+            <span>{faq.q}</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </summary>
           <div class="faq-answer">
-            <p>{item.a}</p>
+            <p>{faq.a}</p>
           </div>
         </details>
       ))}
-    </div>
-
-    <div class="faq-cta-box">
-      <p>Aracınıza özel yağ normu ve bakım detayları için aklınıza takılan bir konu mu var?</p>
-      <a href="#servis-talebi" class="btn btn-primary">Usta Murat'a Soru Sorun</a>
     </div>
   </div>
 </section>
@@ -61,123 +63,76 @@ const mainFaq = [
 <style>
   .faq-section {
     background-color: var(--surface);
-    border-bottom: 1px solid var(--line);
   }
-
-  .faq-container {
-    max-width: 860px;
-  }
-
   .section-header {
     text-align: center;
-    margin-bottom: 36px;
+    max-width: 680px;
+    margin: 0 auto 40px auto;
   }
-
   .section-title {
     font-size: 28px;
-    margin-top: 12px;
-    margin-bottom: 14px;
+    margin-top: 14px;
+    margin-bottom: 12px;
   }
-
-  @media (min-width: 768px) {
-    .section-title {
-      font-size: 34px;
-    }
-  }
-
-  .section-desc {
-    font-size: 16px;
+  .section-subtitle {
+    font-size: 15px;
     color: var(--muted);
-    line-height: 1.6;
   }
-
-  .faq-accordion-wrap {
+  .faq-accordion-list {
+    max-width: 840px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 36px;
+    gap: 14px;
   }
-
   .faq-item {
     background-color: var(--surface-soft);
     border: 1px solid var(--line);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: border-color 0.2s ease;
+    border-radius: var(--radius-button);
+    padding: 16px 20px;
+    transition: all 0.2s ease;
   }
-
   .faq-item[open] {
     border-color: var(--accent);
-    background-color: #FFFFFF;
-    box-shadow: 0 4px 14px rgba(22, 33, 44, 0.04);
+    background-color: var(--surface);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   }
-
-  .faq-summary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 18px 20px;
-    cursor: pointer;
-    list-style: none;
-    user-select: none;
-  }
-
-  .faq-summary::-webkit-details-marker {
-    display: none;
-  }
-
   .faq-question {
     font-size: 16px;
     font-weight: 700;
     color: var(--ink);
-    line-height: 1.4;
-  }
-
-  .faq-chevron {
-    color: var(--muted);
-    transition: transform 0.2s ease;
+    cursor: pointer;
+    list-style: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-left: 12px;
+    justify-content: space-between;
+    gap: 16px;
   }
-
-  .faq-item[open] .faq-chevron {
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+  .faq-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--muted);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .faq-item[open] .faq-icon {
     transform: rotate(180deg);
     color: var(--accent);
   }
-
   .faq-answer {
-    padding: 0 20px 20px 20px;
+    padding-top: 12px;
     font-size: 14px;
-    line-height: 1.65;
     color: var(--muted);
+    line-height: 1.6;
+    border-top: 1px dashed var(--line);
+    margin-top: 12px;
   }
-
-  .faq-cta-box {
-    background: var(--surface-soft);
-    border: 1px dashed var(--line);
-    border-radius: 12px;
-    padding: 24px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-  }
-
-  @media (min-width: 576px) {
-    .faq-cta-box {
-      flex-direction: row;
-      justify-content: space-between;
-      text-align: left;
+  @media (min-width: 992px) {
+    .section-title {
+      font-size: 34px;
     }
-  }
-
-  .faq-cta-box p {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--ink);
   }
 </style>

@@ -1,181 +1,332 @@
 ---
 import { business } from '../data/business';
+import { services } from '../data/services';
+
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
 ---
 
 <header class="site-header">
-  <!-- Üst İletişim Bandı (Clegg Utility Bar Mantığı) -->
-  <div class="utility-bar">
-    <div class="container utility-container">
-      <div class="utility-left">
-        <span class="utility-item">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          {business.address.fullAddress}
-        </span>
-        <span class="utility-item divider-left">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-          Pzt - Cts: {business.workingHours.weekdays}
-        </span>
-      </div>
-      <div class="utility-right">
-        <a href={business.address.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="utility-link">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-          Yol Tarifi Al
-        </a>
-        <a href={`tel:${business.phoneE164}`} class="utility-phone">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          <strong>{business.phoneDisplay}</strong>
-        </a>
-      </div>
+  <div class="container header-container">
+    <!-- Brand Logo (Premium Background-Free Chrome Badge) -->
+    <a href="/" class="brand-link" aria-label="ASM Auto İzmir Yağ Değişimi Anasayfa">
+      <img 
+        src="/images/logo.png" 
+        alt="İzmir Yağ Değişim Servisi - ASM Auto Logo" 
+        class="brand-logo"
+        width="230"
+        height="76"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="desktop-nav" aria-label="Ana Gezinti Menüsü">
+      <ul class="nav-list">
+        <li>
+          <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>Anasayfa</a>
+        </li>
+        <li class="has-dropdown">
+          <a href="/motor-yagi-degisimi/" class={`nav-link ${currentPath.includes('degisimi') || currentPath.includes('bakim') ? 'active' : ''}`}>
+            Hizmetlerimiz
+            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <ul class="dropdown-menu">
+            {services.map((item) => (
+              <li>
+                <a href={`/${item.slug}/`} class="dropdown-link">
+                  <span class="dropdown-title">{item.title}</span>
+                  <span class="dropdown-desc">{item.badge}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </li>
+        <li>
+          <a href="/hakkimizda/" class={`nav-link ${currentPath === '/hakkimizda/' ? 'active' : ''}`}>Hakkımızda</a>
+        </li>
+        <li>
+          <a href="/sikca-sorulan-sorular/" class={`nav-link ${currentPath === '/sikca-sorulan-sorular/' ? 'active' : ''}`}>SSS / Rehber</a>
+        </li>
+        <li>
+          <a href="/iletisim/" class={`nav-link ${currentPath === '/iletisim/' ? 'active' : ''}`}>İletişim</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <a href={`tel:${business.phoneE164}`} class="header-phone-box hide-mobile">
+        <span class="phone-label">Hızlı Servis Hattı</span>
+        <span class="phone-number">{business.phoneDisplay}</span>
+      </a>
+      <a href="/randevu/" class="btn btn-primary header-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="cta-icon">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        <span>Randevu Al</span>
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button 
+        type="button" 
+        class="mobile-menu-btn" 
+        id="mobileMenuBtn" 
+        aria-label="Menüyü Aç/Kapat" 
+        aria-expanded="false"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </div>
 
-  <!-- Ana Sticky Navigasyon -->
-  <nav class="main-nav" aria-label="Ana Gezinti">
-    <div class="container nav-container">
-      <a href="/" class="brand-link" aria-label="ASM İzmir Yağ Değişimi Ana Sayfa">
-        <img src="/images/logo.png" alt="İzmir Yağ Değişim Servisi - ASM Auto Logo" width="180" height="60" class="brand-logo" />
-      </a>
-
-      <!-- Masaüstü Menü -->
-      <ul class="nav-links">
-        <li><a href="/motor-yagi-degisimi/" class="nav-link">Motor Yağı</a></li>
-        <li><a href="/yag-filtresi-degisimi/" class="nav-link">Yağ Filtresi</a></li>
-        <li><a href="/periyodik-bakim/" class="nav-link">Periyodik Bakım</a></li>
-        <li><a href="/hakkimizda/" class="nav-link">Usta Murat</a></li>
-        <li><a href="/sikca-sorulan-sorular/" class="nav-link">Bakım Rehberi</a></li>
-        <li><a href="/iletisim/" class="nav-link">İletişim</a></li>
-      </ul>
-
-      <!-- CTA Butonu -->
-      <div class="nav-actions">
-        <a href="#servis-talebi" class="btn btn-primary nav-cta">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          Servis Talebi
-        </a>
-      </div>
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <img src="/images/logo.png" alt="ASM Logo" class="drawer-logo" width="160" height="52" />
+      <button type="button" class="close-drawer-btn" id="closeDrawerBtn" aria-label="Menüyü Kapat">✕</button>
     </div>
-  </nav>
+    <ul class="mobile-nav-list">
+      <li><a href="/" class="mobile-nav-link">Anasayfa</a></li>
+      <li><a href="/motor-yagi-degisimi/" class="mobile-nav-link">Motor Yağı Değişimi</a></li>
+      <li><a href="/yag-filtresi-degisimi/" class="mobile-nav-link">Yağ Filtresi Değişimi</a></li>
+      <li><a href="/periyodik-bakim/" class="mobile-nav-link">Periyodik Bakım</a></li>
+      <li><a href="/hakkimizda/" class="mobile-nav-link">Hakkımızda & Usta Murat</a></li>
+      <li><a href="/sikca-sorulan-sorular/" class="mobile-nav-link">Sıkça Sorulan Sorular</a></li>
+      <li><a href="/iletisim/" class="mobile-nav-link">İletişim & Konum</a></li>
+      <li class="mobile-cta-item">
+        <a href="/randevu/" class="btn btn-primary" style="width: 100%;">Online Servis Talebi</a>
+      </li>
+    </ul>
+  </div>
 </header>
+
+<script>
+  const btn = document.getElementById('mobileMenuBtn');
+  const closeBtn = document.getElementById('closeDrawerBtn');
+  const drawer = document.getElementById('mobileDrawer');
+
+  function toggleMenu() {
+    const isOpen = drawer?.classList.toggle('open');
+    btn?.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  btn?.addEventListener('click', toggleMenu);
+  closeBtn?.addEventListener('click', toggleMenu);
+</script>
 
 <style>
   .site-header {
-    width: 100%;
-    position: relative;
-    z-index: 100;
-  }
-
-  .utility-bar {
-    background-color: var(--surface-dark);
-    color: #CBD5E1;
-    font-size: 13px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .utility-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .utility-left, .utility-right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .utility-item {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .divider-left {
-    display: none;
-  }
-
-  @media (min-width: 992px) {
-    .divider-left {
-      display: inline-flex;
-      border-left: 1px solid rgba(255, 255, 255, 0.15);
-      padding-left: 16px;
-    }
-  }
-
-  .utility-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    color: #CBD5E1;
-    transition: color 0.2s;
-  }
-  .utility-link:hover {
-    color: #FFFFFF;
-  }
-
-  .utility-phone {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #FFFFFF;
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  .main-nav {
     background-color: var(--surface);
     border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
   }
-
-  .nav-container {
+  .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    height: 84px;
+    gap: 16px;
   }
-
+  .brand-link {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
   .brand-logo {
-    height: 52px;
+    height: 64px;
     width: auto;
     object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.12));
+    transition: transform 0.2s ease;
   }
-
-  .nav-links {
+  .brand-logo:hover {
+    transform: scale(1.02);
+  }
+  .desktop-nav {
     display: none;
-    list-style: none;
+  }
+  .nav-list {
+    display: flex;
     align-items: center;
     gap: 24px;
+    list-style: none;
   }
-
-  @media (min-width: 992px) {
-    .nav-links {
-      display: flex;
-    }
-  }
-
   .nav-link {
     font-size: 15px;
     font-weight: 600;
     color: var(--ink);
-    padding: 6px 0;
+    padding: 8px 4px;
     position: relative;
-    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
   }
-
-  .nav-link:hover {
+  .nav-link:hover, .nav-link.active {
     color: var(--accent);
   }
-
-  .nav-actions {
+  .dropdown-chevron {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s;
+  }
+  .has-dropdown {
+    position: relative;
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 260px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-button);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    list-style: none;
+    padding: 8px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .has-dropdown:hover .dropdown-menu {
+    display: flex;
+  }
+  .dropdown-link {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background 0.15s;
+  }
+  .dropdown-link:hover {
+    background-color: var(--surface-soft);
+  }
+  .dropdown-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .dropdown-desc {
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .header-actions {
     display: flex;
     align-items: center;
+    gap: 16px;
   }
-
-  .nav-cta {
-    padding: 10px 18px;
-    font-size: 14px;
-    min-height: 42px;
+  .header-phone-box {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+  .phone-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .phone-number {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .cta-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .mobile-menu-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--ink);
+    border-radius: 2px;
+  }
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 290px;
+    height: 100vh;
+    background-color: var(--surface);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+    z-index: 999;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: right 0.3s ease;
+  }
+  .mobile-drawer.open {
+    right: 0;
+  }
+  .mobile-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .drawer-logo {
+    height: 44px;
+    width: auto;
+  }
+  .close-drawer-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  .mobile-nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .mobile-nav-link {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    display: block;
+    padding: 8px 0;
+  }
+  .mobile-cta-item {
+    margin-top: 16px;
+  }
+  @media (min-width: 992px) {
+    .desktop-nav {
+      display: block;
+    }
+    .mobile-menu-btn {
+      display: none;
+    }
   }
 </style>

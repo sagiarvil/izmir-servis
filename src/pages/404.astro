@@ -1,53 +1,57 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import MobileActionBar from '../components/MobileActionBar.astro';
 ---
 
-<BaseLayout title="Sayfa Bulunamadı (404) | ASM Auto Servis" description="Aradığınız sayfa bulunamadı. İzmir Yağ Değişimi ana sayfasına veya randevu bölümüne geçebilirsiniz.">
-  <Header />
-
-  <main id="ana-icerik" class="container section not-found-container">
-    <div class="not-found-box">
-      <span class="badge">404 HATA</span>
-      <h1>Aradığınız Sayfa Bulunamadı</h1>
-      <p>Aradığınız sayfa kaldırılmış, adı değiştirilmiş veya geçici olarak kullanım dışı kalmış olabilir.</p>
-      <div class="nf-actions">
-        <a href="/" class="btn btn-primary">Ana Sayfaya Dön</a>
-        <a href="/randevu/" class="btn btn-secondary">Servis Talebi Oluştur</a>
+<BaseLayout 
+  title="Sayfa Bulunamadı (404) | ASM Auto İzmir" 
+  description="Aradığınız sayfa taşınmış veya silinmiş olabilir."
+  canonicalPath="/404/"
+>
+  <section class="section error-section">
+    <div class="container error-box">
+      <span class="error-badge">404 HATA</span>
+      <h1>Sayfa Bulunamadı</h1>
+      <p>Aradığınız sayfa mevcut değil veya taşınmış olabilir. Anasayfamıza dönerek motor yağı değişimi ve servis hizmetlerimize göz atabilirsiniz.</p>
+      <div class="error-actions">
+        <a href="/" class="btn btn-primary">Anasayfaya Dön</a>
+        <a href="/randevu/" class="btn btn-secondary">Randevu Al</a>
       </div>
     </div>
-  </main>
-
-  <Footer />
-  <MobileActionBar />
+  </section>
 </BaseLayout>
 
 <style>
-  .not-found-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
-    padding: 60px 20px;
-  }
-  .not-found-box {
+  .error-section {
+    padding: 80px 0;
     text-align: center;
-    max-width: 540px;
   }
-  .not-found-box h1 {
-    font-size: 32px;
-    margin: 16px 0;
+  .error-box {
+    max-width: 600px;
+    margin: 0 auto;
   }
-  .not-found-box p {
+  .error-badge {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 800;
+    background-color: var(--error-bg);
+    color: var(--error);
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .error-box h1 {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+  .error-box p {
+    font-size: 16px;
     color: var(--muted);
-    margin-bottom: 24px;
+    line-height: 1.6;
+    margin-bottom: 28px;
   }
-  .nf-actions {
+  .error-actions {
     display: flex;
-    gap: 12px;
+    gap: 14px;
     justify-content: center;
-    flex-wrap: wrap;
   }
 </style>

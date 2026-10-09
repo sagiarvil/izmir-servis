@@ -1,293 +1,222 @@
 ---
 import { business } from '../data/business';
-
-const decisionNetwork = [
-  { name: "Dr. Finans", url: "https://drfin.com.tr" },
-  { name: "Excel Arşiv", url: "https://excelarsiv.com" },
-  { name: "SKDM Hesapla", url: "https://skdmhesapla.com" },
-  { name: "Karbon Fiyat", url: "https://karbonfiyat.com" },
-  { name: "Inversion Core", url: "https://inversioncore.com" },
-  { name: "Belgin Kuyumculuk", url: "https://belginkuyumculuk.com" },
-  { name: "Saatchi", url: "https://saatchi.com.tr" },
-  { name: "Dilekçe Yazdır", url: "https://dilekceyazdir.com.tr" },
-  { name: "HTML & HTML", url: "https://htmlandhtml.com" },
-  { name: "Değerlet", url: "https://degerlet.com" }
-];
+import { services } from '../data/services';
 ---
 
 <footer class="site-footer">
   <div class="container footer-container">
-    <div class="footer-top">
-      <!-- Marka Bilgisi -->
+    <div class="footer-grid">
+      <!-- Col 1: Brand Info -->
       <div class="footer-col brand-col">
-        <a href="/" class="footer-logo-link">
-          <img src="/images/logo.png" alt="ASM İzmir Yağ Değişim Servisi Logo" width="160" height="54" class="footer-logo" />
+        <a href="/" class="footer-logo-link" aria-label="ASM Auto Anasayfa">
+          <img 
+            src="/images/logo.png" 
+            alt="İzmir Yağ Değişim Servisi - ASM Auto" 
+            class="footer-logo"
+            width="200"
+            height="66"
+            loading="lazy"
+          />
         </a>
-        <p class="footer-tagline">
-          {business.description}
+        <p class="footer-desc">
+          ASM Auto, İzmir'de motor yağı ve periyodik araç bakımına odaklanan, 35 yıllık mesleki ustalık tecrübesiyle çalışan bağımsız özel bakım servisidir.
         </p>
-        <div class="footer-social">
-          <a href={business.social.instagramShop} target="_blank" rel="noopener noreferrer" class="footer-social-badge" aria-label="ASM Auto Atölye Instagram">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-            <span>@asm_auto_service</span>
+        <div class="footer-social-links">
+          <a href={business.social.instagramShop} target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="ASM Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
           </a>
-          <a href={business.social.instagramMaster} target="_blank" rel="noopener noreferrer" class="footer-social-badge" aria-label="Usta Murat Kişisel & Mesleki Profil">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            <span>@asm_murat_</span>
+          <a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" aria-label="WhatsApp Hattı">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.82c0 4.54-3.7 8.24-8.24 8.24-1.45 0-2.87-.38-4.12-1.1l-.3-.17-3.12.82.83-3.04-.19-.31a8.2 8.2 0 01-1.25-4.44c0-4.54 3.7-8.24 8.24-8.24m4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.3z"></path>
+            </svg>
           </a>
         </div>
       </div>
 
-      <!-- Hizmet Bağlantıları -->
+      <!-- Col 2: Hizmetlerimiz -->
       <div class="footer-col">
-        <h4 class="footer-heading">Hizmetlerimiz</h4>
+        <h4 class="footer-title">Hizmetlerimiz</h4>
         <ul class="footer-links">
-          <li><a href="/motor-yagi-degisimi/">Motor Yağı Değişimi</a></li>
-          <li><a href="/yag-filtresi-degisimi/">Yağ Filtresi Değişimi</a></li>
-          <li><a href="/periyodik-bakim/">Periyodik Bakım</a></li>
-          <li><a href="/sikca-sorulan-sorular/">Araç Bakım Rehberi</a></li>
-          <li><a href="/randevu/">Servis Randevusu</a></li>
+          {services.map((s) => (
+            <li>
+              <a href={`/${s.slug}/`}>{s.title}</a>
+            </li>
+          ))}
+          <li><a href="/randevu/">Servis Randevusu Al</a></li>
         </ul>
       </div>
 
-      <!-- Kurumsal & Yasal Bağlantılar -->
+      <!-- Col 3: Hızlı Menü -->
       <div class="footer-col">
-        <h4 class="footer-heading">Kurumsal & Yasal</h4>
+        <h4 class="footer-title">Kurumsal</h4>
         <ul class="footer-links">
+          <li><a href="/">Anasayfa</a></li>
           <li><a href="/hakkimizda/">Hakkımızda & Usta Murat</a></li>
-          <li><a href="/iletisim/">İletişim & Konum</a></li>
+          <li><a href="/sikca-sorulan-sorular/">Sıkça Sorulan Sorular</a></li>
+          <li><a href="/iletisim/">İletişim & Yol Tarifi</a></li>
           <li><a href="/kvkk-aydinlatma/">KVKK Aydınlatma Metni</a></li>
-          <li><a href="/gizlilik-ve-cerezler/">Gizlilik ve Çerezler</a></li>
-          <li><a href="/ticari-iletisim-tercihleri/">İletişim Tercihleri</a></li>
+          <li><a href="/gizlilik-ve-cerezler/">Gizlilik & Çerez Politikası</a></li>
         </ul>
       </div>
 
-      <!-- İletişim & Çalışma Saatleri -->
-      <div class="footer-col contact-col">
-        <h4 class="footer-heading">İletişim & Konum</h4>
-        <p class="footer-contact-item">
-          <strong>Adres:</strong> {business.address.fullAddress}
+      <!-- Col 4: İletişim Bilgileri -->
+      <div class="footer-col">
+        <h4 class="footer-title">Servis İletişim</h4>
+        <p class="footer-contact-p">
+          <strong>Adres:</strong><br />
+          {business.address.fullAddress}
         </p>
-        <p class="footer-contact-item">
-          <strong>Telefon:</strong> <a href={`tel:${business.phoneE164}`}>{business.phoneDisplay}</a>
+        <p class="footer-contact-p">
+          <strong>Telefon:</strong><br />
+          <a href={`tel:${business.phoneE164}`}>{business.phoneDisplay}</a>
         </p>
-        <p class="footer-contact-item">
-          <strong>Çalışma Saatleri:</strong> Pzt - Cts {business.workingHours.weekdays}
-        </p>
-        <p class="footer-contact-item">
-          <a href={business.address.googleMapsUrl} target="_blank" rel="noopener noreferrer" class="footer-maps-link">Google Haritalar Yol Tarifi →</a>
+        <p class="footer-contact-p">
+          <strong>Çalışma Saatleri:</strong><br />
+          Pzt - Cmt: {business.workingHours.weekdays}
         </p>
       </div>
     </div>
 
-    <!-- Karar Platformları Çapraz Penetrasyon Ağı -->
-    <div class="footer-network">
-      <span class="network-title">Karar & Çözüm Ağımız:</span>
-      <div class="network-links">
-        {decisionNetwork.map(net => (
-          <a href={net.url} target="_blank" rel="noopener noreferrer">{net.name}</a>
-        ))}
-      </div>
-    </div>
-
-    <!-- Alt Telif & Bildirim Bandı -->
+    <!-- Bottom Bar -->
     <div class="footer-bottom">
       <p class="copyright">
-        © {new Date().getFullYear()} {business.legalName} · {business.serviceBrand}. Tüm hakları saklıdır.
+        © {new Date().getFullYear()} {business.name}. Tüm hakları saklıdır.
       </p>
-      <p class="disclaimer">
-        Araç üretici marka isimleri (VW, Renault, Fiat vb.) yalnızca yedek parça ve yağ normu uyumluluğunu belirtmek için kullanılmıştır; yetkili servis bağı iddiası taşımaz.
-      </p>
+      <div class="legal-links">
+        <a href="/kvkk-aydinlatma/">KVKK</a>
+        <a href="/gizlilik-ve-cerezler/">Gizlilik</a>
+        <a href="/ticari-iletisim-tercihleri/">İletişim Tercihleri</a>
+      </div>
     </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background-color: var(--surface-dark);
+    background-color: #121C27;
     color: #94A3B8;
-    font-size: 14px;
-    padding-top: 56px;
+    padding-top: 64px;
     padding-bottom: 32px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
-
-  .footer-top {
+  .footer-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 36px;
-    margin-bottom: 40px;
+    gap: 40px;
+    margin-bottom: 48px;
   }
-
-  @media (min-width: 576px) {
-    .footer-top {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 992px) {
-    .footer-top {
-      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
-      gap: 40px;
-    }
-  }
-
-  .footer-logo {
-    height: 48px;
-    width: auto;
-    object-fit: contain;
+  .footer-logo-link {
+    display: inline-block;
     margin-bottom: 16px;
   }
-
-  .footer-tagline {
-    font-size: 13px;
+  .footer-logo {
+    height: 54px;
+    width: auto;
+    object-fit: contain;
+  }
+  .footer-desc {
+    font-size: 14px;
     line-height: 1.6;
     margin-bottom: 20px;
-    color: #CBD5E1;
+    color: #94A3B8;
   }
-
-  .footer-social {
+  .footer-social-links {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 12px;
   }
-
-  .footer-social-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    color: #FFFFFF !important;
-    font-size: 13px;
-    font-weight: 600;
-    width: fit-content;
-    transition: background 0.2s ease;
-  }
-  .footer-social-badge:hover {
-    background: var(--accent);
-  }
-
-  .footer-social a {
+  .social-icon {
     width: 36px;
     height: 36px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.06);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #FFFFFF;
-    transition: background 0.2s;
+    transition: background 0.2s, color 0.2s;
   }
-  .footer-social a:hover {
+  .social-icon:hover {
     background: var(--accent);
-  }
-
-  .footer-heading {
     color: #FFFFFF;
-    font-size: 15px;
-    font-weight: 700;
-    margin-bottom: 18px;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
   }
-
+  .social-icon.whatsapp:hover {
+    background: #25D366;
+  }
+  .social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .footer-title {
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-bottom: 18px;
+    letter-spacing: -0.01em;
+  }
   .footer-links {
     list-style: none;
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
-
   .footer-links a {
     color: #94A3B8;
+    font-size: 14px;
     transition: color 0.2s;
   }
   .footer-links a:hover {
     color: #FFFFFF;
   }
-
-  .footer-contact-item {
-    font-size: 13px;
-    line-height: 1.6;
-    margin-bottom: 8px;
+  .footer-contact-p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
   }
-
-  .footer-contact-item strong {
-    color: #FFFFFF;
+  .footer-contact-p strong {
+    color: #F8FAFC;
   }
-
-  .footer-contact-item a {
+  .footer-contact-p a {
     color: var(--accent);
-    font-weight: 700;
-  }
-
-  .footer-maps-link {
-    color: #38BDF8 !important;
-    text-decoration: underline;
-  }
-
-  .footer-network {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 12px;
-  }
-
-  @media (min-width: 768px) {
-    .footer-network {
-      flex-direction: row;
-      align-items: center;
-    }
-  }
-
-  .network-title {
-    color: #64748B;
     font-weight: 600;
   }
-
-  .network-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-
-  .network-links a {
-    color: #94A3B8;
-    transition: color 0.2s;
-  }
-
-  .network-links a:hover {
-    color: #FFFFFF;
-  }
-
   .footer-bottom {
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    font-size: 12px;
-    text-align: center;
+    gap: 14px;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 13px;
   }
-
-  @media (min-width: 768px) {
-    .footer-bottom {
-      text-align: left;
+  .copyright {
+    color: #64748B;
+  }
+  .legal-links {
+    display: flex;
+    gap: 18px;
+  }
+  .legal-links a {
+    color: #64748B;
+    transition: color 0.2s;
+  }
+  .legal-links a:hover {
+    color: #94A3B8;
+  }
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
-
-  .copyright {
-    color: #CBD5E1;
-  }
-
-  .disclaimer {
-    color: #64748B;
-    line-height: 1.4;
+  @media (min-width: 992px) {
+    .footer-grid {
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    }
+    .footer-bottom {
+      flex-direction: row;
+    }
   }
 </style>

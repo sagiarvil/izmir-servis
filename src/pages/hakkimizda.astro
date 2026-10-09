@@ -1,76 +1,231 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import MobileActionBar from '../components/MobileActionBar.astro';
-import MasterStory from '../components/MasterStory.astro';
-import TrustEvidence from '../components/TrustEvidence.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import LocationForm from '../components/LocationForm.astro';
+import { seoRegistry } from '../seo/registry';
+import { business } from '../data/business';
 
-import { routesRegistry } from '../seo/registry';
-import { getBreadcrumbSchema } from '../seo/jsonld';
-
-const meta = routesRegistry["/hakkimizda/"];
-const breadcrumbSchema = getBreadcrumbSchema([
-  { name: "Ana Sayfa", path: "/" },
-  { name: "Hakkımızda", path: "/hakkimizda/" }
-]);
+const seo = seoRegistry['/hakkimizda/'];
 ---
 
-<BaseLayout title={meta.title} description={meta.description} canonical={meta.canonical} schema={[breadcrumbSchema]}>
-  <Header />
-
-  <main id="ana-icerik">
-    <div class="page-hero">
-      <div class="container">
-        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-          <a href="/">Ana Sayfa</a>
-          <span class="bc-sep">/</span>
-          <span aria-current="page">Hakkımızda</span>
-        </nav>
-        <span class="badge">USTALIK VE ŞEFFAFLIK</span>
-        <h1 class="page-title">Hakkımızda: Usta Murat & ASM Auto</h1>
-        <p class="page-lead">
-          35 yıllık mesleki geçmişe dayanan deneyimle, İzmir'de araç bakımına ve motor sağlığına adanmış bağımsız servis anlayışı.
-        </p>
-      </div>
+<BaseLayout 
+  title={seo.title} 
+  description={seo.description}
+  canonicalPath="/hakkimizda/"
+>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Sayfa Konumu">
+        <a href="/">Anasayfa</a>
+        <span>/</span>
+        <span class="current">Hakkımızda</span>
+      </nav>
+      <h1 class="page-title">{seo.heading}</h1>
+      <p class="page-intro">
+        35 yıllık mesleki geçmiş, motor mekaniğinde sarsılmaz bir atölye disiplini ve İzmir'de güven veren esnaflık geleneği.
+      </p>
     </div>
+  </div>
 
-    <MasterStory />
-    <TrustEvidence />
-  </main>
+  <section class="section about-story-section">
+    <div class="container story-grid">
+      <div class="story-content">
+        <h2>Usta Murat ve ASM Auto'nun Hikayesi</h2>
+        <p>
+          Otomotiv sektöründe 35 yılı aşkın süredir motor mekaniği ve araç bakımı alanında hizmet veren <strong>Usta Murat</strong>, araç sahiplerinin en çok karşılaştığı sorunların başında "yanlış veya kalitesiz yağ kullanımı" ve "özensiz filtre montajı" geldiğini tespit etmiştir.
+        </p>
+        <p>
+          ASM Auto, tam da bu ihtiyaca yanıt vermek üzere kurulmuştur: Büyük servis zincirlerinin soğuk ve yüksek maliyetli prosedürleri yerine; aracı doğrudan ustasıyla konuşabildiğiniz, işlemlerin gözünüzün önünde yapıldığı, şeffaf ve doğru teknik şartnamelerle çalışan bir yerel merkez.
+        </p>
 
-  <Footer />
-  <MobileActionBar />
+        <h3>İlkelerimiz ve Hizmet Standartlarımız</h3>
+        <div class="values-grid">
+          <div class="value-item">
+            <h4>Teknik Doğruluk</h4>
+            <p>Sadece viskoziteye göre değil, otomobil üreticisinin yayınladığı resmi spesifikasyonlara göre onaylı yağ kullanırız.</p>
+          </div>
+          <div class="value-item">
+            <h4>Şeffaflık & Dürüstlük</h4>
+            <p>Değişen her parçanın eskisi müşteriye gösterilir; onay alınmadan hiçbir ek işlem yapılmaz ve faturalandırılmaz.</p>
+          </div>
+          <div class="value-item">
+            <h4>Atölye Titizliği</h4>
+            <p>Karter tapası pulundan filtre oringlerine kadar her kritik sızdırmazlık elemanı kontrol edilir, tork anahtarıyla sıkılır.</p>
+          </div>
+          <div class="value-item">
+            <h4>Hızlı Servis Kabulü</h4>
+            <p>Zamanınızın değerini biliyoruz; randevulu servis kabulüyle işlemlerinizi en fazla 30-45 dakikada tamamlıyoruz.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="story-aside">
+        <div class="profile-card">
+          <div class="profile-badge">
+            <span class="p-years">35</span>
+            <span class="p-text">YILLIK DENEYİM</span>
+          </div>
+          <h3>{business.experienceMaster}</h3>
+          <p class="p-role">Mekanik & Bakım Uzmanı</p>
+          <div class="profile-links">
+            <a href={business.social.instagramShop} target="_blank" rel="noopener noreferrer" class="p-social-btn">
+              ASM Garage Instagram Takip
+            </a>
+            <a href={business.social.instagramMaster} target="_blank" rel="noopener noreferrer" class="p-social-btn">
+              Usta Murat Instagram Takip
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <CtaBanner />
+  <LocationForm />
 </BaseLayout>
 
 <style>
-  .page-hero {
-    background: linear-gradient(180deg, var(--surface-dark) 0%, #101820 100%);
+  .page-header {
+    background: linear-gradient(135deg, #16212C 0%, #0F1722 100%);
     color: #FFFFFF;
     padding: 48px 0;
+    border-bottom: 2px solid var(--accent);
   }
-  .breadcrumb-nav {
+  .breadcrumb {
     display: flex;
-    align-items: center;
     gap: 8px;
     font-size: 13px;
     color: #94A3B8;
     margin-bottom: 16px;
   }
-  .breadcrumb-nav a { color: #CBD5E1; }
-  .bc-sep { color: #64748B; }
+  .breadcrumb a {
+    color: #CBD5E1;
+  }
+  .breadcrumb .current {
+    color: #FFA573;
+    font-weight: 600;
+  }
   .page-title {
     color: #FFFFFF;
     font-size: 32px;
-    margin: 12px 0 16px 0;
+    margin-bottom: 12px;
   }
-  @media (min-width: 768px) {
-    .page-title { font-size: 42px; }
-  }
-  .page-lead {
+  .page-intro {
     font-size: 16px;
+    color: #94A3B8;
+    max-width: 720px;
     line-height: 1.6;
-    color: #CBD5E1;
-    max-width: 760px;
+  }
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .story-content h2 {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+  .story-content h3 {
+    font-size: 20px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+  .story-content p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .values-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .value-item {
+    background: var(--surface-soft);
+    padding: 20px;
+    border-radius: var(--radius-button);
+    border: 1px solid var(--line);
+  }
+  .value-item h4 {
+    font-size: 16px;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .value-item p {
+    font-size: 13px;
+    margin-bottom: 0;
+  }
+  .story-aside {
+    align-self: start;
+  }
+  .profile-card {
+    background: linear-gradient(135deg, #17232D 0%, #0F1722 100%);
+    color: #FFFFFF;
+    border-radius: var(--radius-card);
+    padding: 36px 28px;
+    text-align: center;
+  }
+  .profile-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: #FFFFFF;
+    margin-bottom: 18px;
+  }
+  .p-years {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .p-text {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .profile-card h3 {
+    color: #FFFFFF;
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+  .p-role {
+    font-size: 13px;
+    color: #94A3B8;
+    margin-bottom: 24px;
+  }
+  .profile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .p-social-btn {
+    display: block;
+    background: rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background 0.2s;
+  }
+  .p-social-btn:hover {
+    background: var(--accent);
+  }
+  @media (min-width: 640px) {
+    .values-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (min-width: 992px) {
+    .story-grid {
+      grid-template-columns: 1.3fr 0.7fr;
+    }
   }
 </style>

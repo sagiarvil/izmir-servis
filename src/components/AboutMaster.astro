@@ -1,0 +1,182 @@
+---
+import { business } from '../data/business';
+---
+
+<section class="section about-section" id="hakkimizda">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-card">
+        <div class="image-wrapper">
+          <!-- Workshop illustration badge -->
+          <div class="badge-overlay">
+            <span class="badge-number">{business.experienceYears}</span>
+            <span class="badge-text">YILLIK USTA DENEYİMİ</span>
+          </div>
+          <div class="craftsman-card">
+            <h4>{business.experienceMaster}</h4>
+            <p>Otomotiv Mekanik & Bakım Ustası</p>
+            <div class="social-tags">
+              <a href={business.social.instagramShop} target="_blank" rel="noopener noreferrer" class="social-pill">
+                @asm_auto_service
+              </a>
+              <a href={business.social.instagramMaster} target="_blank" rel="noopener noreferrer" class="social-pill">
+                @asm_murat_
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text-content">
+        <span class="badge">USTALIK VE GÜVEN</span>
+        <h2 class="section-title">35 Yıllık Deneyimle İzmir'de Gerçek Atölye Hizmeti</h2>
+        <p class="about-p">
+          ASM Auto, gösterişli ve içi boş pazarlama vaatlerine değil; işini bilen ustanın titizliğine ve dürüst esnaflık prensiplerine dayanır. 
+        </p>
+        <p class="about-p">
+          Usta Murat'ın 35 yıllık mesleki geçmişi, motor teknolojilerinin evrimini ve her motorun ihtiyaç duyduğu spesifik yağ özelliklerini sahada bizzat tecrübe ederek şekillenmiştir. Klasik mekanikten günümüzün yüksek basınçlı turbo dizel ve benzinli motorlarına kadar her araçta doğru teknik prosedürü uyguluyoruz.
+        </p>
+
+        <div class="stats-row">
+          <div class="stat-col">
+            <span class="stat-num">35+</span>
+            <span class="stat-label">Yıl Ustalık</span>
+          </div>
+          <div class="stat-col">
+            <span class="stat-num">%100</span>
+            <span class="stat-label">Üretici Onaylı Yağ</span>
+          </div>
+          <div class="stat-col">
+            <span class="stat-num">Binlerce</span>
+            <span class="stat-label">Memnun Araç Sahibi</span>
+          </div>
+        </div>
+
+        <div class="about-actions">
+          <a href="/hakkimizda/" class="btn btn-secondary">Ustalık Hikayemiz →</a>
+          <a href={`tel:${business.phoneE164}`} class="btn btn-outline">Ustayla Görüş: {business.phoneDisplay}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    background-color: var(--surface-soft);
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .about-image-card {
+    position: relative;
+  }
+  .image-wrapper {
+    background: linear-gradient(135deg, #1A2530 0%, #111A22 100%);
+    border-radius: var(--radius-card);
+    padding: 40px 30px;
+    color: #FFFFFF;
+    position: relative;
+    border: 1px solid var(--line);
+  }
+  .badge-overlay {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--accent);
+    color: #FFFFFF;
+    padding: 16px 20px;
+    border-radius: 14px;
+    margin-bottom: 24px;
+  }
+  .badge-number {
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 1;
+  }
+  .badge-text {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+  .craftsman-card h4 {
+    color: #FFFFFF;
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  .craftsman-card p {
+    color: #94A3B8;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .social-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .social-pill {
+    font-size: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #E2E8F0;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background 0.2s;
+  }
+  .social-pill:hover {
+    background: rgba(216, 92, 32, 0.3);
+    color: #FFFFFF;
+  }
+  .section-title {
+    font-size: 30px;
+    margin-top: 14px;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .about-p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 14px;
+  }
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 24px 0;
+    margin: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .stat-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .stat-num {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .about-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  @media (min-width: 992px) {
+    .about-grid {
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+    }
+    .section-title {
+      font-size: 36px;
+    }
+  }
+</style>

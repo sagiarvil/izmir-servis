@@ -1,0 +1,256 @@
+---
+import { services } from '../data/services';
+---
+
+<section class="section services-section" id="hizmetler">
+  <div class="container">
+    <div class="section-header">
+      <span class="badge">UZMAN HİZMETLERİMİZ</span>
+      <h2 class="section-title">İzmir'de Yağ Değişimi ve Periyodik Bakım Çözümleri</h2>
+      <p class="section-subtitle">
+        Aracınızın motor sağlığı için her adımda üretici onaylı yağlar, kaliteli filtreler ve 35 yıllık atölye disiplini uyguluyoruz.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      {services.map((item) => (
+        <article class="service-card">
+          <div class="card-badge">{item.badge}</div>
+          <div class="card-icon-wrap">
+            {item.icon === 'oil-drop' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="card-icon">
+                <path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"></path>
+              </svg>
+            )}
+            {item.icon === 'filter' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="card-icon">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+              </svg>
+            )}
+            {item.icon === 'wrench' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="card-icon">
+                <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            )}
+            {item.icon === 'check-circle' && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="card-icon">
+                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            )}
+          </div>
+
+          <h3 class="card-title">
+            <a href={`/${item.slug}/`}>{item.title}</a>
+          </h3>
+
+          <p class="card-desc">{item.shortDesc}</p>
+
+          <div class="card-features-box">
+            <span class="features-label">İşlem Kapsamı:</span>
+            <ul class="card-features">
+              {item.features.slice(0, 3).map((feat) => (
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="check-icon">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="card-footer">
+            <span class="duration-tag">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="time-icon">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>{item.estimatedDuration}</span>
+            </span>
+            <a href={`/${item.slug}/`} class="card-link" aria-label={`${item.title} detaylarını incele`}>
+              <span>İncele & Talep Al</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-icon">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-section {
+    background-color: var(--surface-soft);
+  }
+  .section-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 48px auto;
+  }
+  .section-title {
+    font-size: 28px;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .section-subtitle {
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .service-card {
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.07);
+    border-color: var(--accent);
+  }
+  .card-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--accent-text);
+    background: var(--accent-soft);
+    padding: 4px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.05em;
+  }
+  .card-icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background-color: var(--surface-soft);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .card-icon {
+    width: 26px;
+    height: 26px;
+  }
+  .card-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .card-title a {
+    color: var(--ink);
+    transition: color 0.2s;
+  }
+  .card-title a:hover {
+    color: var(--accent);
+  }
+  .card-desc {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .card-features-box {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px dashed var(--line);
+    margin-bottom: 20px;
+  }
+  .features-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .card-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .check-icon {
+    width: 15px;
+    height: 15px;
+    color: var(--success);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .duration-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .time-icon {
+    width: 14px;
+    height: 14px;
+  }
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    transition: gap 0.2s;
+  }
+  .card-link:hover {
+    gap: 10px;
+    color: var(--accent-hover);
+  }
+  .arrow-icon {
+    width: 15px;
+    height: 15px;
+  }
+  @media (min-width: 640px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .services-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .section-title {
+      font-size: 34px;
+    }
+  }
+</style>

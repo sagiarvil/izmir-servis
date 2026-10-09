@@ -1,52 +1,82 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import MobileActionBar from '../components/MobileActionBar.astro';
-import { routesRegistry } from '../seo/registry';
 import { business } from '../data/business';
+import { seoRegistry } from '../seo/registry';
 
-const meta = routesRegistry["/gizlilik-ve-cerezler/"];
+const seo = seoRegistry['/gizlilik-ve-cerezler/'];
 ---
 
-<BaseLayout title={meta.title} description={meta.description} canonical={meta.canonical}>
-  <Header />
+<BaseLayout 
+  title={seo.title} 
+  description={seo.description}
+  canonicalPath="/gizlilik-ve-cerezler/"
+>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Sayfa Konumu">
+        <a href="/">Anasayfa</a>
+        <span>/</span>
+        <span class="current">Gizlilik ve Çerez Politikası</span>
+      </nav>
+      <h1 class="page-title">{seo.heading}</h1>
+    </div>
+  </div>
 
-  <main id="ana-icerik" class="container section legal-container">
-    <h1>Gizlilik ve Çerez Politikası</h1>
-    <p class="lead-text">
-      {business.legalName} olarak ziyaretçilerimizin gizlilik haklarına saygı duyuyor ve web sitemizi ziyaretleriniz sırasında güvenli bir deneyim sağlamayı taahhüt ediyoruz.
-    </p>
+  <section class="section">
+    <div class="container legal-body">
+      <h2>1. Genel Gizlilik Taahhüdü</h2>
+      <p>
+        {business.name} olarak, ziyaretçilerimizin gizliliğine ve kişisel verilerinin güvenliğine en üst düzeyde önem veriyoruz. İnternet sitemiz üzerinden toplanan bilgiler üçüncü şahıslara satılmaz, kiralanmaz veya izinsiz paylaşılmaz.
+      </p>
 
-    <h2>1. Çerezler (Cookies) Nedir?</h2>
-    <p>
-      Çerezler, ziyaret ettiğiniz internet siteleri tarafından tarayıcınız aracılığıyla cihazınıza veya ağ sunucusuna depolanan küçük metin dosyalarıdır.
-    </p>
+      <h2>2. Çerez (Cookie) Kullanımı</h2>
+      <p>
+        Sitemizde yalnızca sitenin temel işlevselliğini sağlayan zorunlu teknik çerezler ve kullanıcı deneyimini iyileştiren anonim performans çerezleri kullanılmaktadır. Tarayıcı ayarlarınızdan çerez tercihlerinizi dilediğiniz zaman değiştirebilir veya silebilirsiniz.
+      </p>
 
-    <h2>2. Kullanılan Çerez Türleri</h2>
-    <ul>
-      <li><strong>Zorunlu Çerezler:</strong> Web sitesinin düzgün çalışması, form güvenliği ve temel navigasyon fonksiyonları için gereklidir.</li>
-      <li><strong>Analitik Çerezler:</strong> Ziyaretçi trafiğini ve sayfa kullanım alışkanlıklarını ölçümleyerek web sitemizin performansını artırmamıza yardımcı olur.</li>
-    </ul>
-
-    <h2>3. Çerezlerin Kontrolü ve Silinmesi</h2>
-    <p>
-      Tarayıcınızın ayarlarını değiştirerek çerezlere ilişkin tercihlerinizi kişiselleştirebilir, çerezleri engelleyebilir veya silebilirsiniz.
-    </p>
-  </main>
-
-  <Footer />
-  <MobileActionBar />
+      <h2>3. Veri Güvenliği</h2>
+      <p>
+        Web sitemiz HTTPS ve modern SSL/TLS şifreleme protokolleriyle korunmaktadır. Form aracılığıyla gönderilen tüm veriler güvenli altyapılarımızda muhafaza edilir.
+      </p>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
-  .legal-container {
-    max-width: 800px;
-    padding-top: 48px;
-    padding-bottom: 64px;
+  .page-header {
+    background: linear-gradient(135deg, #16212C 0%, #0F1722 100%);
+    color: #FFFFFF;
+    padding: 40px 0;
+    border-bottom: 2px solid var(--accent);
   }
-  .legal-container h1 { font-size: 32px; margin-bottom: 20px; }
-  .legal-container h2 { font-size: 22px; margin-top: 32px; margin-bottom: 12px; }
-  .legal-container p { font-size: 15px; line-height: 1.7; color: var(--muted); margin-bottom: 16px; }
-  .legal-container ul { margin-left: 20px; margin-bottom: 20px; color: var(--muted); line-height: 1.6; }
+  .breadcrumb {
+    display: flex;
+    gap: 8px;
+    font-size: 13px;
+    color: #94A3B8;
+    margin-bottom: 12px;
+  }
+  .breadcrumb a {
+    color: #CBD5E1;
+  }
+  .breadcrumb .current {
+    color: #FFA573;
+    font-weight: 600;
+  }
+  .page-title {
+    color: #FFFFFF;
+    font-size: 30px;
+  }
+  .legal-body {
+    max-width: 800px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--muted);
+  }
+  .legal-body h2 {
+    font-size: 20px;
+    color: var(--ink);
+    margin-top: 24px;
+    margin-bottom: 10px;
+  }
 </style>

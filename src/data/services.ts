@@ -2,16 +2,13 @@ export interface ServiceItem {
   id: string;
   slug: string;
   title: string;
-  shortTitle: string;
-  badge: string;
-  lead: string;
-  description: string;
+  shortDesc: string;
+  fullDesc: string;
   icon: string;
-  highlights: string[];
-  processSteps: { title: string; desc: string }[];
-  technicalSpecs: string[];
-  faq: { q: string; a: string }[];
-  isPrimary: boolean;
+  badge: string;
+  features: string[];
+  specs: string[];
+  estimatedDuration: string;
 }
 
 export const services: ServiceItem[] = [
@@ -19,147 +16,68 @@ export const services: ServiceItem[] = [
     id: "motor-yagi",
     slug: "motor-yagi-degisimi",
     title: "Motor Yağı Değişimi",
-    shortTitle: "Motor Yağı",
-    badge: "Üretici Standartlarında",
-    lead: "İzmir Gaziemir 6. Sanayi Sitesi'nde motor koduna ve üretici onayına (RN0720, VW 504/507, BMW LL-04 vb.) tam uyumlu sentetik motor yağı değişimi.",
-    description: "Rastgele viskozite seçimi motor ömrünü tüketir. ASM Profesyonel Servis'te sadece viskoziteye değil (0W-20, 5W-30, 5W-40), motorun fabrika teknik onay standartlarına göre sıcak karter tahliyesi ve hassas dolum yapılır.",
-    icon: "oil-can",
-    highlights: [
-      "Motor koduna özel üretici onaylı yağ tespiti",
-      "Eski yağın sıcak motor üzerinden karterden tam tahliyesi",
-      "Karter tapa pulunun her bakımda yenilenmesi",
-      "Üretici kılavuzundaki hassas litre dolumu ve seviye kontrolü"
+    shortDesc: "Aracınızın motor tipine ve üretici onayına (ACEA, API, VW 504/507, MB 229.5 vb.) uygun tam sentetik motor yağı değişimi.",
+    fullDesc: "Motor yağı, motor parçaları arasındaki sürtünmeyi en aza indirerek aşınmayı, aşırı ısınmayı ve tortu oluşumunu engeller. ASM'de yalnızca viskoziteye (5W-30, 0W-20 vb.) göre değil, üretici teknik spesifikasyonuna göre yağ seçilir.",
+    icon: "oil-drop",
+    badge: "Temel Hizmet",
+    features: [
+      "Üretici onaylı tam sentetik motor yağı",
+      "Karter tapası ve pulu kontrolü",
+      "Eski yağın tamamen vakum veya tahliye ile boşaltılması",
+      "Yağ seviyesi ve kaçak kontrolü"
     ],
-    processSteps: [
-      { title: "Araç & Motor Tespiti", desc: "Ruhsat ve motor kodundan fabrikanın zorunlu kıldığı yağ normu belirlenir." },
-      { title: "Karterden Sıcak Boşaltma", desc: "Motor çalışma sıcaklığındayken eski yağ tüm tortusuyla birlikte süzülür." },
-      { title: "Hassas Dolum & Kalibrasyon", desc: "Gramaj ve litre hassasiyetiyle üretici miktarı kadar taze yağ doldurulur." },
-      { title: "Sızdırmazlık & Seviye Testi", desc: "Motor çalıştırılarak yağ basıncı ve karter tapası sızdırmazlık kontrolü yapılır." }
-    ],
-    technicalSpecs: [
-      "ACEA A3/B4, C2, C3, C4, C5 emisyon uyumlu tam sentetik ürünler",
-      "DPF (Dizel Partikül Filtresi) ve GPF uyumlu düşük kül (Low-SAPS) içerik",
-      "Turboşarj ve yüksek basınçlı direkt enjeksiyon (GDI/TSI/TDI) koruma katsayısı"
-    ],
-    faq: [
-      {
-        q: "Aracıma sadece 5W-30 demek neden yeterli değildir?",
-        a: "5W-30 yalnızca viskozitedir (akışkanlık derecesi). Ancak aynı 5W-30 viskozitesinde VW 507, Ford WSS-M2C913 veya Renault RN0720 gibi tamamen farklı kimyasal katkı paketlerine sahip motor yağları bulunur. Yanlış norm partikül filtresini tıkayabilir ve turbo hasarına yol açar."
-      },
-      {
-        q: "Motor yağı ne sıklıkla değiştirilmelidir?",
-        a: "Üretici kılavuzları genellikle 10.000 - 15.000 km veya yılda 1 defa öngörür. Ancak İzmir'in yoğun dur-kalk trafiği ve yaz sıcakları 'ağır çalışma koşulu' sınıfındadır; yağın kimyasal koruyuculuğu 10.000 km civarında hızla düşer."
-      }
-    ],
-    isPrimary: true
+    specs: ["0W-20", "0W-30", "5W-30", "5W-40", "10W-40"],
+    estimatedDuration: "25 - 40 Dakika"
   },
   {
     id: "yag-filtresi",
     slug: "yag-filtresi-degisimi",
     title: "Yağ Filtresi Değişimi",
-    shortTitle: "Yağ Filtresi",
-    badge: "Orijinal Filtre Elemanı",
-    lead: "Mikron düzeyinde partikül tutma kapasitesine sahip OEM filtre elemanı montajı, kovan temizliği ve tork kontrollü sıkım.",
-    description: "Taze motor yağı koyup eski filtreyi bırakmak, temiz suya çamur karıştırmak gibidir. Her yağ değişiminde filtre gövdesi temizlenir, kovan contaları değiştirilir ve tork anahtarıyla sıkılır.",
+    shortDesc: "Motor içindeki metal çapakları ve karbon partiküllerini süzen yüksek filtrasyon kapasiteli orijinal ve eşdeğer filtre montajı.",
+    fullDesc: "Yeni konulan motor yağının temiz kalabilmesi ve yağ pompasının doğru basınç üretmesi için her yağ değişiminde yağ filtresinin de mutlaka yenilenmesi gerekir. Tork kontrollü doğru montaj ile sızdırmazlık garanti altına alınır.",
     icon: "filter",
-    highlights: [
-      "OEM eşdeğerinde kağıt mikron ve by-pass valf kalitesi",
-      "Filtre kapağı O-Ring contasının sıfırlanması",
-      "Doğru tork değeriyle sıkma (kovan çatlamalarını engeller)",
-      "İlk çalıştırmada yağ basıncı gecikmesini önleyen montaj"
+    badge: "Önemli Güvenlik",
+    features: [
+      "OEM kalite ve onaylı filtre markaları",
+      "Filtre contası ve oring yenileme",
+      "Fabrika tork değerinde sıkım",
+      "İlk çalıştırma basınç testi"
     ],
-    processSteps: [
-      { title: "Filtre Kovanı Açılışı", desc: "Özel lokma anahtarıyla filtre kapağı plastik tırnaklara zarar vermeden sökülür." },
-      { title: "Gövde Temizliği", desc: "Kovan içinde kalan kirli yağ ve tortular özel vakum/sprey ile arındırılır." },
-      { title: "Conta & O-Ring Değişimi", desc: "Yeni filtreyle gelen kauçuk contalar taze yağ ile yağlanarak yerine oturtulur." },
-      { title: "Tork Kontrollü Montaj", desc: "Üretici tork değeriyle (genelde 25 Nm) sıkılarak sızdırmazlık garantilenir." }
-    ],
-    technicalSpecs: [
-      "Yüksek basınç geri dönüş valfi (Check-valve) mekanizması",
-      "Sentetik mikro-elyaf filtreleme medyası (15-20 mikron partikül tutuşu)",
-      "Yüksek sıcaklık dayanımlı kauçuk conta alaşımı"
-    ],
-    faq: [
-      {
-        q: "Yağ filtresi değiştirilmeden sadece yağ yenilenebilir mi?",
-        a: "Kesinlikle önerilmez. Eski filtre gözenekleri tıkandığında by-pass valfi açılır ve filtrelenmemiş kirli yağ doğrudan motor yataklarına gider. Ayrıca eski filtre gövdesinde yaklaşık 200-400 ml kirli yağ hapsolur."
-      },
-      {
-        q: "Yan sanayi kalitesiz filtre ne tür zararlar verebilir?",
-        a: "Filtre kağıdı yırtılabilir, basınç valfi kilitlenebilir veya conta sızdırarak motorun aniden yağsız kalmasına (yatak sarmasına) yol açabilir."
-      }
-    ],
-    isPrimary: true
+    specs: ["Kağıt Kartuş Filtreler", "Metal Vidalı Filtreler", "Eco-Filtreler"],
+    estimatedDuration: "15 - 20 Dakika"
   },
   {
     id: "periyodik-bakim",
     slug: "periyodik-bakim",
-    title: "Periyodik Bakım",
-    shortTitle: "Periyodik Bakım",
-    badge: "Kapsamlı Servis Paketi",
-    lead: "Motor yağı, 4 filtre seti (yağ, hava, polen, yakıt), fren kontrolleri ve 24 nokta mekanik güvenlik muayenesi.",
-    description: "Aracınızın yolda kalmasını ve beklenmedik ağır masraflar çıkarmasını engelleyen koruyucu bakım. Fren hidroliği, soğutma sıvısı, alt takım, kayışlar ve akü sağlığı tek ziyarette kontrol edilir.",
+    title: "Periyodik Araç Bakımı",
+    shortDesc: "Motor yağı, yağ filtresi, hava ve polen filtreleri değişimi ile 15 nokta genel mekanik güvenlik kontrolü.",
+    fullDesc: "Periyodik bakım, aracınızın güvenli çalışması, yakıt verimliliğinin korunması ve yüksek onarım masraflarının önlenmesi için her 10.000 - 15.000 km veya yılda bir yapılması gereken kapsamlı servis işlemidir.",
     icon: "wrench",
-    highlights: [
-      "Motor yağı + yağ filtresi + hava filtresi + polen filtresi değişimi",
-      "Fren balataları, diskler ve hidrolik nem seviyesi testi",
-      "Antifriz donma derecesi ve soğutma sistemi sızdırmazlığı",
-      "Alt takım, rotil, körükler ve süspansiyon elemanları kontrolü"
+    badge: "Kapsamlı Paket",
+    features: [
+      "Motor yağı + Yağ filtresi değişimi",
+      "Hava filtresi ve kabin (polen) filtresi değişimi",
+      "Fren balatası ve hidrolik sıvı seviyesi kontrolü",
+      "Akü gerilimi, antifriz ve silecek sıvısı tamamlaması"
     ],
-    processSteps: [
-      { title: "Kabul & Ön İnceleme", desc: "Müşteri şikayetleri dinlenir, kilometre ve bakım geçmişi teyit edilir." },
-      { title: "Dörtlü Filtre ve Yağ Değişimi", desc: "Motorun nefes almasını ve yağlanmasını sağlayan tüm filtreler yenilenir." },
-      { title: "Sıvı ve Mekanik Testler", desc: "Fren sıvısı kaynama noktası, antifriz bome ölçümü ve akü testi yapılır." },
-      { title: "Bakım Sıfırlama & Rapor", desc: "Gösterge servis periyodu sıfırlanır, yapılan işlemler bakım kartına işlenir." }
+    specs: ["Binek Araçlar", "Hafif Ticari Araçlar", "SUV ve Crossover"],
+    estimatedDuration: "45 - 60 Dakika"
+  },
+  {
+    id: "sivi-filtre-kontrol",
+    slug: "filtre-degisimi",
+    title: "Filtre ve Sıvı Kontrolleri",
+    shortDesc: "Hava filtresi, polen filtresi, fren hidroliği, soğutma sıvısı (antifriz) ve direksiyon sıvısı ölçüm ve takviyesi.",
+    fullDesc: "Motorun rahat hava alması, kabin içi havanın temizlenmesi ve fren sisteminin güvenliği için ek filtre ve sıvı kontrol süreçlerimiz eksiksiz tamamlanır.",
+    icon: "check-circle",
+    badge: "Destekleyici",
+    features: [
+      "Hava ve polen filtresi kontrolü",
+      "Fren hidroliği nem ölçümü",
+      "Antifriz donma derecesi tespiti",
+      "Cam suyu ve aydınlatma kontrolü"
     ],
-    technicalSpecs: [
-      "Optik refraktometre ile antifriz derece ölçümü",
-      "Elektronik nem test cihazı ile fren hidroliği boiling point testi",
-      "OBD servis sıfırlama ve arıza hafızası taraması"
-    ],
-    faq: [
-      {
-        q: "Periyodik bakım süresi ne kadardır?",
-        a: "Standart yağ ve filtre periyodik bakımı ortalama 45 - 60 dakika içinde özenle tamamlanır. Ekstra mekanik onarım veya fren müdahalesi gerekirse öncesinde bilgilendirme yapılır."
-      },
-      {
-        q: "Bakım sonrası garanti ve servis kaydı veriliyor mu?",
-        a: "Tüm kullanılan filtre ve yağ ürünlerinin markası, viskozitesi ve işlem kilometresi fiziki bakım kartına ve dijital servis kayıtlarımıza işlenerek size teslim edilir."
-      }
-    ],
-    isPrimary: true
-  }
-];
-
-export const secondaryServices = [
-  {
-    title: "Oto Diyagnostik & Arıza Tespiti",
-    desc: "Lisanslı OBD2 tarama cihazları ile motor, şanzıman, ABS ve hava yastığı elektronik arıza kodlarının analizi ve sıfırlanması.",
-    badge: "Elektronik Tarama"
-  },
-  {
-    title: "Fren Sistemi & Balata Kontrolü",
-    desc: "Ön-arka fren balata kalınlıkları, disk aşınma payı ve elektronik nem test cihazıyla hidrolik kaynama derecesi ölçümü.",
-    badge: "Fren Güvenliği"
-  },
-  {
-    title: "Hava ve Polen Filtresi Değişimi",
-    desc: "Motor hava emiş debisi için hava filtresi ve araç içi klima hava hijyeni için aktif karbonlu polen filtresi değişimi.",
-    badge: "Kabin & Motor Havası"
-  },
-  {
-    title: "Antifriz & Soğutma Sistemi",
-    desc: "Refraktometre ile soğutma sıvısının -35°C koruma derecesi testi, termostat ve radyatör sızdırmazlık muayenesi.",
-    badge: "Motor Koruma"
-  },
-  {
-    title: "Şanzıman ve Diferansiyel Yağları",
-    desc: "Manuel ve otomatik şanzıman yağ viskoziteleri, diferansiyel dişli sıvısı seviyesi ve kaçak kontrolleri.",
-    badge: "Aktarma Organları"
-  },
-  {
-    title: "Akü Sağlığı & Şarj Dinamosu Testi",
-    desc: "Dijital akü test cihazı ile CCA marş basma gücü, alternatör şarj voltajı ve kaçak akım tespiti.",
-    badge: "Elektrik Sistemi"
+    specs: ["Tüm Marka ve Modeller"],
+    estimatedDuration: "20 - 30 Dakika"
   }
 ];

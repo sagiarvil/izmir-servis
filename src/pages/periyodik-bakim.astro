@@ -1,175 +1,234 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import MobileActionBar from '../components/MobileActionBar.astro';
-import AppointmentSection from '../components/AppointmentSection.astro';
-
-import { routesRegistry } from '../seo/registry';
+import CtaBanner from '../components/CtaBanner.astro';
+import LocationForm from '../components/LocationForm.astro';
+import { seoRegistry } from '../seo/registry';
 import { services } from '../data/services';
 import { business } from '../data/business';
-import { getServiceSchema, getBreadcrumbSchema, getFaqSchema } from '../seo/jsonld';
 
-const meta = routesRegistry["/periyodik-bakim/"];
-const service = services.find(s => s.slug === "periyodik-bakim")!;
+const seo = seoRegistry['/periyodik-bakim/'];
+const service = services.find(s => s.id === 'periyodik-bakim')!;
 
-const breadcrumbSchema = getBreadcrumbSchema([
-  { name: "Ana Sayfa", path: "/" },
-  { name: service.title, path: `/${service.slug}/` }
-]);
-
-const serviceSchema = getServiceSchema(service);
-const faqSchema = getFaqSchema(service.faq);
-const schemas = [serviceSchema, breadcrumbSchema, faqSchema];
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "İzmir Periyodik Bakım Servisi",
+  "serviceType": "Periyodik Araç Bakımı",
+  "provider": {
+    "@type": "AutoRepair",
+    "name": business.name,
+    "telephone": business.phoneE164,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": business.address.street,
+      "addressLocality": business.address.district,
+      "addressRegion": "İzmir",
+      "addressCountry": "TR"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "İzmir"
+  },
+  "description": service.fullDesc
+};
 ---
 
-<BaseLayout title={meta.title} description={meta.description} canonical={meta.canonical} schema={schemas}>
-  <Header />
-
-  <main id="ana-icerik">
-    <div class="page-hero">
-      <div class="container">
-        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-          <a href="/">Ana Sayfa</a>
-          <span class="bc-sep">/</span>
-          <span aria-current="page">{service.title}</span>
-        </nav>
-        <span class="badge">{service.badge}</span>
-        <h1 class="page-title">{service.title}</h1>
-        <p class="page-lead">{service.lead}</p>
-        <div class="page-cta-row">
-          <a href={`tel:${business.phoneE164}`} class="btn btn-primary">Hemen Ara: {business.phoneDisplay}</a>
-          <a href="#servis-talebi" class="btn btn-secondary">Servis Talebi Oluştur</a>
-        </div>
-      </div>
+<BaseLayout 
+  title={seo.title} 
+  description={seo.description}
+  canonicalPath="/periyodik-bakim/"
+  schemaJson={serviceSchema}
+>
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Sayfa Konumu">
+        <a href="/">Anasayfa</a>
+        <span>/</span>
+        <a href="/#hizmetler">Hizmetlerimiz</a>
+        <span>/</span>
+        <span class="current">Periyodik Bakım</span>
+      </nav>
+      <h1 class="page-title">{seo.heading}</h1>
+      <p class="page-intro">
+        Motor yağı, yağ filtresi, hava ve polen filtreleri değişimi ile 15 nokta mekanik ve sıvı kontrollerini kapsayan profesyonel bakım paketi.
+      </p>
     </div>
+  </div>
 
-    <section class="section service-content-section">
-      <div class="container content-container">
-        <div class="main-article">
-          <h2>Kapsamlı Periyodik Bakım Neleri İçerir?</h2>
-          <p>
-            {service.description} Bakım sürecinde sadece motor yağı değil; motorun hava emiş sağlığı (hava filtresi), araç içi kabin hijyeni (polen filtresi), yakıt besleme verimi ve hayati önem taşıyan fren hidrolik sıvısı titizlikle test edilir.
-          </p>
+  <section class="section service-content-section">
+    <div class="container content-grid">
+      <div class="main-body">
+        <h2>Periyodik Bakım Neden Aksatılmamalıdır?</h2>
+        <p>
+          Düzenli periyodik bakım, aracınızın yakıt tüketimini optimize eder, motor performansını korur ve ileride oluşabilecek yüksek maliyetli motor ve şanzıman arızalarının önüne geçer. ASM Auto'da her araç kendi üretici bakım takvimine göre titizlikle ele alınır.
+        </p>
+        
+        <h3>Periyodik Bakım Kapsamında Neler Yapılır?</h3>
+        <ul class="process-checklist">
+          <li><strong>Motor Yağı ve Yağ Filtresi:</strong> Üretici onaylı tam sentetik motor yağı doldurulur, yeni filtre takılır.</li>
+          <li><strong>Hava Filtresi Değişimi:</strong> Yanma odasına giren havayı temizleyen hava filtresi yenilenerek motorun nefes alması ve yakıt tasarrufu sağlanır.</li>
+          <li><strong>Polen (Kabin) Filtresi:</strong> Araç içi klimadan gelen havayı temizleyen karbonlu veya standart polen filtresi yenilenir.</li>
+          <li><strong>Fren ve Süspansiyon Kontrolü:</strong> Ön/arka fren balataları, diskler, fren hidrolik sıvısı seviyesi ve nem oranı test edilir.</li>
+          <li><strong>Sıvı Tamamlamaları:</strong> Antifriz donma derecesi ölçülür, cam suyu ve akü şarj durumu kontrol edilir.</li>
+        </ul>
 
-          <h3>24 Nokta Mekanik Muayene ve Bakım Adımları</h3>
-          <div class="process-list">
-            {service.processSteps.map((step, idx) => (
-              <div class="process-item">
-                <div class="p-num">{idx + 1}</div>
-                <div>
-                  <h4>{step.title}</h4>
-                  <p>{step.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <h3>Ölçüm Cihazları & Servis Doğrulamaları</h3>
-          <ul class="specs-list">
-            {service.technicalSpecs.map(spec => (
-              <li>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>{spec}</span>
-              </li>
-            ))}
-          </ul>
-
-          <h3>Sık Sorulan Sorular</h3>
-          <div class="service-faq-wrap">
-            {service.faq.map(item => (
-              <div class="s-faq-item">
-                <h4>{item.q}</h4>
-                <p>{item.a}</p>
-              </div>
-            ))}
-          </div>
+        <h3>Desteklenen Araç Grupları</h3>
+        <div class="specs-pill-container">
+          {service.specs.map((spec) => (
+            <span class="spec-pill">{spec}</span>
+          ))}
         </div>
-
-        <aside class="sidebar-info">
-          <div class="sidebar-card">
-            <h4>Randevu & Hızlı İletişim</h4>
-            <p>Aracınızın kilometresine ve yaşına göre bakım planını birlikte oluşturalım.</p>
-            <a href={`tel:${business.phoneE164}`} class="btn btn-primary side-btn">Hemen Ara</a>
-            <a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary side-btn">WhatsApp Danışma</a>
-          </div>
-
-          <div class="sidebar-card other-services">
-            <h4>Öncelikli Hizmetler</h4>
-            <ul>
-              <li><a href="/motor-yagi-degisimi/">Motor Yağı Değişimi</a></li>
-              <li><a href="/yag-filtresi-degisimi/">Yağ Filtresi Değişimi</a></li>
-              <li><a href="/sikca-sorulan-sorular/">Bakım Rehberi</a></li>
-            </ul>
-          </div>
-        </aside>
       </div>
-    </section>
 
-    <AppointmentSection />
-  </main>
+      <aside class="sidebar-box">
+        <div class="service-summary-card">
+          <h4>Periyodik Bakım Özeti</h4>
+          <dl class="summary-list">
+            <dt>Tahmini Süre:</dt>
+            <dd>{service.estimatedDuration}</dd>
+            <dt>Bakım Aralığı:</dt>
+            <dd>10.000 - 15.000 KM</dd>
+            <dt>Kontrol Noktası:</dt>
+            <dd>15 Nokta Güvenlik</dd>
+            <dt>Kayıt:</dt>
+            <dd>Bakım Defteri / Kartı</dd>
+          </dl>
+          <a href="/randevu/" class="btn btn-primary" style="width: 100%; margin-top: 16px;">
+            Periyodik Bakım Randevusu Al
+          </a>
+          <a href={`tel:${business.phoneE164}`} class="btn btn-outline" style="width: 100%; margin-top: 8px;">
+            Fiyat Bilgisi İçin Ara
+          </a>
+        </div>
+      </aside>
+    </div>
+  </section>
 
-  <Footer />
-  <MobileActionBar />
+  <CtaBanner />
+  <LocationForm />
 </BaseLayout>
 
 <style>
-  .page-hero {
-    background: linear-gradient(180deg, var(--surface-dark) 0%, #101820 100%);
+  .page-header {
+    background: linear-gradient(135deg, #16212C 0%, #0F1722 100%);
     color: #FFFFFF;
     padding: 48px 0;
+    border-bottom: 2px solid var(--accent);
   }
-  .breadcrumb-nav {
+  .breadcrumb {
     display: flex;
-    align-items: center;
     gap: 8px;
     font-size: 13px;
     color: #94A3B8;
     margin-bottom: 16px;
   }
-  .breadcrumb-nav a { color: #CBD5E1; }
-  .breadcrumb-nav a:hover { color: #FFF; }
-  .bc-sep { color: #64748B; }
+  .breadcrumb a {
+    color: #CBD5E1;
+  }
+  .breadcrumb .current {
+    color: #FFA573;
+    font-weight: 600;
+  }
   .page-title {
     color: #FFFFFF;
     font-size: 32px;
-    margin: 12px 0 16px 0;
+    margin-bottom: 12px;
   }
-  @media (min-width: 768px) {
-    .page-title { font-size: 42px; }
-  }
-  .page-lead {
+  .page-intro {
     font-size: 16px;
+    color: #94A3B8;
+    max-width: 720px;
     line-height: 1.6;
-    color: #CBD5E1;
-    max-width: 760px;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .main-body h2 {
+    font-size: 24px;
+    margin-bottom: 14px;
+    margin-top: 24px;
+  }
+  .main-body h3 {
+    font-size: 18px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+  .main-body p {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .process-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     margin-bottom: 24px;
   }
-  .page-cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
-  .content-container { display: grid; grid-template-columns: 1fr; gap: 40px; }
-  @media (min-width: 992px) {
-    .content-container { grid-template-columns: 1fr 340px; gap: 56px; }
+  .process-checklist li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--surface-soft);
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
   }
-  .main-article h2 { font-size: 26px; margin-bottom: 16px; }
-  .main-article h3 { font-size: 20px; margin-top: 32px; margin-bottom: 16px; }
-  .main-article p { font-size: 15px; line-height: 1.65; color: var(--muted); margin-bottom: 16px; }
-  .process-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
-  .process-item { display: flex; gap: 16px; background: var(--surface-soft); padding: 16px 20px; border-radius: 12px; border: 1px solid var(--line); }
-  .p-num { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); color: #FFF; font-weight: 800; font-size: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .process-item h4 { font-size: 16px; margin-bottom: 4px; }
-  .process-item p { font-size: 13px; color: var(--muted); margin-bottom: 0; }
-  .specs-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
-  .specs-list li { display: flex; gap: 10px; align-items: center; font-size: 14px; color: var(--ink); }
-  .specs-list svg { color: var(--success); flex-shrink: 0; }
-  .service-faq-wrap { display: flex; flex-direction: column; gap: 16px; }
-  .s-faq-item { background: var(--surface-soft); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
-  .s-faq-item h4 { font-size: 15px; margin-bottom: 6px; color: var(--ink); }
-  .s-faq-item p { font-size: 13px; color: var(--muted); line-height: 1.55; margin-bottom: 0; }
-  .sidebar-card { background: var(--surface-soft); border: 1px solid var(--line); border-radius: var(--radius-card); padding: 24px; margin-bottom: 24px; }
-  .sidebar-card h4 { font-size: 18px; margin-bottom: 12px; }
-  .sidebar-card p { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
-  .side-btn { width: 100%; margin-bottom: 10px; font-size: 14px; }
-  .other-services ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-  .other-services a { color: var(--ink); font-weight: 600; font-size: 14px; text-decoration: underline; }
-  .other-services a:hover { color: var(--accent); }
+  .specs-pill-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .spec-pill {
+    background-color: var(--accent-soft);
+    color: var(--accent-text);
+    border: 1px solid rgba(216, 92, 32, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .sidebar-box {
+    align-self: start;
+  }
+  .service-summary-card {
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+  .service-summary-card h4 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .summary-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 13px;
+  }
+  .summary-list dt {
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .summary-list dd {
+    color: var(--ink);
+    font-weight: 700;
+  }
+  @media (min-width: 992px) {
+    .content-grid {
+      grid-template-columns: 1.2fr 0.8fr;
+    }
+    .page-title {
+      font-size: 40px;
+    }
+  }
 </style>

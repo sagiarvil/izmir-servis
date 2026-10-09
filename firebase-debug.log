@@ -1,0 +1,154 @@
+[debug] [2026-10-09T18:27:13.299Z] ----------------------------------------------------------------------
+[debug] [2026-10-09T18:27:13.300Z] Command:       /Users/macair1/.nvm/versions/node/v22.23.2/bin/node /Users/macair1/.nvm/versions/node/v22.23.2/bin/firebase hosting:channel:deploy preview --project studio-7658156126-ffb8e --only izmiryagdegisimi --expires 30d
+[debug] [2026-10-09T18:27:13.300Z] CLI Version:   15.30.2
+[debug] [2026-10-09T18:27:13.300Z] Platform:      darwin
+[debug] [2026-10-09T18:27:13.300Z] Node Version:  v22.23.2
+[debug] [2026-10-09T18:27:13.301Z] Detected Agent: antigravity
+[debug] [2026-10-09T18:27:13.301Z] Time:          Fri Oct 09 2026 21:27:13 GMT+0300 (Türkiye Standard Time)
+[debug] [2026-10-09T18:27:13.302Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-10-09T18:27:13.648Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-09T18:27:13.648Z] > authorizing via signed-in user (barisbagirlar@gmail.com)
+[debug] [2026-10-09T18:27:13.648Z] [iam] checking project studio-7658156126-ffb8e for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-10-09T18:27:13.652Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:13.652Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:13.653Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/studio-7658156126-ffb8e:testIamPermissions [none]
+[debug] [2026-10-09T18:27:13.653Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/studio-7658156126-ffb8e:testIamPermissions  x-goog-user-project=studio-7658156126-ffb8e
+[debug] [2026-10-09T18:27:13.653Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/studio-7658156126-ffb8e:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-10-09T18:27:14.687Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/studio-7658156126-ffb8e:testIamPermissions 200
+[debug] [2026-10-09T18:27:14.687Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/studio-7658156126-ffb8e:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-10-09T18:27:14.687Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:14.687Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:14.687Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e [none]
+[debug] [2026-10-09T18:27:15.183Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e 200
+[debug] [2026-10-09T18:27:15.183Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e {"projectId":"studio-7658156126-ffb8e","projectNumber":"390979735373","displayName":"degerlet","name":"projects/studio-7658156126-ffb8e","resources":{"hostingSite":"studio-7658156126-ffb8e"},"state":"ACTIVE","labels":{"firebase":"enabled"},"etag":"1_46a067c9-fcae-4b2b-898a-b3e861f29583"}
+[debug] [2026-10-09T18:27:15.183Z] Expires TTL: 2592000000
+[debug] [2026-10-09T18:27:15.184Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:15.184Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:15.184Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi/channels/preview [none]
+[debug] [2026-10-09T18:27:15.768Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi/channels/preview 404
+[debug] [2026-10-09T18:27:15.768Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi/channels/preview {"error":{"code":404,"message":"Requested entity was not found.","status":"NOT_FOUND"}}
+[debug] [2026-10-09T18:27:15.768Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:15.768Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:15.768Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi/channels?channelId=preview [none]
+[debug] [2026-10-09T18:27:15.769Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi/channels?channelId=preview {"ttl":"2592000s"}
+[debug] [2026-10-09T18:27:16.480Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi/channels?channelId=preview 200
+[debug] [2026-10-09T18:27:16.480Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi/channels?channelId=preview {"name":"projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi/channels/preview","url":"https://izmiryagdegisimi--preview-a7hfq6eh.web.app","createTime":"2026-10-09T18:27:16.217300430Z","updateTime":"2026-10-09T18:27:16.217300430Z","retainedReleaseCount":10,"expireTime":"2026-11-08T18:27:16.217300430Z"}
+[debug] [2026-10-09T18:27:16.480Z] [hosting] created new channnel for site izmiryagdegisimi {"name":"projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi/channels/preview","url":"https://izmiryagdegisimi--preview-a7hfq6eh.web.app","createTime":"2026-10-09T18:27:16.217300430Z","updateTime":"2026-10-09T18:27:16.217300430Z","retainedReleaseCount":10,"expireTime":"2026-11-08T18:27:16.217300430Z"}
+[info] ✔  hosting:channel: Channel preview has been created on site izmiryagdegisimi. 
+[info] 
+[info] === Deploying to 'studio-7658156126-ffb8e'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-10-09T18:27:16.481Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:16.481Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:16.481Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi [none]
+[debug] [2026-10-09T18:27:17.427Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi 200
+[debug] [2026-10-09T18:27:17.427Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi {"name":"projects/studio-7658156126-ffb8e/sites/izmiryagdegisimi","defaultUrl":"https://izmiryagdegisimi.web.app","type":"USER_SITE"}
+[debug] [2026-10-09T18:27:17.429Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:17.429Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:17.429Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/versions [none]
+[debug] [2026-10-09T18:27:17.429Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-10-09T18:27:18.740Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/versions 200
+[debug] [2026-10-09T18:27:18.740Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/versions {"name":"projects/390979735373/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[izmiryagdegisimi]: beginning deploy... 
+[info] i  hosting[izmiryagdegisimi]: found 28 files in dist 
+[debug] [2026-10-09T18:27:18.749Z] [hosting] uploading with 200 concurrency
+[debug] [2026-10-09T18:27:18.750Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:18.750Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:18.750Z] [hosting] hash cache [ZGlzdA] stored for 28 files
+[debug] [2026-10-09T18:27:18.751Z] [hosting][hash queue][FINAL] {"max":1,"min":0,"avg":0,"active":0,"complete":28,"success":28,"errored":0,"retried":0,"total":28,"elapsed":2}
+[debug] [2026-10-09T18:27:18.751Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/390979735373/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa:populateFiles [none]
+[debug] [2026-10-09T18:27:18.751Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/390979735373/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa:populateFiles {"files":{"/sitemap.xml":"e31a667182d3ce3be1acd5cfc075391f0d35b17ad98d07f4c500e579ab1d1139","/rss.xml":"95b854dde18f576110aa6a76c3904be5bd182377e3e8b62e2d66893ef3cbca37","/robots.txt":"0a4e478d0bfb123d3c11f2f04a5d28afe7c774efd58fd308752765ebba32fcc7","/llms.txt":"a15bbaf53e1baa49c5d420b12993a8149fae3192aa474e465be2072d75a81f0a","/llms-full.txt":"fe1c6f21269d3568f4689876fbcde8cf5ecd845d65329bba43b589a6bb79fd2e","/index.html":"209d6045ba981ccd139f8bfd3dbfb74da7c0813e11b2277b97914a3268147b61","/feed.json":"15e26905e7ab79d4f4ec20758ee09aa37fbfbe0201b5520c5268cbfa765ce5b7","/favicon.png":"dc5a52cf82f7b60d13cbdcb12d108566d8a11092bc041676eabfeb9c02a4f993","/404.html":"a752e19515ab2ed1ed924136c0cd062bda3f23d20519b64e5dbe0b58b0a1a160","/yag-filtresi-degisimi/index.html":"ca03973a0978ef176dc128273e204840d8480dbc19286de92dcd52f980bebe3b","/ticari-iletisim-tercihleri/index.html":"1c1e42e5da91ed7689e6a15dcbe5b84915c676ccab590ee9f50da138bff556b8","/sikca-sorulan-sorular/index.html":"84534b2e704c4a211d1aa71945a589bfad21ece951fde439ed16e504a98a8628","/randevu/index.html":"991d2c83cd9260137d8cefd339c17cd30f21c3b619ac900eb5c6b535648a8fcf","/periyodik-bakim/index.html":"d1775f2ae4cbb7974e8bbe992977ffd922f7e859a9354bc074f3f6011fbce826","/motor-yagi-degisimi/index.html":"156d3c610b41299bfa7e59434cc14acb67d27f840daf7f91640c66ad5ce7c8d1","/llms/tools.md":"968a224e99ad80ef7e40f73cf01b7ada1eda10c9071a69c5b0098d28002776ad","/llms/guides.md":"e30076fb5650dd3a43b8a64f0267142712741ea2739dfc07b8b02e1fe652feb0","/llms/core.md":"baf1653d9315f9ed73b674d3e1708c54cdab047737c9a622de8b605363904e65","/kvkk-aydinlatma/index.html":"214b53afce97dd13f2bbdc0ced48ac19b4e049349a3751931269d5f1d47a6f8e","/images/logo.webp":"0fdb3d5880564600770dec83e29b86f374f73d8b6810f001eeef9c691a2325cf","/images/logo.png":"49222afab15eb17ecbbbf214e338a8f54213d67e2674a6f501d57e7857583e69","/images/logo-badge.png":"49222afab15eb17ecbbbf214e338a8f54213d67e2674a6f501d57e7857583e69","/iletisim/index.html":"0ad9d34d56e4c58cdbac9dd631af770132eb0baae5a56fb4a9e5c09e3f06ca38","/hakkimizda/index.html":"472503ab09453e8887aeaae04e4fe8bb3ce98d0ee39d595f2f321ccc420aa095","/gizlilik-ve-cerezler/index.html":"a3517e13f82b53d1b0a655f7fd148bd7272c1782d748067b9f97fef778d3b705","/_astro/index.DJ89FdYt.css":"d090670c0ffa4d73e302ee4dc20e51cb525830755ea72eec4c4f0b5cae82625f","/_astro/hakkimizda.CFTX_CBF.css":"ae3f72acc4e499ee8054af1de6fff434fd4355e1dc61e3dafd796452bb3536c8","/_astro/gizlilik-ve-cerezler.BlmPH54y.css":"06fe20d0a599d6e5943c14f13f2acfac2f43f138fbb5af19ccd9fb9ac90c482a"}}
+[debug] [2026-10-09T18:27:19.801Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/390979735373/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa:populateFiles 200
+[debug] [2026-10-09T18:27:19.801Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/390979735373/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa/files"}
+[debug] [2026-10-09T18:27:19.801Z] [hosting][populate queue][FINAL] {"max":1051,"min":1051,"avg":1051,"active":0,"complete":1,"success":1,"errored":0,"retried":0,"total":1,"elapsed":1051}
+[debug] [2026-10-09T18:27:19.801Z] [hosting] uploads queued: 0
+[debug] [2026-10-09T18:27:19.801Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1791570439801}
+[info] i  hosting: upload complete 
+[info] ✔  hosting[izmiryagdegisimi]: file upload complete 
+[debug] [2026-10-09T18:27:19.801Z] [hosting] deploy completed after 1060ms
+[debug] [2026-10-09T18:27:19.802Z] [
+  {
+    "config": {
+      "target": "izmiryagdegisimi",
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "cleanUrls": true,
+      "trailingSlash": true,
+      "headers": [
+        {
+          "source": "**",
+          "headers": [
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "SAMEORIGIN"
+            },
+            {
+              "key": "Referrer-Policy",
+              "value": "strict-origin-when-cross-origin"
+            },
+            {
+              "key": "Permissions-Policy",
+              "value": "camera=(), microphone=(), geolocation=()"
+            }
+          ]
+        },
+        {
+          "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|avif|css|js)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "max-age=31536000, immutable"
+            }
+          ]
+        }
+      ],
+      "site": "izmiryagdegisimi"
+    },
+    "version": "projects/390979735373/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa"
+  }
+]
+[info] i  hosting[izmiryagdegisimi]: finalizing version... 
+[debug] [2026-10-09T18:27:19.802Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:19.802Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:19.803Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa updateMask=status%2Cconfig
+[debug] [2026-10-09T18:27:19.803Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa {"status":"FINALIZED","config":{"headers":[{"glob":"**","headers":{"X-Content-Type-Options":"nosniff","X-Frame-Options":"SAMEORIGIN","Referrer-Policy":"strict-origin-when-cross-origin","Permissions-Policy":"camera=(), microphone=(), geolocation=()"}},{"glob":"**/*.@(jpg|jpeg|gif|png|svg|webp|avif|css|js)","headers":{"Cache-Control":"max-age=31536000, immutable"}}],"cleanUrls":true,"trailingSlashBehavior":"ADD"}}
+[debug] [2026-10-09T18:27:21.626Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa 200
+[debug] [2026-10-09T18:27:21.626Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa {"name":"projects/390979735373/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa","status":"FINALIZED","config":{"headers":[{"headers":{"X-Frame-Options":"SAMEORIGIN","Referrer-Policy":"strict-origin-when-cross-origin","Permissions-Policy":"camera=(), microphone=(), geolocation=()","X-Content-Type-Options":"nosniff"},"glob":"**"},{"headers":{"Cache-Control":"max-age=31536000, immutable"},"glob":"**/*.@(jpg|jpeg|gif|png|svg|webp|avif|css|js)"}],"cleanUrls":true,"trailingSlashBehavior":"ADD"},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-10-09T18:27:17.876035Z","createUser":{"email":"barisbagirlar@gmail.com"},"finalizeTime":"2026-10-09T18:27:21.269451Z","finalizeUser":{"email":"barisbagirlar@gmail.com"}}
+[debug] [2026-10-09T18:27:21.626Z] [hosting] finalized version for izmiryagdegisimi:[object Object]
+[info] ✔  hosting[izmiryagdegisimi]: version finalized 
+[info] i  hosting[izmiryagdegisimi]: releasing new version... 
+[debug] [2026-10-09T18:27:21.626Z] [hosting] releasing to channel: preview
+[debug] [2026-10-09T18:27:21.626Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:21.626Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:21.626Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/channels/preview/releases versionName=projects%2F390979735373%2Fsites%2Fizmiryagdegisimi%2Fversions%2F562c9e0150b3f4aa
+[debug] [2026-10-09T18:27:21.626Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/channels/preview/releases {}
+[debug] [2026-10-09T18:27:23.101Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/channels/preview/releases 200
+[debug] [2026-10-09T18:27:23.101Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/izmiryagdegisimi/channels/preview/releases {"name":"projects/390979735373/sites/izmiryagdegisimi/channels/preview/releases/1791570441780000","version":{"name":"projects/390979735373/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa","status":"FINALIZED","config":{"headers":[{"headers":{"Referrer-Policy":"strict-origin-when-cross-origin","Permissions-Policy":"camera=(), microphone=(), geolocation=()","X-Content-Type-Options":"nosniff","X-Frame-Options":"SAMEORIGIN"},"glob":"**"},{"headers":{"Cache-Control":"max-age=31536000, immutable"},"glob":"**/*.@(jpg|jpeg|gif|png|svg|webp|avif|css|js)"}],"cleanUrls":true,"trailingSlashBehavior":"ADD"},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-10-09T18:27:17.876035Z","createUser":{"email":"barisbagirlar@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIXtemeNtBdD69D0Dn7w2CIjq2LyI-H2fryFePz83DpAWVIGDZWkg"},"finalizeTime":"2026-10-09T18:27:21.269451Z","finalizeUser":{"email":"barisbagirlar@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIXtemeNtBdD69D0Dn7w2CIjq2LyI-H2fryFePz83DpAWVIGDZWkg"}},"type":"DEPLOY","releaseTime":"2026-10-09T18:27:21.780Z","releaseUser":{"email":"barisbagirlar@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIXtemeNtBdD69D0Dn7w2CIjq2LyI-H2fryFePz83DpAWVIGDZWkg"}}
+[debug] [2026-10-09T18:27:23.101Z] [hosting] release: {"name":"projects/390979735373/sites/izmiryagdegisimi/channels/preview/releases/1791570441780000","version":{"name":"projects/390979735373/sites/izmiryagdegisimi/versions/562c9e0150b3f4aa","status":"FINALIZED","config":{"headers":[{"headers":{"Referrer-Policy":"strict-origin-when-cross-origin","Permissions-Policy":"camera=(), microphone=(), geolocation=()","X-Content-Type-Options":"nosniff","X-Frame-Options":"SAMEORIGIN"},"glob":"**"},{"headers":{"Cache-Control":"max-age=31536000, immutable"},"glob":"**/*.@(jpg|jpeg|gif|png|svg|webp|avif|css|js)"}],"cleanUrls":true,"trailingSlashBehavior":"ADD"},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2026-10-09T18:27:17.876035Z","createUser":{"email":"barisbagirlar@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIXtemeNtBdD69D0Dn7w2CIjq2LyI-H2fryFePz83DpAWVIGDZWkg"},"finalizeTime":"2026-10-09T18:27:21.269451Z","finalizeUser":{"email":"barisbagirlar@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIXtemeNtBdD69D0Dn7w2CIjq2LyI-H2fryFePz83DpAWVIGDZWkg"}},"type":"DEPLOY","releaseTime":"2026-10-09T18:27:21.780Z","releaseUser":{"email":"barisbagirlar@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/ACg8ocIXtemeNtBdD69D0Dn7w2CIjq2LyI-H2fryFePz83DpAWVIGDZWkg"}}
+[info] ✔  hosting[izmiryagdegisimi]: release complete 
+[info] 
+[info] ✔  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/studio-7658156126-ffb8e/overview
+[info] Hosting URL: https://izmiryagdegisimi.web.app
+[debug] [2026-10-09T18:27:23.104Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:23.104Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:23.104Z] >>> [apiv2][query] GET https://identitytoolkit.googleapis.com/admin/v2/projects/studio-7658156126-ffb8e/config [none]
+[debug] [2026-10-09T18:27:23.104Z] >>> [apiv2][(partial)header] GET https://identitytoolkit.googleapis.com/admin/v2/projects/studio-7658156126-ffb8e/config  x-goog-user-project=studio-7658156126-ffb8e
+[debug] [2026-10-09T18:27:24.080Z] <<< [apiv2][status] GET https://identitytoolkit.googleapis.com/admin/v2/projects/studio-7658156126-ffb8e/config 200
+[debug] [2026-10-09T18:27:24.080Z] <<< [apiv2][body] GET https://identitytoolkit.googleapis.com/admin/v2/projects/studio-7658156126-ffb8e/config {"name":"projects/390979735373/config","signIn":{"email":{"enabled":true},"anonymous":{"enabled":true},"hashConfig":{"algorithm":"SCRYPT","signerKey":"93COI9irMx7oDOvovdUdQ7IMKCX+Wuxmr2P5wDLcmja9px80Xb6nlMN4XbPj1D5pkAEnpixjFrXegkD4SJx7UA==","saltSeparator":"Bw==","rounds":8,"memoryCost":14}},"notification":{"sendEmail":{"method":"DEFAULT","resetPasswordTemplate":{"senderLocalPart":"noreply","subject":"Reset your password for %APP_NAME%","body":"<p>Hello,</p>\n<p>Follow this link to reset your %APP_NAME% password for your %EMAIL% account.</p>\n<p><a href='%LINK%'>%LINK%</a></p>\n<p>If you didn’t ask to reset your password, you can ignore this email.</p>\n<p>Thanks,</p>\n<p>Your %APP_NAME% team</p>","bodyFormat":"HTML","replyTo":"noreply"},"verifyEmailTemplate":{"senderLocalPart":"noreply","subject":"Verify your email for %APP_NAME%","body":"<p>Hello %DISPLAY_NAME%,</p>\n<p>Follow this link to verify your email address.</p>\n<p><a href='%LINK%'>%LINK%</a></p>\n<p>If you didn’t ask to verify this address, you can ignore this email.</p>\n<p>Thanks,</p>\n<p>Your %APP_NAME% team</p>","bodyFormat":"HTML","replyTo":"noreply"},"changeEmailTemplate":{"senderLocalPart":"noreply","subject":"Your sign-in email was changed for %APP_NAME%","body":"<p>Hello %DISPLAY_NAME%,</p>\n<p>Your sign-in email for %APP_NAME% was changed to %NEW_EMAIL%.</p>\n<p>If you didn’t ask to change your email, follow this link to reset your sign-in email.</p>\n<p><a href='%LINK%'>%LINK%</a></p>\n<p>Thanks,</p>\n<p>Your %APP_NAME% team</p>","bodyFormat":"HTML","replyTo":"noreply"},"callbackUri":"https://studio-7658156126-ffb8e.firebaseapp.com/__/auth/action","dnsInfo":{"customDomainState":"NOT_STARTED","domainVerificationRequestTime":"1970-01-01T00:00:00Z"},"revertSecondFactorAdditionTemplate":{"senderLocalPart":"noreply","subject":"You've added 2 step verification to your %APP_NAME% account.","body":"<p>Hello %DISPLAY_NAME%,</p>\n<p>Your account in %APP_NAME% has been updated with %SECOND_FACTOR% for 2-step verification.</p>\n<p>If you didn't add this 2-step verification, click the link below to remove it.</p>\n<p><a href='%LINK%'>%LINK%</a></p>\n<p>Thanks,</p>\n<p>Your %APP_NAME% team</p>","bodyFormat":"HTML","replyTo":"noreply"}},"sendSms":{"smsTemplate":{"content":"%LOGIN_CODE% is your verification code for %APP_NAME%."}},"defaultLocale":"en"},"quota":{},"monitoring":{"requestLogging":{}},"multiTenant":{},"authorizedDomains":["6000-firebase-studio-1776602960361.cluster-fbfjltn375c6wqxlhoehbz44sk.cloudworkstations.dev","9000-firebase-studio-1776602960361.cluster-fbfjltn375c6wqxlhoehbz44sk.cloudworkstations.dev","studio--studio-7658156126-ffb8e.us-central1.hosted.app","localhost","degerlet.com","www.degerlet.com","saatchi--predeploy-rollback-r83ogp41.web.app","studio-7658156126-ffb8e--r10-guided-admin-ch0zf3xo.web.app","izmiryagdegisimi--test-preview-0sf3mj5x.web.app"],"subtype":"FIREBASE_AUTH","client":{"apiKey":"AIzaSyAFcMC-75U85yZA47Y98l2wZOi96v5RUiY","permissions":{},"firebaseSubdomain":"studio-7658156126-ffb8e"},"mfa":{"state":"DISABLED"},"blockingFunctions":{},"smsRegionConfig":{},"emailPrivacyConfig":{"enableImprovedEmailPrivacy":true},"mobileLinksConfig":{"domain":"HOSTING_DOMAIN"},"defaultHostingSite":"studio-7658156126-ffb8e"}
+[debug] [2026-10-09T18:27:24.081Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:24.081Z] Checked if tokens are valid: true, expires at: 1791572592863
+[debug] [2026-10-09T18:27:24.081Z] >>> [apiv2][query] PATCH https://identitytoolkit.googleapis.com/admin/v2/projects/studio-7658156126-ffb8e/config update_mask=authorizedDomains
+[debug] [2026-10-09T18:27:24.081Z] >>> [apiv2][(partial)header] PATCH https://identitytoolkit.googleapis.com/admin/v2/projects/studio-7658156126-ffb8e/config  x-goog-user-project=studio-7658156126-ffb8e
+[debug] [2026-10-09T18:27:24.081Z] >>> [apiv2][body] PATCH https://identitytoolkit.googleapis.com/admin/v2/projects/studio-7658156126-ffb8e/config {"authorizedDomains":["6000-firebase-studio-1776602960361.cluster-fbfjltn375c6wqxlhoehbz44sk.cloudworkstations.dev","9000-firebase-studio-1776602960361.cluster-fbfjltn375c6wqxlhoehbz44sk.cloudworkstations.dev","studio--studio-7658156126-ffb8e.us-central1.hosted.app","localhost","degerlet.com","www.degerlet.com","saatchi--predeploy-rollback-r83ogp41.web.app","studio-7658156126-ffb8e--r10-guided-admin-ch0zf3xo.web.app","izmiryagdegisimi--test-preview-0sf3mj5x.web.app","izmiryagdegisimi--preview-a7hfq6eh.web.app"]}

@@ -2,88 +2,95 @@
 import { business } from '../data/business';
 ---
 
-<section class="hero-section" aria-labelledby="hero-title">
+<section class="hero-section">
+  <div class="hero-backdrop"></div>
   <div class="container hero-container">
     <div class="hero-content">
-      <div class="hero-badge-wrap">
-        <span class="badge">ASM AUTO · İZMİR YAĞ SERVİSİ</span>
-        <span class="badge-sub">35 Yıllık Ustalık Deneyimi</span>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span>İZMİR'İN GÜVENİLİR MOTOR YAĞI & PERİYODİK BAKIM SERVİSİ</span>
       </div>
-
-      <h1 id="hero-title" class="hero-title">
-        İzmir'de Motor Yağı Değişimi ve Periyodik Bakım
+      
+      <h1 class="hero-title">
+        İzmir'de Motor Yağı Değişimi ve Profesyonel Periyodik Bakım
       </h1>
-
+      
       <p class="hero-lead">
-        Yağ değişimi yalnızca eski yağı boşaltmak değildir. Aracın motoruna uygun spesifikasyon, doğru filtre ve düzgün uygulama gerekir. ASM Auto'da bakım ihtiyacınızı araç bilgilerinize göre değerlendirelim.
+        35 yıllık mesleki tecrübe, aracınızın üretici standartlarına uygun orijinal filtreler ve onaylı tam sentetik motor yağlarıyla motorunuzun ömrünü uzatan yerel uzman servis.
       </p>
 
-      <!-- Ana Aksiyon Butonları (Clegg Dönüşüm Mimarisinin Omurgası) -->
-      <div class="hero-actions">
-        <a href={`tel:${business.phoneE164}`} class="btn btn-primary hero-btn-main">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          Hemen Ara: {business.phoneDisplay}
+      <div class="hero-cta-group">
+        <a href={`tel:${business.phoneE164}`} class="btn btn-primary hero-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="btn-icon">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+          </svg>
+          <span>Hemen Ara: {business.phoneDisplay}</span>
         </a>
 
-        <a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn btn-secondary hero-btn-whatsapp">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-          WhatsApp'tan Sor
+        <a href={business.whatsappUrl} target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp hero-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="btn-icon">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.23 8.23 0 012.41 5.82c0 4.54-3.7 8.24-8.24 8.24-1.45 0-2.87-.38-4.12-1.1l-.3-.17-3.12.82.83-3.04-.19-.31a8.2 8.2 0 01-1.25-4.44c0-4.54 3.7-8.24 8.24-8.24m4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.25-1.5-1.4-1.75-.14-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.3z"></path>
+          </svg>
+          <span>WhatsApp'tan Danışın</span>
         </a>
 
-        <a href="#servis-talebi" class="btn btn-outline hero-btn-schedule">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-          Servis Talebi Oluştur
+        <a href="/randevu/" class="btn btn-outline-white hero-btn">
+          <span>Servis Talebi Oluştur →</span>
         </a>
-      </div>
-
-      <!-- Hızlı Hizmet Geçiş Etiketleri -->
-      <div class="hero-quick-tags">
-        <span class="quick-tags-title">Öncelikli Hizmetler:</span>
-        <a href="/motor-yagi-degisimi/" class="quick-tag">Motor Yağı Değişimi</a>
-        <a href="/yag-filtresi-degisimi/" class="quick-tag">Yağ Filtresi Değişimi</a>
-        <a href="/periyodik-bakim/" class="quick-tag">Periyodik Bakım</a>
       </div>
     </div>
 
-    <!-- Sağ Görsel & Teknik Güven Paneli -->
-    <div class="hero-visual">
-      <div class="visual-card">
-        <div class="visual-logo-wrap">
-          <img src="/images/logo.png" alt="İzmir Yağ Değişim Servisi Resmi Rozeti" width="480" height="320" class="hero-logo-img" />
+    <!-- Quick Features Strip (Amcam Style) -->
+    <div class="hero-features-grid">
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-svg">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+          </svg>
         </div>
-        
-        <div class="trust-pill-grid">
-          <div class="trust-pill">
-            <span class="pill-icon">✓</span>
-            <div class="pill-text">
-              <strong>Motor Koduna Özel</strong>
-              <small>Üretici Onaylı Yağ Normu</small>
-            </div>
-          </div>
+        <div class="feature-text">
+          <strong>35 Yıllık Ustalık</strong>
+          <span>Usta Murat Güvencesi</span>
+        </div>
+      </div>
 
-          <div class="trust-pill">
-            <span class="pill-icon">✓</span>
-            <div class="pill-text">
-              <strong>Sıcak Karter Tahliyesi</strong>
-              <small>Tortu Bırakmayan Boşaltma</small>
-            </div>
-          </div>
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-svg">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="feature-text">
+          <strong>Üretici Onaylı Yağ</strong>
+          <span>ACEA / API Standartları</span>
+        </div>
+      </div>
 
-          <div class="trust-pill">
-            <span class="pill-icon">✓</span>
-            <div class="pill-text">
-              <strong>35 Yıllık Ustalık</strong>
-              <small>Usta Murat Güvencesi</small>
-            </div>
-          </div>
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-svg">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <div class="feature-text">
+          <strong>Aynı Gün Hızlı Servis</strong>
+          <span>25 - 45 Dk Teslimat</span>
+        </div>
+      </div>
 
-          <div class="trust-pill">
-            <span class="pill-icon">✓</span>
-            <div class="pill-text">
-              <strong>Tork Kontrollü</strong>
-              <small>Sıfır Kaçak & Sızdırmazlık</small>
-            </div>
-          </div>
+      <div class="feature-card">
+        <div class="feature-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="feature-svg">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+        </div>
+        <div class="feature-text">
+          <strong>Şeffaf Bakım Kaydı</strong>
+          <span>Tork & Sızdırmazlık Testi</span>
         </div>
       </div>
     </div>
@@ -92,219 +99,147 @@ import { business } from '../data/business';
 
 <style>
   .hero-section {
-    background: linear-gradient(180deg, #F8FAFC 0%, #FFFFFF 100%);
-    padding-top: 36px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid var(--line);
+    position: relative;
+    background-color: #0E1721;
+    background-image: radial-gradient(circle at 80% 20%, rgba(216, 92, 32, 0.15) 0%, transparent 50%),
+                      linear-gradient(180deg, #121C27 0%, #0A1118 100%);
+    color: #FFFFFF;
+    padding-top: 64px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
   }
-
-  @media (min-width: 992px) {
-    .hero-section {
-      padding-top: 60px;
-      padding-bottom: 72px;
-    }
-  }
-
   .hero-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 36px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-content {
+    max-width: 860px;
+    margin-bottom: 48px;
+  }
+  .hero-badge {
+    display: inline-flex;
     align-items: center;
-  }
-
-  @media (min-width: 992px) {
-    .hero-container {
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 48px;
-    }
-  }
-
-  .hero-badge-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-  }
-
-  .badge-sub {
-    font-size: 13px;
+    gap: 8px;
+    background-color: rgba(216, 92, 32, 0.15);
+    border: 1px solid rgba(216, 92, 32, 0.35);
+    color: #FFA573;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 12px;
     font-weight: 700;
-    color: var(--muted);
-    background-color: var(--surface-muted);
-    padding: 6px 12px;
-    border-radius: var(--radius-badge);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
   }
-
+  .badge-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #D85C20;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #D85C20;
+  }
   .hero-title {
     font-size: 32px;
-    line-height: 1.18;
-    color: var(--ink);
+    line-height: 1.2;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 20px;
     letter-spacing: -0.02em;
-    margin-bottom: 18px;
   }
-
-  @media (min-width: 768px) {
-    .hero-title {
-      font-size: 44px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .hero-title {
-      font-size: 48px;
-    }
-  }
-
   .hero-lead {
     font-size: 17px;
     line-height: 1.6;
-    color: var(--muted);
-    margin-bottom: 28px;
-    max-width: 620px;
+    color: #94A3B8;
+    margin-bottom: 32px;
+    max-width: 760px;
   }
-
-  .hero-actions {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 28px;
-  }
-
-  @media (min-width: 576px) {
-    .hero-actions {
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-  }
-
-  .hero-btn-main {
-    background-color: var(--accent);
-    color: #FFFFFF;
-    font-weight: 700;
-  }
-
-  .hero-btn-whatsapp {
-    background-color: #128C7E;
-    color: #FFFFFF;
-    font-weight: 600;
-  }
-  .hero-btn-whatsapp:hover {
-    background-color: #075E54;
-  }
-
-  .hero-btn-schedule {
-    font-weight: 600;
-  }
-
-  .hero-quick-tags {
+  .hero-cta-group {
     display: flex;
     flex-wrap: wrap;
+    gap: 14px;
     align-items: center;
-    gap: 8px;
-    padding-top: 16px;
-    border-top: 1px solid var(--line);
   }
-
-  .quick-tags-title {
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--muted);
-    margin-right: 4px;
+  .hero-btn {
+    padding: 15px 26px;
+    font-size: 15px;
   }
-
-  .quick-tag {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--ink);
-    background-color: var(--surface-soft);
-    padding: 6px 12px;
-    border-radius: 20px;
-    border: 1px solid var(--line);
-    transition: all 0.2s;
+  .btn-icon {
+    width: 18px;
+    height: 18px;
   }
-  .quick-tag:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background-color: #FFF;
+  .btn-whatsapp {
+    background-color: #25D366;
+    color: #FFFFFF;
   }
-
-  /* Sağ Görsel Kartı */
-  .visual-card {
-    background: #FFFFFF;
-    border: 1px solid var(--line);
-    border-radius: var(--radius-card);
-    padding: 24px;
-    box-shadow: 0 10px 30px rgba(22, 33, 44, 0.06);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .btn-whatsapp:hover {
+    background-color: #20BA5A;
   }
-
-  .visual-logo-wrap {
-    width: 100%;
-    max-width: 380px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
+  .btn-outline-white {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
   }
-
-  .hero-logo-img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+  .btn-outline-white:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #FFFFFF;
   }
-
-  .trust-pill-grid {
-    width: 100%;
+  .hero-features-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 16px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
-
-  @media (min-width: 480px) {
-    .trust-pill-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  .trust-pill {
+  .feature-card {
     display: flex;
     align-items: center;
-    gap: 10px;
-    background-color: var(--surface-soft);
-    padding: 10px 14px;
-    border-radius: 10px;
-    text-align: left;
-    border: 1px solid var(--line);
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 14px 18px;
+    backdrop-filter: blur(8px);
   }
-
-  .pill-icon {
+  .feature-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: rgba(216, 92, 32, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: var(--success-bg);
-    color: var(--success);
-    font-weight: 800;
-    font-size: 13px;
+    color: #D85C20;
     flex-shrink: 0;
   }
-
-  .pill-text strong {
-    display: block;
-    font-size: 13px;
-    color: var(--ink);
-    line-height: 1.2;
+  .feature-svg {
+    width: 22px;
+    height: 22px;
   }
-
-  .pill-text small {
-    display: block;
-    font-size: 11px;
-    color: var(--muted);
+  .feature-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .feature-text strong {
+    font-size: 14px;
+    color: #F8FAFC;
+    font-weight: 700;
+  }
+  .feature-text span {
+    font-size: 12px;
+    color: #94A3B8;
+  }
+  @media (min-width: 640px) {
+    .hero-features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (min-width: 1024px) {
+    .hero-title {
+      font-size: 46px;
+    }
+    .hero-features-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 </style>
