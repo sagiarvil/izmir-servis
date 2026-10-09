@@ -7,7 +7,7 @@ import { business } from '../data/business';
   title="İzmir Periyodik Araç Bakımı | ASM Auto Servis"
   description="İzmir'de 10.000 ve 15.000 km periyodik araç bakımı. Yağ, filtreler, sıvı seviyeleri ve 30 nokta güvenlik analizi."
 >
-  <div style="background-color: var(--amcam-dark); color: #fff; padding: 45px 0 50px; border-bottom: 3px solid var(--amcam-red);">
+  <div style="background-color: var(--asm-dark); color: #fff; padding: 45px 0 50px; border-bottom: 3px solid var(--asm-red);">
     <div class="container">
       <span class="section-tag" style="color: #ff4d4f;">TAM SERVİS PAKETİ</span>
       <h1 style="font-size: 36px; color: #fff; text-transform: uppercase;">Periyodik Bakım Hizmeti</h1>
@@ -19,7 +19,7 @@ import { business } from '../data/business';
     <div class="container">
       <div class="about-grid">
         <div>
-          <img src="/images/service-periodic.webp" alt="Periyodik Bakım Paketi" style="border-radius: 4px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;" />
+          <img src="/images/service-engine-bay.webp" alt="Periyodik Bakım Paketi Motor Bölmesi İnceleme" style="border-radius: 4px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; width: 100%; height: auto; object-fit: cover;" />
         </div>
         <div>
           <span class="section-tag">30 NOKTA KONTROL</span>
@@ -28,15 +28,81 @@ import { business } from '../data/business';
             Sadece yağ değil; motorun, frenlerin ve yürüyen aksamın sağlığı için tam entegre servis sunuyoruz.
           </p>
           <ul class="about-checklist" style="margin-top: 20px;">
-            <li>✓ Motor Yağı & Yağ Filtresi</li>
+            <li>✓ Motor Yağı & Yağ Filtresi (Üretici Onaylı)</li>
             <li>✓ Hava & Polen Filtresi Değişimi</li>
             <li>✓ Fren Balata & Disk Kalınlık Ölçümü</li>
-            <li>✓ Fren Hidroliği Nem Testi</li>
-            <li>✓ Antifriz Donma Derecesi Ölçümü</li>
-            <li>✓ Alt Takım & Süspansiyon Kontrolü</li>
+            <li>✓ Elektronik Cihazla Fren Hidroliği Nem Testi</li>
+            <li>✓ Refraktometre ile Antifriz Donma Noktası Analizi</li>
+            <li>✓ Alt Takım, Körük ve Süspansiyon Boşluk Kontrolü</li>
           </ul>
           <div style="margin-top: 25px;">
             <a href="/#servis-talebi" class="header-cta-btn">Randevu Al & Fiyat Sor →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Atölye Kontrol Adımları ve Gerçek Uygulama Görselleri -->
+  <section style="padding: 50px 0 70px; background-color: var(--asm-gray-bg); border-top: 1px solid #e2e8f0;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 35px;">
+        <span class="section-tag">SERVİS STANDARDI</span>
+        <h2 class="section-title">Atölye İçi Güvenlik ve Sıvı Kontrolleri</h2>
+        <p style="color: var(--asm-text-muted); font-size: 15px; max-width: 650px; margin: 0 auto;">
+          Bakım sırasında uygulanan her teknik adım, elektronik ölçüm cihazları ve fabrika toleranslarıyla belgelenir.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 25px;">
+        <div style="background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+          <img 
+            src="/images/brake-fluid-test.webp" 
+            alt="Fren Hidroliği Elektronik Nem Testi" 
+            width="600" 
+            height="380" 
+            style="width: 100%; height: 220px; object-fit: cover;" 
+            loading="lazy"
+          />
+          <div style="padding: 20px;">
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--asm-dark); margin-bottom: 6px;">Fren Hidroliği Nem Testi</h4>
+            <p style="font-size: 13px; color: #4a5568; margin: 0; line-height: 1.6;">
+              Fren sıvısının nem oranı dijital cihazla ölçülür. %3 üzeri nem kaynama noktasını düşürerek fren pedalında süngerleşmeye yol açar; zamanında tespit edilir.
+            </p>
+          </div>
+        </div>
+
+        <div style="background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+          <img 
+            src="/images/service-air-cabin-filter.webp" 
+            alt="Hava ve Polen Filtresi Kontrol ve Değişimi" 
+            width="600" 
+            height="380" 
+            style="width: 100%; height: 220px; object-fit: cover;" 
+            loading="lazy"
+          />
+          <div style="padding: 20px;">
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--asm-dark); margin-bottom: 6px;">Hava & Polen Filtresi Yenileme</h4>
+            <p style="font-size: 13px; color: #4a5568; margin: 0; line-height: 1.6;">
+              Hava filtresi hava debimetresini korur ve yakıt tüketimini dengeler. Aktif karbonlu kabin filtresi ise klima sistemini ve iç hava kalitesini taze tutar.
+            </p>
+          </div>
+        </div>
+
+        <div style="background: #fff; border-radius: 4px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+          <img 
+            src="/images/service-oil-filter.webp" 
+            alt="Tork Anahtarlı Yağ Filtresi Montajı" 
+            width="600" 
+            height="380" 
+            style="width: 100%; height: 220px; object-fit: cover;" 
+            loading="lazy"
+          />
+          <div style="padding: 20px;">
+            <h4 style="font-size: 16px; font-weight: 700; color: var(--asm-dark); margin-bottom: 6px;">Orijinal Filtre & Tork Güvencesi</h4>
+            <p style="font-size: 13px; color: #4a5568; margin: 0; line-height: 1.6;">
+              Yüksek mikron filtre kağıdıyla motoru mikro partiküllerden korur, yeni O-ring conta taze yağ ile yağlanıp fabrika torkunda sıkılır.
+            </p>
           </div>
         </div>
       </div>

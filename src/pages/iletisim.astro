@@ -5,7 +5,7 @@ import { business } from '../data/business';
 const googleMapsDirUrl = "https://www.google.com/maps/dir/?api=1&destination=38.3340,27.1350";
 const appleMapsDirUrl = "maps://?daddr=38.3340,27.1350";
 const yandexNaviUrl = "https://www.google.com/maps/dir/?api=1&destination=38.3340,27.1350";
-const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Auto%20servisinize%20gelmek%20istiyorum,%20canl%C4%B1%20konum%20payla%C5%9F%C4%B1r%20m%C4%B1s%C4%B1n%C4%B1z?";
+const whatsappLiveLocUrl = "https://wa.me/0532 555 00 99?text=Merhaba,%20ASM%20Auto%20servisinize%20gelmek%20istiyorum,%20canl%C4%B1%20konum%20payla%C5%9F%C4%B1r%20m%C4%B1s%C4%B1n%C4%B1z?";
 ---
 
 <Layout
@@ -16,7 +16,7 @@ const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Aut
   <!-- =========================================================================
        BAŞLIK BÖLÜMÜ
        ========================================================================= -->
-  <div style="background-color: var(--amcam-dark); color: #fff; padding: 45px 0 50px; border-bottom: 3px solid var(--amcam-red);">
+  <div style="background-color: var(--asm-dark); color: #fff; padding: 45px 0 50px; border-bottom: 3px solid var(--asm-red);">
     <div class="container">
       <span class="section-tag" style="color: #ff4d4f;">İZMİR 6. SANAYİ SİTESİ</span>
       <h1 style="font-size: 36px; color: #fff; text-transform: uppercase;">İletişim & Canlı Yol Tarifi</h1>
@@ -74,7 +74,7 @@ const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Aut
   <!-- =========================================================================
        CANLI GOOGLE HARİTA VE ADRES BİLGİ KUTUSU
        ========================================================================= -->
-  <section style="padding: 50px 0; background-color: var(--amcam-gray-bg);">
+  <section style="padding: 50px 0; background-color: var(--asm-gray-bg);">
     <div class="container">
       
       <div style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; align-items: stretch;">
@@ -94,7 +94,7 @@ const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Aut
         </div>
 
         <!-- Yan Bilgi Paneli -->
-        <div style="background-color: #ffffff; padding: 30px 25px; border: 1px solid #e2e8f0; border-top: 4px solid var(--amcam-red); border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="background-color: #ffffff; padding: 30px 25px; border: 1px solid #e2e8f0; border-top: 4px solid var(--asm-red); border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
           
           <div>
             <span class="section-tag">FİZİKSEL ATÖLYE BİLGİLERİ</span>
@@ -113,7 +113,7 @@ const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Aut
             <div style="margin-bottom: 18px;">
               <strong style="display: block; font-size: 13px; color: #64748b; text-transform: uppercase;">Telefon & İletişim:</strong>
               <p style="font-size: 16px; font-weight: 700; margin-top: 4px;">
-                <a href={`tel:${business.phoneE164}`} style="color: var(--amcam-red);">{business.phoneDisplay}</a>
+                <a href={`tel:${business.phoneE164}`} style="color: var(--asm-red);">{business.phoneDisplay}</a>
               </p>
               <p style="font-size: 15px; font-weight: 600; color: #475569; margin-top: 2px;">
                 GSM / WhatsApp: <a href={`tel:${business.whatsappE164}`}>{business.whatsappE164}</a>
@@ -135,7 +135,7 @@ const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Aut
             <a href={googleMapsDirUrl} target="_blank" rel="noopener noreferrer" class="btn-hero-red" style="text-align: center; justify-content: center; padding: 13px 20px;">
               Navigasyonu Başlat ↗
             </a>
-            <a href={`tel:${business.phoneE164}`} class="btn-hero-whatsapp" style="background-color: var(--amcam-dark); border-color: #333; text-align: center; justify-content: center; padding: 13px 20px;">
+            <a href={`tel:${business.phoneE164}`} class="btn-hero-whatsapp" style="background-color: var(--asm-dark); border-color: #333; text-align: center; justify-content: center; padding: 13px 20px;">
               Telefonla Yol Tarifi Al
             </a>
           </div>
@@ -156,7 +156,7 @@ const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Aut
       <div style="text-align: center; margin-bottom: 40px;">
         <span class="section-tag">KOLAY BULUNABİLİRLİK REHBERİ</span>
         <h2 class="section-title">Servisimize Nasıl Ulaşırsınız?</h2>
-        <p style="color: var(--amcam-text-muted); font-size: 15px; max-width: 680px; margin: 0 auto;">
+        <p style="color: var(--asm-text-muted); font-size: 15px; max-width: 680px; margin: 0 auto;">
           6. Sanayi Sitesi geniş bir alana yayıldığı için hangi yönden gelirseniz gelin dükkanımızı kolayca bulabilmeniz için tarif noktalarımız:
         </p>
       </div>
@@ -213,12 +213,12 @@ const whatsappLiveLocUrl = "https://wa.me/905322530035?text=Merhaba,%20ASM%20Aut
   <!-- =========================================================================
        HIZLI SERVİS TALEBİ FORMU
        ========================================================================= -->
-  <section style="padding: 60px 0; background-color: var(--amcam-gray-bg); border-top: 1px solid #e2e8f0;">
+  <section style="padding: 60px 0; background-color: var(--asm-gray-bg); border-top: 1px solid #e2e8f0;">
     <div class="container" style="max-width: 800px;">
       <div class="booking-form-box">
         <span class="section-tag">SERVİS GELİŞİNİZİ BİLDİRİN</span>
         <h2 class="section-title" style="margin-bottom: 15px;">Gelmeden Önce Bize Yazın</h2>
-        <p style="font-size: 14px; color: var(--amcam-text-muted); margin-bottom: 25px;">
+        <p style="font-size: 14px; color: var(--asm-text-muted); margin-bottom: 25px;">
           Geleceğiniz saati ve araç modelinizi önceden bildirirseniz, liftimizi ve araca uygun motor yağınızı siz gelmeden hazır edelim.
         </p>
 

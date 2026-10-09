@@ -11,7 +11,7 @@ ASM Auto (Murat Asım), İzmir 6. Sanayi Sitesi'nde **25 yıldır aynı adreste*
 
 - **Kurucu & Baş Teknisyen:** Murat Asım
 - **Fiziksel Lokasyon:** 574 Sokak. No:17 6. Sanayi Sitesi, 35410 Gaziemir / İzmir
-- **Telefon:** 0232 253 00 35 / 0532 253 00 35
+- **Telefon:** +90 532 555 00 99
 - **Doğrulanmış Sosyal Kanıt:**
   - Instagram (Usta): [@asm_murat_](https://www.instagram.com/asm_murat_/)
   - Instagram (Atölye): [@asm_auto_service](https://www.instagram.com/asm_auto_service/)
@@ -21,7 +21,7 @@ ASM Auto (Murat Asım), İzmir 6. Sanayi Sitesi'nde **25 yıldır aynı adreste*
 ## 🛠️ Mimari & Teknolojiler
 
 - **Frontend:** [Astro](https://astro.build/) (Static Site Generation / Sub-14KB TCP AST)
-- **Tasarım:** Amcam Otomotiv kutu ve blok mimarisi, şeffaf krom amblem rozet logo
+- **Tasarım:** Yalın kutu ve blok servis mimarisi, şeffaf krom amblem rozet logo
 - **Hosting & Dağıtım:** Google Firebase Hosting (`studio-7658156126-ffb8e` / `izmiryagdegisimi`)
 - **Kalite Standartları:** Google Search Quality Evaluator E-E-A-T & YMYL standartları
 

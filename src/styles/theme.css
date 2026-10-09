@@ -1,21 +1,21 @@
 /* ==========================================================================
-   AMCAM OTOMOTİV BİREBİR TASARIM VE KUTU MİMARİSİ
+   asm OTOMOTİV BİREBİR TASARIM VE KUTU MİMARİSİ
    İzmir Yağ Değişimi | ASM Auto
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --amcam-red: #b90809;
-  --amcam-red-dark: #920405;
-  --amcam-dark: #191919;
-  --amcam-darker: #111111;
-  --amcam-gray-bg: #f5f6f8;
-  --amcam-gray-light: #ececec;
-  --amcam-gray-border: #dcdcdc;
-  --amcam-text-main: #333333;
-  --amcam-text-muted: #666666;
-  --amcam-green: #22c15e;
+  --asm-red: #b90809;
+  --asm-red-dark: #920405;
+  --asm-dark: #191919;
+  --asm-darker: #111111;
+  --asm-gray-bg: #f5f6f8;
+  --asm-gray-light: #ececec;
+  --asm-gray-border: #dcdcdc;
+  --asm-text-main: #333333;
+  --asm-text-muted: #666666;
+  --asm-green: #22c15e;
   --font-heading: 'Maven Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --container-width: 1220px;
@@ -29,7 +29,7 @@
 
 body {
   font-family: var(--font-body);
-  color: var(--amcam-text-main);
+  color: var(--asm-text-main);
   background-color: #ffffff;
   font-size: 14px;
   line-height: 1.6;
@@ -52,7 +52,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
-  color: var(--amcam-dark);
+  color: var(--asm-dark);
 }
 
 .container {
@@ -62,10 +62,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   1. TOP ACTION BAR (AMCAM BİREBİR)
+   1. TOP ACTION BAR (asm BİREBİR)
    ========================================================================== */
 #Action_bar {
-  background-color: var(--amcam-dark);
+  background-color: var(--asm-dark);
   color: #cccccc;
   font-size: 13px;
   padding: 8px 0;
@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
   border-radius: 50%;
 }
 
@@ -135,11 +135,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .social-links a:hover {
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
 }
 
 /* ==========================================================================
-   2. TOP HEADER (AMCAM BİREBİR - LOGO, MENÜ, KIRMIZI BUTON)
+   2. TOP HEADER (asm BİREBİR - LOGO, MENÜ, KIRMIZI BUTON)
    ========================================================================== */
 #Top_bar {
   background-color: #ffffff;
@@ -186,7 +186,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: 15px;
   font-weight: 700;
-  color: var(--amcam-dark);
+  color: var(--asm-dark);
   text-transform: uppercase;
   padding: 10px 0;
   position: relative;
@@ -195,7 +195,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-nav a:hover,
 .main-nav a.active {
-  color: var(--amcam-red);
+  color: var(--asm-red);
 }
 
 .main-nav a::after {
@@ -205,7 +205,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
   transition: width 0.25s ease;
 }
 
@@ -218,7 +218,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
   color: #ffffff;
   font-family: var(--font-heading);
   font-weight: 700;
@@ -228,12 +228,12 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 4px;
   letter-spacing: 0.03em;
   transition: all 0.2s ease;
-  border: 1px solid var(--amcam-red-dark);
+  border: 1px solid var(--asm-red-dark);
   box-shadow: 0 3px 6px rgba(185, 8, 9, 0.25);
 }
 
 .header-cta-btn:hover {
-  background-color: var(--amcam-red-dark);
+  background-color: var(--asm-red-dark);
   box-shadow: 0 4px 12px rgba(185, 8, 9, 0.4);
   transform: translateY(-1px);
 }
@@ -243,7 +243,7 @@ h1, h2, h3, h4, h5, h6 {
   background: none;
   border: none;
   font-size: 26px;
-  color: var(--amcam-dark);
+  color: var(--asm-dark);
   cursor: pointer;
 }
 
@@ -256,7 +256,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
   overflow: hidden;
   padding: 75px 0 85px;
-  border-bottom: 4px solid var(--amcam-red);
+  border-bottom: 4px solid var(--asm-red);
 }
 
 .hero-slider-wrap::before {
@@ -282,7 +282,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
   color: #ffffff;
   font-family: var(--font-heading);
   font-weight: 800;
@@ -327,7 +327,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
   color: #ffffff;
   font-family: var(--font-heading);
   font-weight: 800;
@@ -341,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-hero-red:hover {
-  background-color: var(--amcam-red-dark);
+  background-color: var(--asm-red-dark);
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(185, 8, 9, 0.6);
 }
@@ -350,7 +350,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--amcam-green);
+  background-color: var(--asm-green);
   color: #ffffff;
   font-family: var(--font-heading);
   font-weight: 800;
@@ -391,11 +391,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==========================================================================
-   4. AMCAM 3 ÜST KUTU (ENERGY-BOX MİMARİSİ)
+   4. asm 3 ÜST KUTU (ENERGY-BOX MİMARİSİ)
    ========================================================================== */
 .section-energy-boxes {
   padding: 50px 0;
-  background-color: var(--amcam-gray-bg);
+  background-color: var(--asm-gray-bg);
 }
 
 .energy-boxes-grid {
@@ -404,7 +404,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 25px;
 }
 
-/* Amcam'ın Birebir Energy-Box Kutusu */
+/* asm'ın Birebir Energy-Box Kutusu */
 .energy-box {
   background-color: #ffffff;
   position: relative;
@@ -419,7 +419,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* Amcam'ın Üst ve Alt Çizgileri */
+/* asm'ın Üst ve Alt Çizgileri */
 .energy-box::before {
   content: '';
   position: absolute;
@@ -447,11 +447,11 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 12px;
 }
 
-/* Amcam'ın Kırmızı Numara Kutusu */
+/* asm'ın Kırmızı Numara Kutusu */
 .energy-box-num {
   width: 50px;
   height: 70px;
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -475,19 +475,19 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
   line-height: 1.15;
   margin: 4px 0 0 0;
-  color: var(--amcam-red);
+  color: var(--asm-red);
   font-weight: 700;
 }
 
 .energy-box-desc {
   padding-top: 8px;
-  color: var(--amcam-text-main);
+  color: var(--asm-text-main);
   font-size: 13.5px;
   line-height: 1.6;
 }
 
 /* ==========================================================================
-   5. HAKKIMIZDA (AMCAM SECTION 1 BİREBİR)
+   5. HAKKIMIZDA (asm SECTION 1 BİREBİR)
    ========================================================================== */
 .section-about {
   padding: 70px 0;
@@ -517,7 +517,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   bottom: 25px;
   right: 25px;
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
   color: #ffffff;
   padding: 16px 24px;
   border-radius: 4px;
@@ -544,7 +544,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 800;
-  color: var(--amcam-red);
+  color: var(--asm-red);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 6px;
@@ -562,7 +562,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-subtitle {
   font-size: 18px;
   font-weight: 700;
-  color: var(--amcam-red);
+  color: var(--asm-red);
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -577,7 +577,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .about-text {
   font-size: 14px;
-  color: var(--amcam-text-muted);
+  color: var(--asm-text-muted);
   line-height: 1.7;
   margin-bottom: 24px;
 }
@@ -600,16 +600,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-checklist li svg {
-  color: var(--amcam-red);
+  color: var(--asm-red);
   flex-shrink: 0;
 }
 
 /* ==========================================================================
-   6. HİZMETLERİMİZ / NELER YAPIYORUZ? (AMCAM 6'LI ENERGY-BOX GRID)
+   6. HİZMETLERİMİZ / NELER YAPIYORUZ? (asm 6'LI ENERGY-BOX GRID)
    ========================================================================== */
 .section-services {
   padding: 70px 0 80px;
-  background-color: var(--amcam-gray-bg);
+  background-color: var(--asm-gray-bg);
 }
 
 .services-header {
@@ -623,7 +623,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 30px;
 }
 
-/* Amcam Hizmet Kartı */
+/* asm Hizmet Kartı */
 .service-card {
   background-color: #ffffff;
   position: relative;
@@ -671,7 +671,7 @@ h1, h2, h3, h4, h5, h6 {
 .service-card-num {
   width: 48px;
   height: 64px;
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -714,12 +714,12 @@ h1, h2, h3, h4, h5, h6 {
 .service-card-desc {
   font-size: 13.5px;
   line-height: 1.6;
-  color: var(--amcam-text-main);
+  color: var(--asm-text-main);
   margin-bottom: 16px;
   flex-grow: 1;
 }
 
-/* Amcam'ın arrow_link bağlantısı */
+/* asm'ın arrow_link bağlantısı */
 a.arrow_link {
   display: inline-flex;
   align-items: center;
@@ -727,7 +727,7 @@ a.arrow_link {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 13px;
-  color: var(--amcam-red);
+  color: var(--asm-red);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   padding-top: 6px;
@@ -735,12 +735,12 @@ a.arrow_link {
 }
 
 a.arrow_link:hover {
-  color: var(--amcam-red-dark);
+  color: var(--asm-red-dark);
   gap: 12px;
 }
 
 /* ==========================================================================
-   7. MODEL & MARKA ÖZEL BAKIM BLOKLARI (AMCAM TİCARİ/BİNEK GRUBU)
+   7. MODEL & MARKA ÖZEL BAKIM BLOKLARI (asm TİCARİ/BİNEK GRUBU)
    ========================================================================== */
 .section-vehicle-brands {
   padding: 60px 0;
@@ -764,14 +764,14 @@ a.arrow_link:hover {
 }
 
 .brand-card:hover {
-  border-color: var(--amcam-red);
+  border-color: var(--asm-red);
   box-shadow: 0 6px 18px rgba(185, 8, 9, 0.1);
   transform: translateY(-2px);
 }
 
 .brand-card h4 {
   font-size: 12px;
-  color: var(--amcam-red);
+  color: var(--asm-red);
   text-transform: uppercase;
   font-weight: 800;
   margin-bottom: 4px;
@@ -786,19 +786,19 @@ a.arrow_link:hover {
 
 .brand-card p {
   font-size: 13px;
-  color: var(--amcam-text-muted);
+  color: var(--asm-text-muted);
   line-height: 1.5;
 }
 
 /* ==========================================================================
-   8. İSTATİSTİK SAYACI BANDI (AMCAM COUNTER BANNER)
+   8. İSTATİSTİK SAYACI BANDI (asm COUNTER BANNER)
    ========================================================================== */
 .section-stats {
-  background-color: var(--amcam-dark);
+  background-color: var(--asm-dark);
   color: #ffffff;
   padding: 45px 0;
-  border-top: 3px solid var(--amcam-red);
-  border-bottom: 3px solid var(--amcam-red);
+  border-top: 3px solid var(--asm-red);
+  border-bottom: 3px solid var(--asm-red);
 }
 
 .stats-grid {
@@ -818,7 +818,7 @@ a.arrow_link:hover {
 }
 
 .stat-item h3 span {
-  color: var(--amcam-red);
+  color: var(--asm-red);
 }
 
 .stat-item p {
@@ -830,11 +830,11 @@ a.arrow_link:hover {
 }
 
 /* ==========================================================================
-   9. KONUM & RANDEVU FORMU (CLEGG + AMCAM BİRLEŞİMİ)
+   9. KONUM & RANDEVU FORMU (CLEGG + asm BİRLEŞİMİ)
    ========================================================================== */
 .section-contact-booking {
   padding: 70px 0;
-  background-color: var(--amcam-gray-bg);
+  background-color: var(--asm-gray-bg);
 }
 
 .booking-grid {
@@ -881,7 +881,7 @@ a.arrow_link:hover {
   width: 42px;
   height: 42px;
   background-color: #fff1f1;
-  color: var(--amcam-red);
+  color: var(--asm-red);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -898,7 +898,7 @@ a.arrow_link:hover {
 
 .info-detail p {
   font-size: 14px;
-  color: var(--amcam-text-muted);
+  color: var(--asm-text-muted);
 }
 
 .booking-form-box {
@@ -934,7 +934,7 @@ a.arrow_link:hover {
 }
 
 .form-control:focus {
-  border-color: var(--amcam-red);
+  border-color: var(--asm-red);
   box-shadow: 0 0 0 3px rgba(185, 8, 9, 0.12);
 }
 
@@ -946,7 +946,7 @@ a.arrow_link:hover {
 
 .btn-submit {
   width: 100%;
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
   color: #ffffff;
   font-family: var(--font-heading);
   font-weight: 800;
@@ -962,17 +962,17 @@ a.arrow_link:hover {
 }
 
 .btn-submit:hover {
-  background-color: var(--amcam-red-dark);
+  background-color: var(--asm-red-dark);
 }
 
 /* ==========================================================================
-   10. FOOTER (AMCAM 4 KOLONLU YAPI)
+   10. FOOTER (asm 4 KOLONLU YAPI)
    ========================================================================== */
 #Footer {
-  background-color: var(--amcam-dark);
+  background-color: var(--asm-dark);
   color: #a0aec0;
   padding: 60px 0 0;
-  border-top: 4px solid var(--amcam-red);
+  border-top: 4px solid var(--asm-red);
 }
 
 .footer-grid {
@@ -1001,7 +1001,7 @@ a.arrow_link:hover {
   left: 0;
   width: 32px;
   height: 2px;
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
 }
 
 .footer-col ul {
@@ -1049,7 +1049,7 @@ a.arrow_link:hover {
 }
 
 /* ==========================================================================
-   11. AMCAM SIDE TAB & WHATSAPP FLOATING BUTTON
+   11. asm SIDE TAB & WHATSAPP FLOATING BUTTON
    ========================================================================== */
 #rum_sst_tab {
   position: fixed;
@@ -1057,7 +1057,7 @@ a.arrow_link:hover {
   right: -1px;
   transform-origin: 100% 100%;
   transform: rotate(-90deg);
-  background-color: var(--amcam-red);
+  background-color: var(--asm-red);
   color: #ffffff;
   z-index: 9999;
   cursor: pointer;
@@ -1068,7 +1068,7 @@ a.arrow_link:hover {
 }
 
 #rum_sst_tab:hover {
-  background-color: var(--amcam-red-dark);
+  background-color: var(--asm-red-dark);
 }
 
 #rum_sst_tab a {
@@ -1088,7 +1088,7 @@ a.arrow_link:hover {
   right: 25px;
   width: 58px;
   height: 58px;
-  background-color: var(--amcam-green);
+  background-color: var(--asm-green);
   color: #ffffff;
   border-radius: 50%;
   display: flex;
@@ -1180,3 +1180,173 @@ a.arrow_link:hover {
     display: none;
   }
 }
+
+/* ==========================================================================
+   GOOGLE HARİTALAR KAYAN YORUM BANDI (INFINITE MARQUEE)
+   ========================================================================== */
+.reviews-ticker-section {
+  background-color: #f8fafc;
+  padding: 45px 0 50px;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  overflow: hidden;
+  position: relative;
+}
+
+.reviews-ticker-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.reviews-badge-google {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 8px 18px;
+  border-radius: 30px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--asm-dark);
+}
+
+.reviews-badge-google .stars {
+  color: #fbbc04;
+  letter-spacing: 2px;
+}
+
+.ticker-track-wrap {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 18px;
+  position: relative;
+}
+
+.ticker-track-wrap:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+.ticker-track {
+  display: flex;
+  gap: 18px;
+  flex-shrink: 0;
+  animation: marqueeScroll 90s linear infinite;
+}
+
+.ticker-track-reverse {
+  animation: marqueeScrollReverse 95s linear infinite;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+@keyframes marqueeScrollReverse {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.google-review-card {
+  width: 340px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.review-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.review-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1a73e8;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.review-meta {
+  flex-grow: 1;
+}
+
+.review-author {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--asm-dark);
+  line-height: 1.2;
+}
+
+.review-car-tag {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+.review-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.review-stars {
+  color: #fbbc04;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.review-date {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.review-text {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #334155;
+  margin: 0;
+}
+
+/* KOMPAKT USTA & GÜVENCE BANDI */
+.compact-master-strip {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid var(--asm-red);
+  border-radius: 6px;
+  padding: 20px 25px;
+  margin: 30px 0;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.03);
+}
+
+.compact-master-grid {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 25px;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .compact-master-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
