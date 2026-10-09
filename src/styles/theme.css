@@ -403,19 +403,75 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 15px rgba(185, 8, 9, 0.35);
 }
 
+/* KELİME BAZLI 3D UÇARAK GELEN KELİME ANİMASYONLARI (FUTURISTIC 2050 FLY-IN) */
+@keyframes flyWord3D {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) translate3d(-100px, 80px, -200px) rotateX(45deg) rotateY(-20deg) scale(0.6);
+    filter: blur(14px);
+    letter-spacing: 0.15em;
+  }
+  60% {
+    opacity: 1;
+    transform: perspective(1000px) translate3d(8px, -6px, 20px) rotateX(-5deg) rotateY(3deg) scale(1.04);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) translate3d(0, 0, 0) rotateX(0) rotateY(0) scale(1);
+    filter: blur(0);
+    letter-spacing: normal;
+  }
+}
+
 .hero-title {
-  font-size: 44px;
-  line-height: 1.15;
+  font-size: 46px;
+  line-height: 1.18;
   font-weight: 900;
   color: #ffffff;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: -0.02em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px 14px;
 }
 
-.hero-title span {
+.hero-word-fly {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+  animation: flyWord3D 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.fly-word-1 { animation-delay: 0.10s; }
+.fly-word-2 { animation-delay: 0.20s; }
+.fly-word-3 { animation-delay: 0.30s; }
+.fly-word-4 { animation-delay: 0.40s; }
+
+.hero-accent-block {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.fly-word-amp {
   color: #ff3b3e;
-  text-shadow: 0 0 25px rgba(255, 59, 62, 0.4);
+  animation-delay: 0.50s;
+  font-weight: 900;
+  text-shadow: 0 0 25px rgba(255, 59, 62, 0.6);
+}
+
+.fly-word-5 {
+  color: #ff3b3e;
+  animation-delay: 0.60s;
+  text-shadow: 0 0 25px rgba(255, 59, 62, 0.5);
+}
+
+.fly-word-6 {
+  color: #ff3b3e;
+  animation-delay: 0.70s;
+  text-shadow: 0 0 25px rgba(255, 59, 62, 0.5);
 }
 
 .hero-desc {
